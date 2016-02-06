@@ -1,0 +1,189 @@
+object FRegister: TFRegister
+  Left = 492
+  Top = 188
+  BorderStyle = bsDialog
+  Caption = 'Daftar Sidik Jari'
+  ClientHeight = 381
+  ClientWidth = 406
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  OnCreate = FormCreate
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object lbl1: TLabel
+    Left = 8
+    Top = 32
+    Width = 36
+    Height = 13
+    Caption = 'User ID'
+  end
+  object lbl2: TLabel
+    Left = 8
+    Top = 80
+    Width = 16
+    Height = 13
+    Caption = 'Jari'
+  end
+  object imgJari: TImage
+    Left = 272
+    Top = 8
+    Width = 121
+    Height = 137
+    AutoSize = True
+    Center = True
+    Proportional = True
+    Stretch = True
+  end
+  object lbl3: TLabel
+    Left = 8
+    Top = 8
+    Width = 30
+    Height = 13
+    Caption = 'Comp.'
+  end
+  object lbl4: TLabel
+    Left = 8
+    Top = 56
+    Width = 28
+    Height = 13
+    Caption = 'Nama'
+  end
+  object lbl5: TLabel
+    Left = 208
+    Top = 32
+    Width = 54
+    Height = 20
+    Caption = 'ENTER'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object edIdUser: TEdit
+    Left = 56
+    Top = 32
+    Width = 145
+    Height = 19
+    BevelInner = bvNone
+    BevelOuter = bvNone
+    CharCase = ecUpperCase
+    Ctl3D = False
+    ParentCtl3D = False
+    TabOrder = 1
+    Text = 'ADMIN'
+    OnKeyDown = edIdUserKeyDown
+  end
+  object cbFingerIndex: TComboBox
+    Left = 56
+    Top = 80
+    Width = 145
+    Height = 21
+    Style = csDropDownList
+    Ctl3D = False
+    ItemHeight = 13
+    ItemIndex = 6
+    ParentCtl3D = False
+    TabOrder = 3
+    Text = 'Telunjuk Kanan'
+    Items.Strings = (
+      'Kelingking Kiri'
+      'Manis Kiri'
+      'Tengah Kiri'
+      'Telunjuk Kiri'
+      'Jempol Kiri'
+      'Jempol Kanan'
+      'Telunjuk Kanan'
+      'Tengah Kanan'
+      'Manis Kanan'
+      'Kelingking Kanan')
+  end
+  object btnDaftar: TButton
+    Left = 8
+    Top = 112
+    Width = 105
+    Height = 25
+    Caption = '&Daftar'
+    Enabled = False
+    TabOrder = 4
+    OnClick = btnDaftarClick
+  end
+  object btnSimpan: TButton
+    Left = 160
+    Top = 112
+    Width = 107
+    Height = 25
+    Caption = '&Simpan'
+    Enabled = False
+    TabOrder = 5
+    OnClick = btnSimpanClick
+  end
+  object cbComp: TComboBox
+    Left = 56
+    Top = 8
+    Width = 145
+    Height = 21
+    Style = csDropDownList
+    ItemHeight = 13
+    TabOrder = 0
+  end
+  object edNama: TEdit
+    Left = 56
+    Top = 56
+    Width = 209
+    Height = 19
+    BevelInner = bvNone
+    BevelOuter = bvNone
+    Ctl3D = False
+    Enabled = False
+    ParentCtl3D = False
+    TabOrder = 2
+  end
+  object status: TStatusBar
+    Left = 0
+    Top = 362
+    Width = 406
+    Height = 19
+    Panels = <>
+    SimplePanel = True
+  end
+  object redtStatus: TRichEdit
+    Left = 8
+    Top = 160
+    Width = 385
+    Height = 201
+    Ctl3D = True
+    HideScrollBars = False
+    ParentCtl3D = False
+    ReadOnly = True
+    ScrollBars = ssVertical
+    TabOrder = 7
+  end
+  object FPReg: TFinFPReg
+    AutoConnect = False
+    ConnectKind = ckRunningOrNew
+    OnFPRegistrationStatus = FPRegFPRegistrationStatus
+    OnFPRegistrationTemplate = FPRegFPRegistrationTemplate
+    OnFPSamplesNeeded = FPRegFPSamplesNeeded
+    OnFPRegistrationImage = FPRegFPRegistrationImage
+    Left = 328
+    Top = 16
+  end
+  object FPVer: TFinFPVer
+    AutoConnect = False
+    ConnectKind = ckRunningOrNew
+    OnFPVerificationStatus = FPVerFPVerificationStatus
+    OnFPVerificationID = FPVerFPVerificationID
+    OnFPVerificationImage = FPVerFPVerificationImage
+    Left = 288
+    Top = 16
+  end
+end
