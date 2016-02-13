@@ -11,6 +11,7 @@ uses
 
 begin
   Application.Initialize;
+  Application.Title := 'Aplikasi Penggajian';
   Application.CreateForm(TDM, DM);
   Application.CreateForm(TFMain, FMain);
   Application.Run;
