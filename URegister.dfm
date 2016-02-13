@@ -1,10 +1,10 @@
 object FRegister: TFRegister
-  Left = 492
-  Top = 188
+  Left = 258
+  Top = 191
   BorderStyle = bsDialog
   Caption = 'Daftar Sidik Jari'
   ClientHeight = 381
-  ClientWidth = 406
+  ClientWidth = 386
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,14 +19,14 @@ object FRegister: TFRegister
   TextHeight = 13
   object lbl1: TLabel
     Left = 8
-    Top = 32
+    Top = 8
     Width = 36
     Height = 13
     Caption = 'User ID'
   end
   object lbl2: TLabel
     Left = 8
-    Top = 80
+    Top = 56
     Width = 16
     Height = 13
     Caption = 'Jari'
@@ -34,30 +34,23 @@ object FRegister: TFRegister
   object imgJari: TImage
     Left = 272
     Top = 8
-    Width = 121
-    Height = 137
+    Width = 105
+    Height = 105
     AutoSize = True
     Center = True
     Proportional = True
     Stretch = True
   end
-  object lbl3: TLabel
-    Left = 8
-    Top = 8
-    Width = 30
-    Height = 13
-    Caption = 'Comp.'
-  end
   object lbl4: TLabel
     Left = 8
-    Top = 56
+    Top = 32
     Width = 28
     Height = 13
     Caption = 'Nama'
   end
   object lbl5: TLabel
     Left = 208
-    Top = 32
+    Top = 8
     Width = 54
     Height = 20
     Caption = 'ENTER'
@@ -70,7 +63,7 @@ object FRegister: TFRegister
   end
   object edIdUser: TEdit
     Left = 56
-    Top = 32
+    Top = 8
     Width = 145
     Height = 19
     BevelInner = bvNone
@@ -78,13 +71,13 @@ object FRegister: TFRegister
     CharCase = ecUpperCase
     Ctl3D = False
     ParentCtl3D = False
-    TabOrder = 1
+    TabOrder = 0
     Text = 'ADMIN'
     OnKeyDown = edIdUserKeyDown
   end
   object cbFingerIndex: TComboBox
     Left = 56
-    Top = 80
+    Top = 56
     Width = 145
     Height = 21
     Style = csDropDownList
@@ -92,7 +85,7 @@ object FRegister: TFRegister
     ItemHeight = 13
     ItemIndex = 6
     ParentCtl3D = False
-    TabOrder = 3
+    TabOrder = 2
     Text = 'Telunjuk Kanan'
     Items.Strings = (
       'Kelingking Kiri'
@@ -108,36 +101,27 @@ object FRegister: TFRegister
   end
   object btnDaftar: TButton
     Left = 8
-    Top = 112
+    Top = 88
     Width = 105
     Height = 25
     Caption = '&Daftar'
     Enabled = False
-    TabOrder = 4
+    TabOrder = 3
     OnClick = btnDaftarClick
   end
   object btnSimpan: TButton
     Left = 160
-    Top = 112
+    Top = 88
     Width = 107
     Height = 25
     Caption = '&Simpan'
     Enabled = False
-    TabOrder = 5
+    TabOrder = 4
     OnClick = btnSimpanClick
-  end
-  object cbComp: TComboBox
-    Left = 56
-    Top = 8
-    Width = 145
-    Height = 21
-    Style = csDropDownList
-    ItemHeight = 13
-    TabOrder = 0
   end
   object edNama: TEdit
     Left = 56
-    Top = 56
+    Top = 32
     Width = 209
     Height = 19
     BevelInner = bvNone
@@ -145,27 +129,27 @@ object FRegister: TFRegister
     Ctl3D = False
     Enabled = False
     ParentCtl3D = False
-    TabOrder = 2
+    TabOrder = 1
   end
   object status: TStatusBar
     Left = 0
     Top = 362
-    Width = 406
+    Width = 386
     Height = 19
     Panels = <>
     SimplePanel = True
   end
   object redtStatus: TRichEdit
     Left = 8
-    Top = 160
-    Width = 385
-    Height = 201
+    Top = 128
+    Width = 369
+    Height = 233
     Ctl3D = True
     HideScrollBars = False
     ParentCtl3D = False
     ReadOnly = True
     ScrollBars = ssVertical
-    TabOrder = 7
+    TabOrder = 6
   end
   object FPReg: TFinFPReg
     AutoConnect = False

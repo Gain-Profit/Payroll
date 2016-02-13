@@ -17,8 +17,6 @@ type
     imgJari: TImage;
     btnDaftar: TButton;
     btnSimpan: TButton;
-    lbl3: TLabel;
-    cbComp: TComboBox;
     lbl4: TLabel;
     edNama: TEdit;
     status: TStatusBar;
@@ -90,16 +88,6 @@ begin
   Activation:= '1YJ3-FBDA-C633-2124-7321-5XJN';
 
   FPReg.DeviceInfo(SN,Verification,Activation);
-
-  DM.SQLExec(DM.QShow,'SELECT kd_perusahaan FROM tb_company',True);
-
-  while not DM.QShow.Eof do
-  begin
-    cbComp.Items.Add(dm.QShow.FieldByName('kd_perusahaan').AsString);
-    dm.QShow.Next;
-  end;
-  cbComp.ItemIndex := 0;
-
 end;
 
 
@@ -188,11 +176,10 @@ end;
 
 procedure TFRegister.cekUser;
 begin
-  DM.SQLExec(DM.QShow,'SELECT n_user FROM tb_user WHERE kd_perusahaan ="'+
-                      cbComp.Text+'" AND kd_user ="'+edIdUser.Text+'"',True);
+  DM.SQLExec(DM.QShow,'SELECT n_user FROM tb_user WHERE kd_user ="'+edIdUser.Text+'"',True);
   if (DM.QShow.RecordCount = 0) then
   begin
-    ShowMessage('Data User untuk Perusahaan ini tidak ditemukan...');
+    ShowMessage('Data User dengan ID ini tidak ditemukan...');
     edNama.Clear;
     btnDaftar.Enabled := False;
     btnSimpan.Enabled := False;
@@ -298,5 +285,4 @@ begin
   FPVer.FPVerificationStop;
   FPReg.FPRegistrationStart('MySecretKey'+edIdUser.Text);
 end;
-
 end.
