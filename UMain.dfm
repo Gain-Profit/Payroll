@@ -32,13 +32,4 @@ object FMain: TFMain
     TabOrder = 1
     OnClick = btnVerifikasiClick
   end
-  object btnSound: TButton
-    Left = 24
-    Top = 104
-    Width = 233
-    Height = 25
-    Caption = 'Sound'
-    TabOrder = 2
-    OnClick = btnSoundClick
-  end
 end

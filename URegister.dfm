@@ -72,7 +72,6 @@ object FRegister: TFRegister
     Ctl3D = False
     ParentCtl3D = False
     TabOrder = 0
-    Text = 'ADMIN'
     OnKeyDown = edIdUserKeyDown
   end
   object cbFingerIndex: TComboBox
