@@ -3,13 +3,14 @@ unit UDM;
 interface
 
 uses
-  SysUtils, Classes, DB, mySQLDbTables;
+  SysUtils, Classes, DB, mySQLDbTables,Dialogs;
 
 type
   TDM = class(TDataModule)
     xConn: TmySQLDatabase;
     Qexe: TmySQLQuery;
     QShow: TmySQLQuery;
+    procedure koneksikan;
     procedure DataModuleCreate(Sender: TObject);
     procedure SQLExec(aQuery:TmySQLQuery; _SQL:string; isSearch: boolean);
   private
@@ -27,26 +28,7 @@ implementation
 
 {$R *.dfm}
 
-procedure TDM.DataModuleCreate(Sender: TObject);
-begin
-  _host := _host;
-  _db:= 'profit';
-  _user:= 'root';
-  _password:= 'server';
-  _port:= 3306;
-
-  with xConn do
-  begin
-    Host := _host;
-    DatabaseName:= _db;
-    UserName:= _user;
-    UserPassword:= _password;
-    port:= _port;
-    Connected:= True;
-  end;
-end;
-
-procedure TDM.SQLExec(aQuery:TmySQLQuery; _SQL:string; isSearch: boolean);
+procedure Tdm.SQLExec(aQuery:TmySQLQuery; _SQL:string; isSearch: boolean);
 begin
   with aQuery  do
   begin
@@ -58,6 +40,60 @@ begin
     else
       ExecSQL;
   end;
+end;
+
+function krupuk(const s: String; CryptInt: Integer): String;
+var
+  i: integer;
+  s2: string;
+begin
+  if not (Length(s) = 0) then
+    for i := 1 to Length(s) do
+      s2 := s2 + Chr(Ord(s[i]) - cryptint);
+  Result := s2;
+end;
+
+procedure Tdm.koneksikan;
+var
+  data,pusat,jalur1,jalur2,nama,kata: string;
+  X: TextFile;
+begin
+  assignfile(X,'tools/koneksi.cbCon');
+  try
+    reset(X);
+    readln(X,pusat);
+    readln(X,data);
+    readln(X,jalur2);
+    readln(X,nama);
+    readln(X,kata);
+    closefile(X);
+
+    jalur1 :=krupuk(jalur2,6);
+  
+    _host := krupuk(pusat,6);
+    _db:= krupuk(data,6);
+    _user:= krupuk(nama,6);
+    _password:= krupuk(kata,6);
+    _port:= strtoint(jalur1);
+
+    with xConn do
+    begin
+      Connected := False;
+      Host := _host;
+      DatabaseName:= _db;
+      UserName:= _user;
+      UserPassword:= _password;
+      port:= _port;
+      Connected:= True;
+    end;
+  except
+    showmessage('Tidak Terkoneksi ke database...');
+  end;
+end;
+
+procedure Tdm.DataModuleCreate(Sender: TObject);
+begin
+koneksikan;
 end;
 
 end.
