@@ -3,7 +3,7 @@ object FMain: TFMain
   Top = 108
   Width = 808
   Height = 579
-  Caption = 'Absensi Sidik Jari'
+  Caption = 'Penggajian'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -107,7 +107,7 @@ object FMain: TFMain
       item
         Alignment = taCenter
         Text = 'VERSI'
-        Width = 50
+        Width = 100
       end
       item
         Alignment = taCenter
