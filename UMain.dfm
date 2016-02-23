@@ -1,8 +1,8 @@
 object FMain: TFMain
-  Left = 367
-  Top = 335
-  Width = 288
-  Height = 212
+  Left = 168
+  Top = 108
+  Width = 808
+  Height = 579
   Caption = 'Absensi Sidik Jari'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -10,26 +10,173 @@ object FMain: TFMain
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
+  FormStyle = fsMDIForm
   OldCreateOrder = False
   Position = poScreenCenter
+  WindowState = wsMaximized
   PixelsPerInch = 96
   TextHeight = 13
-  object btnRegister: TButton
-    Left = 24
-    Top = 16
-    Width = 233
-    Height = 25
-    Caption = 'Register'
+  object sCoolBar1: TsPanel
+    Left = 0
+    Top = 0
+    Width = 792
+    Height = 81
+    Align = alTop
+    BorderWidth = 5
+    ParentBackground = True
+    ParentColor = True
     TabOrder = 0
-    OnClick = btnRegisterClick
+    SkinData.SkinSection = 'TOOLBAR'
+    object sbKeluar: TsSpeedButton
+      Left = 640
+      Top = 6
+      Width = 146
+      Height = 69
+      Cursor = crHandPoint
+      Caption = 'Keluar'
+      Flat = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Rockwell'
+      Font.Style = [fsBold]
+      Layout = blGlyphTop
+      ParentFont = False
+      Spacing = 0
+      OnClick = sbKeluarClick
+      Align = alRight
+      SkinData.SkinSection = 'TOOLBUTTON'
+      DisabledGlyphKind = []
+      ImageIndex = 6
+      Reflected = True
+    end
+    object sSpeedButton1: TsSpeedButton
+      Left = 6
+      Top = 6
+      Width = 130
+      Height = 69
+      Cursor = crHandPoint
+      Caption = 'Master Data'
+      Flat = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Rockwell'
+      Font.Style = [fsBold]
+      Layout = blGlyphTop
+      ParentFont = False
+      PopupMenu = pmMasterData
+      Spacing = 0
+      Align = alLeft
+      ButtonStyle = tbsDropDown
+      SkinData.SkinSection = 'TOOLBUTTON'
+      DropdownMenu = pmMasterData
+      ImageIndex = 5
+      Reflected = True
+    end
+    object sSpeedButton2: TsSpeedButton
+      Left = 136
+      Top = 6
+      Width = 130
+      Height = 69
+      Cursor = crHandPoint
+      Caption = 'Penggajian'
+      Flat = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Rockwell'
+      Font.Style = [fsBold]
+      Layout = blGlyphTop
+      ParentFont = False
+      Spacing = 0
+      Align = alLeft
+      ButtonStyle = tbsDropDown
+      SkinData.SkinSection = 'TOOLBUTTON'
+      ImageIndex = 0
+      Reflected = True
+    end
   end
-  object btnVerifikasi: TButton
-    Left = 24
-    Top = 56
-    Width = 233
+  object sb: TsStatusBar
+    Left = 0
+    Top = 516
+    Width = 792
     Height = 25
-    Caption = 'Check'
-    TabOrder = 1
-    OnClick = btnVerifikasiClick
+    Hint = 'Double Klick Untuk Mengganti Periode Akun'
+    Panels = <
+      item
+        Alignment = taCenter
+        Text = 'VERSI'
+        Width = 50
+      end
+      item
+        Alignment = taCenter
+        Text = 'USER'
+        Width = 150
+      end
+      item
+        Alignment = taCenter
+        Text = 'profit@localhost'
+        Width = 150
+      end
+      item
+        Alignment = taCenter
+        Text = 'Periode :'
+        Width = 60
+      end
+      item
+        Alignment = taCenter
+        Text = '25/01/2015'
+        Width = 100
+      end
+      item
+        Alignment = taCenter
+        Text = '25/02/2015'
+        Width = 100
+      end
+      item
+        Width = 50
+      end>
+    ParentShowHint = False
+    ShowHint = True
+    SkinData.SkinSection = 'STATUSBAR'
+  end
+  object tc_child: TsTabControl
+    Left = 0
+    Top = 81
+    Width = 792
+    Height = 24
+    Cursor = crHandPoint
+    Align = alTop
+    HotTrack = True
+    TabOrder = 2
+    Visible = False
+    SkinData.SkinSection = 'PAGECONTROL'
+  end
+  object sSkinProvider1: TsSkinProvider
+    AddedTitle.Font.Charset = DEFAULT_CHARSET
+    AddedTitle.Font.Color = clNone
+    AddedTitle.Font.Height = -11
+    AddedTitle.Font.Name = 'MS Sans Serif'
+    AddedTitle.Font.Style = []
+    SkinData.SkinSection = 'FORM'
+    TitleButtons = <>
+    Left = 8
+    Top = 120
+  end
+  object pmMasterData: TPopupMenu
+    MenuAnimation = [maLeftToRight, maRightToLeft, maTopToBottom, maBottomToTop]
+    Left = 16
+    Top = 8
+    object DaftarKaryawan1: TMenuItem
+      Caption = 'Register Karyawan'
+      OnClick = DaftarKaryawan1Click
+    end
+    object miDaftarKaryawan: TMenuItem
+      Caption = 'Daftar Karyawan'
+    end
+    object N5: TMenuItem
+      Caption = '-'
+    end
   end
 end
