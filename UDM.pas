@@ -3,13 +3,14 @@ unit UDM;
 interface
 
 uses
-  SysUtils, Classes, DB, mySQLDbTables,Dialogs;
+  SysUtils, Classes, DB, mySQLDbTables,Dialogs, sSkinManager, IniFiles, Forms;
 
 type
   TDM = class(TDataModule)
     xConn: TmySQLDatabase;
     Qexe: TmySQLQuery;
     QShow: TmySQLQuery;
+    sm: TsSkinManager;
     procedure koneksikan;
     procedure DataModuleCreate(Sender: TObject);
     procedure SQLExec(aQuery:TmySQLQuery; _SQL:string; isSearch: boolean);
@@ -21,7 +22,7 @@ type
 
 var
   DM: TDM;
-  _host,_db,_user,_password:string;
+  _host,_db,_user,_password,WPath:string;
   _port:Integer;
 
 implementation
@@ -92,8 +93,23 @@ begin
 end;
 
 procedure Tdm.DataModuleCreate(Sender: TObject);
+var
+  appINI : TIniFile;
 begin
-koneksikan;
+  WPath := ExtractFilePath(Application.ExeName);
+  sm.SkinDirectory:= WPath + 'tools\skins';
+  appINI := TIniFile.Create(WPath + 'tools\gain.ini');
+
+  try
+    sm.SkinName:=appINI.ReadString('payroll','nama_skin','Air');
+    sm.HueOffset:=appini.ReadInteger('payroll','hue_skin',0);
+    sm.Saturation:=appini.ReadInteger('payroll','sat_skin',0);
+  finally
+    appINI.Free;
+  end;
+  sm.Active:= True;
+
+  koneksikan;
 end;
 
 end.
