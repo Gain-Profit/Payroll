@@ -4,7 +4,6 @@ uses
   Forms,
   URegister in 'URegister.pas' {FRegister},
   UDM in 'UDM.pas' {DM: TDataModule},
-  UCheckIO in 'UCheckIO.pas' {FChekIO},
   UMain in 'UMain.pas' {FMain};
 
 {$R *.res}
