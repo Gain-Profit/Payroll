@@ -38,21 +38,6 @@ uses URegister;
 
 {$R *.dfm}
 
-{
-Memainkan Sound;
-
-uses MMSystem;
-
-SND_ASYNC play sound in the background and
-    let the program continue while playing.
-SND_SYNC stops the program while playing and
-    lets the program continues only after playing the sount completely.
-SND_LOOP plays the sound in a loop over and over.
-    only when playing a new sound, or when you
-    call PlaySound(nil,0,0) the playing is stopped.
-PlaySound('DeviceFail',0,SND_ASYNC);
-}
-
 
 procedure TFMain.sbKeluarClick(Sender: TObject);
 begin
