@@ -28,7 +28,7 @@ var
   DM: TDM;
   _host, _db, _user, _password, WPath: string;
   _port: Integer;
-  metu_kabeh: Boolean;
+  metu_kabeh,login: Boolean;
 
 implementation
 
