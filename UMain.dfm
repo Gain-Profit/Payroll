@@ -14,6 +14,8 @@ object FMain: TFMain
   OldCreateOrder = False
   Position = poScreenCenter
   WindowState = wsMaximized
+  OnClose = FormClose
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object sCoolBar1: TsPanel
@@ -47,7 +49,8 @@ object FMain: TFMain
       Align = alRight
       SkinData.SkinSection = 'TOOLBUTTON'
       DisabledGlyphKind = []
-      ImageIndex = 6
+      ImageIndex = 2
+      Images = DM.image
       Reflected = True
     end
     object sSpeedButton1: TsSpeedButton
@@ -71,7 +74,8 @@ object FMain: TFMain
       ButtonStyle = tbsDropDown
       SkinData.SkinSection = 'TOOLBUTTON'
       DropdownMenu = pmMasterData
-      ImageIndex = 5
+      ImageIndex = 0
+      Images = DM.image
       Reflected = True
     end
     object sSpeedButton2: TsSpeedButton
@@ -93,7 +97,8 @@ object FMain: TFMain
       Align = alLeft
       ButtonStyle = tbsDropDown
       SkinData.SkinSection = 'TOOLBUTTON'
-      ImageIndex = 0
+      ImageIndex = 1
+      Images = DM.image
       Reflected = True
     end
   end
@@ -174,6 +179,7 @@ object FMain: TFMain
     end
     object miDaftarKaryawan: TMenuItem
       Caption = 'Daftar Karyawan'
+      OnClick = miDaftarKaryawanClick
     end
     object N5: TMenuItem
       Caption = '-'
