@@ -5,7 +5,8 @@ uses
   URegister in 'URegister.pas' {FRegister},
   UDM in 'UDM.pas' {DM: TDataModule},
   UMain in 'UMain.pas' {FMain},
-  UDaftarKaryawan in 'UDaftarKaryawan.pas' {FDaftarKaryawan};
+  UDaftarKaryawan in 'UDaftarKaryawan.pas' {FDaftarKaryawan},
+  U_Login in 'U_Login.pas' {F_Login};
 
 {$R *.res}
 
