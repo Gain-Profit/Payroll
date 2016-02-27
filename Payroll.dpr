@@ -4,7 +4,8 @@ uses
   Forms,
   URegister in 'URegister.pas' {FRegister},
   UDM in 'UDM.pas' {DM: TDataModule},
-  UMain in 'UMain.pas' {FMain};
+  UMain in 'UMain.pas' {FMain},
+  UDaftarKaryawan in 'UDaftarKaryawan.pas' {FDaftarKaryawan};
 
 {$R *.res}
 
