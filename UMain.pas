@@ -24,6 +24,7 @@ type
     miDaftarKaryawan: TMenuItem;
     N5: TMenuItem;
     DaftarKaryawan1: TMenuItem;
+    procedure panel_auto_width;
     procedure MDIChildCreated(const childHandle: THandle);
     procedure MDIChildDestroyed(const childHandle: THandle);
     procedure sbKeluarClick(Sender: TObject);
@@ -44,9 +45,20 @@ var
 implementation
 
 uses
-  URegister, UDaftarKaryawan, UDM;
+  URegister, UDaftarKaryawan, UDM, U_Login;
 
 {$R *.dfm}
+
+procedure TFMain.panel_auto_width;
+var x: integer;
+    y: string;
+begin
+ for x:=0 to sb.Panels.Count-1 do
+ begin
+    y:= sb.Panels[x].text;
+    sb.Panels[x].Width := sb.Canvas.TextWidth(y) +30;
+ end;
+end;
 
 //add a tab for an MDI child
 procedure TFMain.MDIChildCreated(const childHandle: THandle);
@@ -82,12 +94,13 @@ end;
 procedure TFMain.WmAfterShow(var Msg: TMessage);
 begin
   dm.sm.Active := true;
-{
-  application.CreateForm(tF_login, f_login);
-  f_login.sb.Panels[0].Text:=sb.Panels[3].Text;
-  f_login.sb.Panels[1].Text:=sb.Panels[4].Text;
+  login := False;
+
+  application.CreateForm(TF_Login, f_login);
   f_login.ShowModal;
-}
+
+  if not(login) then
+    Close;
 end;
 
 procedure TFMain.sbKeluarClick(Sender: TObject);
