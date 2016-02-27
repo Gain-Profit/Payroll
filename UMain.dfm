@@ -173,10 +173,6 @@ object FMain: TFMain
     MenuAnimation = [maLeftToRight, maRightToLeft, maTopToBottom, maBottomToTop]
     Left = 16
     Top = 8
-    object DaftarKaryawan1: TMenuItem
-      Caption = 'Register Karyawan'
-      OnClick = DaftarKaryawan1Click
-    end
     object miDaftarKaryawan: TMenuItem
       Caption = 'Daftar Karyawan'
       OnClick = miDaftarKaryawanClick

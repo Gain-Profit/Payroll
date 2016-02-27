@@ -23,12 +23,10 @@ type
     pmMasterData: TPopupMenu;
     miDaftarKaryawan: TMenuItem;
     N5: TMenuItem;
-    DaftarKaryawan1: TMenuItem;
     procedure panel_auto_width;
     procedure MDIChildCreated(const childHandle: THandle);
     procedure MDIChildDestroyed(const childHandle: THandle);
     procedure sbKeluarClick(Sender: TObject);
-    procedure DaftarKaryawan1Click(Sender: TObject);
     procedure miDaftarKaryawanClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormShow(Sender: TObject);
@@ -106,12 +104,6 @@ end;
 procedure TFMain.sbKeluarClick(Sender: TObject);
 begin
   Close;
-end;
-
-procedure TFMain.DaftarKaryawan1Click(Sender: TObject);
-begin
-  Application.CreateForm(TFRegister, FRegister);
-  FRegister.ShowModal;
 end;
 
 procedure TFMain.miDaftarKaryawanClick(Sender: TObject);
