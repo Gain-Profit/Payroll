@@ -154,28 +154,29 @@ object FDaftarKaryawan: TFDaftarKaryawan
     end
     object spnl1: TsPanel
       Left = 0
-      Top = 265
+      Top = 248
       Width = 150
-      Height = 137
+      Height = 154
       Align = alBottom
       TabOrder = 0
       SkinData.SkinSection = 'PANEL'
       DesignSize = (
         150
-        137)
-      object B_tambah: TsButton
+        154)
+      object btnRegister: TsButton
         Left = 6
-        Top = 8
+        Top = 9
         Width = 136
-        Height = 25
+        Height = 40
         Anchors = [akBottom]
-        Caption = '&Tambah Data'
+        Caption = '&Register'#13#10'Sidik Jari'
         TabOrder = 0
+        OnClick = btnRegisterClick
         SkinData.SkinSection = 'BUTTON'
       end
       object b_edit: TsButton
         Left = 6
-        Top = 40
+        Top = 57
         Width = 136
         Height = 25
         Anchors = [akBottom]
@@ -185,7 +186,7 @@ object FDaftarKaryawan: TFDaftarKaryawan
       end
       object b_hapus: TsButton
         Left = 6
-        Top = 72
+        Top = 89
         Width = 136
         Height = 25
         Anchors = [akBottom]
@@ -195,7 +196,7 @@ object FDaftarKaryawan: TFDaftarKaryawan
       end
       object b_duplikat: TsButton
         Left = 6
-        Top = 104
+        Top = 121
         Width = 136
         Height = 25
         Anchors = [akBottom]

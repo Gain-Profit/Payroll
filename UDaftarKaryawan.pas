@@ -23,7 +23,7 @@ type
     sb_2: TsSpeedButton;
     sb_1: TsSpeedButton;
     spnl1: TsPanel;
-    B_tambah: TsButton;
+    btnRegister: TsButton;
     b_edit: TsButton;
     b_hapus: TsButton;
     b_duplikat: TsButton;
@@ -43,6 +43,7 @@ type
     procedure sb_2Click(Sender: TObject);
     procedure TvDataCustomDrawCell(Sender: TcxCustomGridTableView; ACanvas:
       TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+    procedure btnRegisterClick(Sender: TObject);
   private
     procedure WmAfterShow(var Msg: TMessage); message WM_AFTER_SHOW;
     { Private declarations }
@@ -56,7 +57,7 @@ var
 implementation
 
 uses
-  UMain, UDM;
+  UMain, UDM, URegister;
 
 {$R *.dfm}
 
@@ -125,6 +126,12 @@ begin
     ACanvas.Font.Color := clYellow;
     ACanvas.Brush.Color := clRed;
   end;
+end;
+
+procedure TFDaftarKaryawan.btnRegisterClick(Sender: TObject);
+begin
+  Application.CreateForm(TFRegister, FRegister);
+  FRegister.ShowModal;
 end;
 
 end.
