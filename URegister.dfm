@@ -48,19 +48,6 @@ object FRegister: TFRegister
     Height = 13
     Caption = 'Nama'
   end
-  object lbl5: TLabel
-    Left = 208
-    Top = 8
-    Width = 54
-    Height = 20
-    Caption = 'ENTER'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -16
-    Font.Name = 'MS Sans Serif'
-    Font.Style = []
-    ParentFont = False
-  end
   object edIdUser: TEdit
     Left = 56
     Top = 8
@@ -70,9 +57,9 @@ object FRegister: TFRegister
     BevelOuter = bvNone
     CharCase = ecUpperCase
     Ctl3D = False
+    Enabled = False
     ParentCtl3D = False
     TabOrder = 0
-    OnKeyDown = edIdUserKeyDown
   end
   object cbFingerIndex: TComboBox
     Left = 56
@@ -104,7 +91,6 @@ object FRegister: TFRegister
     Width = 105
     Height = 25
     Caption = '&Daftar'
-    Enabled = False
     TabOrder = 3
     OnClick = btnDaftarClick
   end

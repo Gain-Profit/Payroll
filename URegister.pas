@@ -20,7 +20,6 @@ type
     lbl4: TLabel;
     edNama: TEdit;
     status: TStatusBar;
-    lbl5: TLabel;
     redtStatus: TRichEdit;
     procedure Awal;
     procedure FormCreate(Sender: TObject);
@@ -33,9 +32,6 @@ type
       const FPTemplate: WideString);
     procedure FPRegFPRegistrationImage(Sender: TObject);
     procedure btnSimpanClick(Sender: TObject);
-    procedure edIdUserKeyDown(Sender: TObject; var Key: Word;
-      Shift: TShiftState);
-    procedure cekUser;
     procedure btnVerifikasiClick(Sender: TObject);
     procedure StartVerifikasi;
     procedure StartRegistrasi;
@@ -83,6 +79,9 @@ end;
 
 procedure TFRegister.FormShow(Sender: TObject);
 begin
+  edIdUser.Text := dm.QKaryawan.FIeldByName('kd_user').AsString;
+  edNama.Text := dm.QKaryawan.FIeldByName('n_user').AsString;
+  
   SN:= 'C800V004068';
   Verification:= 'EC5-C58-C93-CAD-DEA';
   Activation:= '1YJ3-FBDA-C633-2124-7321-5XJN';
@@ -162,34 +161,6 @@ begin
   except
     on E:exception do
     messagedlg('proses penyimpanan gagal,ulangi lagi!!! '#10#13'' + e.Message, mterror, [mbOk],0);
-  end;
-end;
-
-procedure TFRegister.edIdUserKeyDown(Sender: TObject; var Key: Word;
-  Shift: TShiftState);
-begin
-  if (Key= vk_return) and (edIdUser.Text <> '')then
-  begin
-  cekUser;
-  end;
-end;
-
-procedure TFRegister.cekUser;
-begin
-  DM.SQLExec(DM.QShow,'SELECT n_user FROM tb_user WHERE kd_user ="'+edIdUser.Text+'"',True);
-  if (DM.QShow.RecordCount = 0) then
-  begin
-    ShowMessage('Data User dengan ID ini tidak ditemukan...');
-    edNama.Clear;
-    btnDaftar.Enabled := False;
-    btnSimpan.Enabled := False;
-    Exit;
-  end else
-  begin
-    edNama.Text:= DM.QShow.FieldByName('n_user').AsString;
-    cbFingerIndex.SetFocus;
-    btnDaftar.Enabled := True;
-    btnSimpan.Enabled := False;
   end;
 end;
 
