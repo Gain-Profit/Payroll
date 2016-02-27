@@ -41,7 +41,8 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure sb_2Click(Sender: TObject);
-    procedure TvDataCustomDrawCell(Sender: TcxCustomGridTableView; ACanvas: TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+    procedure TvDataCustomDrawCell(Sender: TcxCustomGridTableView; ACanvas:
+      TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
   private
     procedure WmAfterShow(var Msg: TMessage); message WM_AFTER_SHOW;
     { Private declarations }
@@ -71,7 +72,8 @@ end;
 
 procedure TFDaftarKaryawan.WmAfterShow(var Msg: TMessage);
 begin
-  dm.SQLExec(dm.QKaryawan, 'SELECT kd_user,n_user,Alamat,Kontak, ' + 'fx_clock_registered(kd_user) AS CheckClock FROM tb_user', true);
+  dm.SQLExec(dm.QKaryawan, 'SELECT kd_user,n_user,Alamat,Kontak, ' +
+    'fx_clock_registered(kd_user) AS CheckClock FROM tb_user', true);
   tvdata.DataController.FocusedRowIndex := 1;
 end;
 
@@ -115,7 +117,8 @@ begin
   tvdata.DataController.DataSource.DataSet.RecNo := posisi;
 end;
 
-procedure TFDaftarKaryawan.TvDataCustomDrawCell(Sender: TcxCustomGridTableView; ACanvas: TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+procedure TFDaftarKaryawan.TvDataCustomDrawCell(Sender: TcxCustomGridTableView;
+  ACanvas: TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
 begin
   if (AViewInfo.Text = 'BELUM TERDAFTAR') then
   begin
