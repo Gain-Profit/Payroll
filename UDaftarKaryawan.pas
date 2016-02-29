@@ -24,7 +24,7 @@ type
     sb_1: TsSpeedButton;
     spnl1: TsPanel;
     btnRegister: TsButton;
-    b_edit: TsButton;
+    btnDaftarHadir: TsButton;
     b_hapus: TsButton;
     b_duplikat: TsButton;
     p1: TsPanel;
@@ -44,6 +44,7 @@ type
     procedure TvDataCustomDrawCell(Sender: TcxCustomGridTableView; ACanvas:
       TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
     procedure btnRegisterClick(Sender: TObject);
+    procedure btnDaftarHadirClick(Sender: TObject);
   private
     procedure WmAfterShow(var Msg: TMessage); message WM_AFTER_SHOW;
     { Private declarations }
@@ -57,7 +58,7 @@ var
 implementation
 
 uses
-  UMain, UDM, URegister;
+  UMain, UDM, URegister, UDaftarHadir;
 
 {$R *.dfm}
 
@@ -132,6 +133,12 @@ procedure TFDaftarKaryawan.btnRegisterClick(Sender: TObject);
 begin
   Application.CreateForm(TFRegister, FRegister);
   FRegister.ShowModal;
+end;
+
+procedure TFDaftarKaryawan.btnDaftarHadirClick(Sender: TObject);
+begin
+  Application.CreateForm(TFDaftarHadir, FDaftarHadir);
+  FDaftarHadir.Show;
 end;
 
 end.

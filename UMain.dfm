@@ -131,13 +131,13 @@ object FMain: TFMain
       end
       item
         Alignment = taCenter
-        Text = '25/01/2015'
-        Width = 100
+        Text = '02'
+        Width = 50
       end
       item
         Alignment = taCenter
-        Text = '25/02/2015'
-        Width = 100
+        Text = '2016'
+        Width = 75
       end
       item
         Width = 50
@@ -156,6 +156,7 @@ object FMain: TFMain
     HotTrack = True
     TabOrder = 2
     Visible = False
+    OnChange = tc_childChange
     SkinData.SkinSection = 'PAGECONTROL'
   end
   object sSkinProvider1: TsSkinProvider

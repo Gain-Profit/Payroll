@@ -30,6 +30,7 @@ type
     procedure miDaftarKaryawanClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormShow(Sender: TObject);
+    procedure tc_childChange(Sender: TObject);
   private
     procedure WmAfterShow(var Msg: TMessage); message WM_AFTER_SHOW;
     { Private declarations }
@@ -121,6 +122,25 @@ begin
 
   action := cafree;
   FMain := nil;
+end;
+
+procedure TFMain.tc_childChange(Sender: TObject);
+var
+  cHandle: Integer;
+  k: Integer;
+begin
+  cHandle := Integer(tc_child.Tabs.Objects[tc_child.TabIndex]);
+
+  if tc_child.Tag = -1 then Exit;
+
+  for k := 0 to MDIChildCount - 1 do
+  begin
+    if MDIChildren[k].Handle = cHandle then
+    begin
+      MDIChildren[k].Show;
+      Break;
+    end;
+  end;
 end;
 
 end.

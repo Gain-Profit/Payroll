@@ -174,14 +174,15 @@ object FDaftarKaryawan: TFDaftarKaryawan
         OnClick = btnRegisterClick
         SkinData.SkinSection = 'BUTTON'
       end
-      object b_edit: TsButton
+      object btnDaftarHadir: TsButton
         Left = 6
         Top = 57
         Width = 136
         Height = 25
         Anchors = [akBottom]
-        Caption = '&Ubah Data'
+        Caption = 'Daftar Hadir'
         TabOrder = 1
+        OnClick = btnDaftarHadirClick
         SkinData.SkinSection = 'BUTTON'
       end
       object b_hapus: TsButton
