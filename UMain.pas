@@ -45,7 +45,7 @@ var
 implementation
 
 uses
-  URegister, UDaftarKaryawan, UDM, U_Login;
+  URegister, UDaftarKaryawan, UDM, ULogin;
 
 {$R *.dfm}
 
@@ -123,8 +123,8 @@ begin
   dm.sm.Active := true;
   login := False;
 
-  application.CreateForm(TF_Login, f_login);
-  f_login.ShowModal;
+  application.CreateForm(TFLogin, FLogin);
+  FLogin.ShowModal;
 
   if not(login) then
     Close;
@@ -187,9 +187,9 @@ begin
   if versiAPP < versiDB then
   begin
     ShowMessage('APLIKASI PENGGAJIAN VERSI : '+ versiAPP +
-    'TIDAK DAPAT DIJALANKAN' + #13#10 +
-    'aplikasi terbaru dengan versi : '+ versiDB + #13#10 +
-    'SUDAH DIRILIS...'+ #13#10#13#10 +
+    ' TIDAK DAPAT DIJALANKAN' + #13#10 +
+    'aplikasi terbaru dengan versi : '+ versiDB +
+    ' SUDAH DIRILIS...'+ #13#10#13#10 +
     'Download Applikasi Terbaru!!!' );
 
     WinExec(PChar('rundll32 url.dll,FileProtocolHandler '+ UrlDownloadLocal),
