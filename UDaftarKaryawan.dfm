@@ -39,6 +39,7 @@ object FDaftarKaryawan: TFDaftarKaryawan
       LookAndFeel.Kind = lfOffice11
       object TvData: TcxGridDBTableView
         NavigatorButtons.ConfirmDelete = False
+        OnCellDblClick = TvDataCellDblClick
         OnCustomDrawCell = TvDataCustomDrawCell
         DataController.DataSource = DM.dsKaryawan
         DataController.Summary.DefaultGroupSummaryItems = <
@@ -154,18 +155,18 @@ object FDaftarKaryawan: TFDaftarKaryawan
     end
     object spnl1: TsPanel
       Left = 0
-      Top = 248
+      Top = 352
       Width = 150
-      Height = 154
+      Height = 90
       Align = alBottom
       TabOrder = 0
       SkinData.SkinSection = 'PANEL'
       DesignSize = (
         150
-        154)
+        90)
       object btnRegister: TsButton
         Left = 6
-        Top = 9
+        Top = 41
         Width = 136
         Height = 40
         Anchors = [akBottom]
@@ -176,55 +177,13 @@ object FDaftarKaryawan: TFDaftarKaryawan
       end
       object btnDaftarHadir: TsButton
         Left = 6
-        Top = 57
+        Top = 9
         Width = 136
         Height = 25
         Anchors = [akBottom]
         Caption = 'Daftar Hadir'
         TabOrder = 1
         OnClick = btnDaftarHadirClick
-        SkinData.SkinSection = 'BUTTON'
-      end
-      object b_hapus: TsButton
-        Left = 6
-        Top = 89
-        Width = 136
-        Height = 25
-        Anchors = [akBottom]
-        Caption = '&Hapus Data'
-        TabOrder = 2
-        SkinData.SkinSection = 'BUTTON'
-      end
-      object b_duplikat: TsButton
-        Left = 6
-        Top = 121
-        Width = 136
-        Height = 25
-        Anchors = [akBottom]
-        Caption = '&Duplikat Data'
-        TabOrder = 3
-        SkinData.SkinSection = 'BUTTON'
-      end
-    end
-    object p1: TsPanel
-      Left = 0
-      Top = 402
-      Width = 150
-      Height = 40
-      Align = alBottom
-      TabOrder = 1
-      SkinData.SkinSection = 'PANEL'
-      DesignSize = (
-        150
-        40)
-      object B_property: TsButton
-        Left = 6
-        Top = 7
-        Width = 136
-        Height = 25
-        Anchors = [akBottom]
-        Caption = '&Property'
-        TabOrder = 0
         SkinData.SkinSection = 'BUTTON'
       end
     end

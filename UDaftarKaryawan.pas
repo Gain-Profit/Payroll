@@ -24,17 +24,13 @@ type
     sb_1: TsSpeedButton;
     spnl1: TsPanel;
     btnRegister: TsButton;
-    btnDaftarHadir: TsButton;
-    b_hapus: TsButton;
-    b_duplikat: TsButton;
-    p1: TsPanel;
-    B_property: TsButton;
     sSkinProvider1: TsSkinProvider;
     TvDatakd_user: TcxGridDBColumn;
     TvDatan_user: TcxGridDBColumn;
     TvDataAlamat: TcxGridDBColumn;
     TvDataKontak: TcxGridDBColumn;
     TvDataCheckClock: TcxGridDBColumn;
+    btnDaftarHadir: TsButton;
     procedure WMMDIACTIVATE(var msg: TWMMDIACTIVATE); message WM_MDIACTIVATE;
     procedure FormShow(Sender: TObject);
     procedure sb_1Click(Sender: TObject);
@@ -45,6 +41,9 @@ type
       TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
     procedure btnRegisterClick(Sender: TObject);
     procedure btnDaftarHadirClick(Sender: TObject);
+    procedure TvDataCellDblClick(Sender: TcxCustomGridTableView;
+      ACellViewInfo: TcxGridTableDataCellViewInfo; AButton: TMouseButton;
+      AShift: TShiftState; var AHandled: Boolean);
   private
     procedure WmAfterShow(var Msg: TMessage); message WM_AFTER_SHOW;
     { Private declarations }
@@ -136,6 +135,15 @@ begin
 end;
 
 procedure TFDaftarKaryawan.btnDaftarHadirClick(Sender: TObject);
+begin
+  Application.CreateForm(TFDaftarHadir, FDaftarHadir);
+  FDaftarHadir.Show;
+end;
+
+procedure TFDaftarKaryawan.TvDataCellDblClick(
+  Sender: TcxCustomGridTableView;
+  ACellViewInfo: TcxGridTableDataCellViewInfo; AButton: TMouseButton;
+  AShift: TShiftState; var AHandled: Boolean);
 begin
   Application.CreateForm(TFDaftarHadir, FDaftarHadir);
   FDaftarHadir.Show;
