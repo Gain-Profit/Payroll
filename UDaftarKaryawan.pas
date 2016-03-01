@@ -74,7 +74,8 @@ end;
 procedure TFDaftarKaryawan.WmAfterShow(var Msg: TMessage);
 begin
   dm.SQLExec(dm.QKaryawan, 'SELECT kd_user,n_user,Alamat,Kontak, ' +
-    'fx_clock_registered(kd_user) AS CheckClock FROM tb_user', true);
+    'fx_clock_registered(kd_user) AS CheckClock FROM tb_user ' +
+    'WHERE aktif = "Y"', true);
   tvdata.DataController.FocusedRowIndex := 1;
 end;
 
