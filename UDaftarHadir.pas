@@ -8,7 +8,8 @@ uses
   cxDataStorage, cxEdit, DB, cxDBData, mySQLDbTables, StdCtrls, sButton,
   Buttons, sSpeedButton, ExtCtrls, sPanel, cxGridLevel,
   cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxClasses,
-  cxControls, cxGridCustomView, cxGrid, sEdit, sLabel;
+  cxControls, cxGridCustomView, cxGrid, sEdit, sLabel, Mask, sMaskEdit,
+  sCustomComboEdit, sTooledit;
 
 const
   WM_AFTER_SHOW = WM_USER + 300; // custom message
@@ -34,12 +35,18 @@ type
     lbl2: TsLabel;
     edID: TsEdit;
     edNama: TsEdit;
+    p1: TsPanel;
+    l_1: TsLabel;
+    l_2: TsLabel;
+    deMulai: TsDateEdit;
+    deSampai: TsDateEdit;
     procedure WMMDIACTIVATE(var msg: TWMMDIACTIVATE); message WM_MDIACTIVATE;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure sb_1Click(Sender: TObject);
     procedure sb_2Click(Sender: TObject);
+    procedure segarkan;
   private
     procedure WmAfterShow(var Msg: TMessage); message WM_AFTER_SHOW;
     { Private declarations }
@@ -57,11 +64,17 @@ uses UDM, UMain;
 {$R *.dfm}
 
 procedure TFDaftarHadir.FormCreate(Sender: TObject);
+var
+  Year, Month, Day: Word;
 begin
+  DecodeDate(Now, Year, Month, Day);
+  deMulai.Date:= EncodeDate(Year,Month,1);
+  deSampai.Date:= Date();
+
   edID.Text := dm.QKaryawan.FIeldByName('kd_user').Text;
   edNama.Text := dm.QKaryawan.FIeldByName('n_user').Text;
 
-  Caption := 'Daftar Hadir - ' + edID.Text; 
+  Caption := 'Daftar Hadir - ' + edID.Text;
   FMain.MDIChildCreated(self.Handle);
 end;
 
@@ -71,20 +84,8 @@ begin
 end;
 
 procedure TFDaftarHadir.WmAfterShow(var Msg: TMessage);
-var
-  periode, sql : string;
 begin
-  periode := FMain.sb.Panels[5].Text + FMain.sb.Panels[4].Text;
-  sql := 'SELECT user_id,checkin_time,checkout_time, ' +
-  'TIMEDIFF(checkout_time,checkin_time) AS Total, ' +
-  'IFNULL(fx_pembulatan(checkout_time,checkin_time),0) AS Jam, ' +
-  'keterangan AS keterangan FROM tb_checkinout ' +
-  'WHERE EXTRACT(YEAR_MONTH FROM checkin_time) = "'+periode+'" ' +
-  'AND user_id = "'+edID.Text+'" ORDER BY checkin_time DESC';
-  
-  dm.SQLExec(QDaftarHadir, sql, true);
-
-  tvdata.DataController.FocusedRowIndex := 1;
+  segarkan;
 end;
 
 procedure TFDaftarHadir.WMMDIACTIVATE(var msg: TWMMDIACTIVATE);
@@ -119,13 +120,23 @@ begin
 end;
 
 procedure TFDaftarHadir.sb_2Click(Sender: TObject);
-var
-  posisi: integer;
 begin
-  posisi := tvdata.DataController.DataSource.DataSet.RecNo;
-  tvdata.DataController.DataSource.DataSet.Close;
-  tvdata.DataController.DataSource.DataSet.Open;
-  tvdata.DataController.DataSource.DataSet.RecNo := posisi;
+  segarkan;
+end;
+
+procedure TFDaftarHadir.segarkan;
+var
+  sql : string;
+begin
+  sql := 'SELECT user_id,checkin_time,checkout_time, ' +
+  'TIMEDIFF(checkout_time,checkin_time) AS Total, ' +
+  'IFNULL(fx_pembulatan(checkout_time,checkin_time),0) AS Jam, ' +
+  'keterangan AS keterangan FROM tb_checkinout ' +
+  'WHERE user_id = "'+edID.Text+'"  AND date(checkin_time) >= '+
+  quotedstr(FormatDateTime('yyyy-MM-dd',deMulai.Date))+' AND date(checkin_time) <= '+
+  quotedstr(FormatDateTime('yyyy-MM-dd',deSampai.Date))+'ORDER BY checkin_time DESC';
+  
+  dm.SQLExec(QDaftarHadir, sql, true);
 end;
 
 end.

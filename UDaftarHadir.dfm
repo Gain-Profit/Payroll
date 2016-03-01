@@ -77,6 +77,75 @@ object FDaftarHadir: TFDaftarHadir
       Images = DM.image
       Reflected = True
     end
+    object p1: TsPanel
+      Left = 0
+      Top = 352
+      Width = 150
+      Height = 90
+      Align = alBottom
+      TabOrder = 0
+      SkinData.SkinSection = 'PANEL'
+      object l_1: TsLabel
+        Left = 4
+        Top = 5
+        Width = 31
+        Height = 13
+        Caption = 'Mulai :'
+      end
+      object l_2: TsLabel
+        Left = 4
+        Top = 45
+        Width = 41
+        Height = 13
+        Caption = 'Sampai :'
+      end
+      object deMulai: TsDateEdit
+        Left = 4
+        Top = 21
+        Width = 138
+        Height = 21
+        AutoSize = False
+        EditMask = '!99/99/9999;1; '
+        MaxLength = 10
+        TabOrder = 0
+        Text = '  /  /    '
+        BoundLabel.Indent = 0
+        BoundLabel.Font.Charset = DEFAULT_CHARSET
+        BoundLabel.Font.Color = clWindowText
+        BoundLabel.Font.Height = -11
+        BoundLabel.Font.Name = 'MS Sans Serif'
+        BoundLabel.Font.Style = []
+        BoundLabel.Layout = sclLeft
+        BoundLabel.MaxWidth = 0
+        BoundLabel.UseSkinColor = True
+        SkinData.SkinSection = 'EDIT'
+        GlyphMode.Blend = 0
+        GlyphMode.Grayed = False
+      end
+      object deSampai: TsDateEdit
+        Left = 4
+        Top = 61
+        Width = 138
+        Height = 21
+        AutoSize = False
+        EditMask = '!99/99/9999;1; '
+        MaxLength = 10
+        TabOrder = 1
+        Text = '  /  /    '
+        BoundLabel.Indent = 0
+        BoundLabel.Font.Charset = DEFAULT_CHARSET
+        BoundLabel.Font.Color = clWindowText
+        BoundLabel.Font.Height = -11
+        BoundLabel.Font.Name = 'MS Sans Serif'
+        BoundLabel.Font.Style = []
+        BoundLabel.Layout = sclLeft
+        BoundLabel.MaxWidth = 0
+        BoundLabel.UseSkinColor = True
+        SkinData.SkinSection = 'EDIT'
+        GlyphMode.Blend = 0
+        GlyphMode.Grayed = False
+      end
+    end
   end
   object pnlUtama: TsPanel
     Left = 0
