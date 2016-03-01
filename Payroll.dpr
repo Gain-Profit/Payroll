@@ -7,7 +7,7 @@ uses
   UMain in 'UMain.pas' {FMain},
   UDaftarKaryawan in 'UDaftarKaryawan.pas' {FDaftarKaryawan},
   U_Login in 'U_Login.pas' {F_Login},
-  UDaftarHadir in 'UDaftarHadir.pas';
+  UDaftarHadir in 'UDaftarHadir.pas' {FDaftarHadir};
 
 {$R *.res}
 
