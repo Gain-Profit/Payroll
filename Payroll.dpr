@@ -6,7 +6,7 @@ uses
   UDM in 'UDM.pas' {DM: TDataModule},
   UMain in 'UMain.pas' {FMain},
   UDaftarKaryawan in 'UDaftarKaryawan.pas' {FDaftarKaryawan},
-  U_Login in 'U_Login.pas' {F_Login},
+  ULogin in 'ULogin.pas' {FLogin},
   UDaftarHadir in 'UDaftarHadir.pas' {FDaftarHadir};
 
 {$R *.res}

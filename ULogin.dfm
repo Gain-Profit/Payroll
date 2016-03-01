@@ -1,4 +1,4 @@
-object F_Login: TF_Login
+object FLogin: TFLogin
   Left = 411
   Top = 163
   BorderStyle = bsDialog

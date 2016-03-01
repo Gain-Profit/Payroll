@@ -1,4 +1,4 @@
-unit U_Login;
+unit ULogin;
 
 interface
 
@@ -10,7 +10,7 @@ uses
   ExtCtrls, sPanel, XPMan;
 
 type
-  TF_Login = class(TForm)
+  TFLogin = class(TForm)
     sb: TsStatusBar;
     sg_login: TsGroupBox;
     sLabel4: TsLabel;
@@ -37,7 +37,7 @@ type
   end;
 
 var
-  F_Login: TF_Login;
+  FLogin: TFLogin;
   userPassword, userRealName: string;
   isAdmin: Boolean;
 
@@ -49,7 +49,7 @@ uses
 
 {$R *.dfm}
 
-procedure TF_Login.Ed_Kd_UserKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+procedure TFLogin.Ed_Kd_UserKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
 var
   sql: string;
 begin
@@ -90,7 +90,7 @@ begin
     close;
 end;
 
-procedure TF_Login.sButton1Click(Sender: TObject);
+procedure TFLogin.sButton1Click(Sender: TObject);
 var
   passs: string;
 begin
@@ -115,22 +115,22 @@ begin
   end;
 end;
 
-procedure TF_Login.Ed_N_UserEnter(Sender: TObject);
+procedure TFLogin.Ed_N_UserEnter(Sender: TObject);
 begin
   ed_kd_user.SetFocus;
 end;
 
-procedure TF_Login.sBitBtn2Click(Sender: TObject);
+procedure TFLogin.sBitBtn2Click(Sender: TObject);
 begin
   close;
 end;
 
-procedure TF_Login.FormClose(Sender: TObject; var Action: TCloseAction);
+procedure TFLogin.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   action := cafree;
 end;
 
-procedure TF_Login.FormShow(Sender: TObject);
+procedure TFLogin.FormShow(Sender: TObject);
 begin
   Ed_Kd_User.Clear;
   Ed_N_User.Clear;
@@ -140,7 +140,7 @@ begin
   sb.Panels[0].Text := dm.xConn.DatabaseName + '@' + dm.xConn.Host;
 end;
 
-procedure TF_Login.Ed_PasswordKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+procedure TFLogin.Ed_PasswordKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
 begin
   if key = vk_return then
   begin
@@ -148,7 +148,7 @@ begin
   end;
 end;
 
-procedure TF_Login.Ed_Kd_UserChange(Sender: TObject);
+procedure TFLogin.Ed_Kd_UserChange(Sender: TObject);
 begin
   Ed_N_User.Clear;
   ed_password.clear;
