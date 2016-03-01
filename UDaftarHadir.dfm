@@ -122,29 +122,30 @@ object FDaftarHadir: TFDaftarHadir
         OptionsView.ColumnAutoWidth = True
         OptionsView.Footer = True
         OptionsView.GroupByBox = False
-        object TvDatauser_id: TcxGridDBColumn
-          Caption = 'Id Karyawan'
-          DataBinding.FieldName = 'user_id'
-        end
         object TvDatacheckin_time: TcxGridDBColumn
           Caption = 'Check IN'
           DataBinding.FieldName = 'checkin_time'
+          Width = 160
         end
         object TvDatacheckout_time: TcxGridDBColumn
           Caption = 'Check Out'
           DataBinding.FieldName = 'checkout_time'
+          Width = 160
         end
         object TvDataTotal: TcxGridDBColumn
           Caption = 'Total'
           DataBinding.FieldName = 'TOTAL'
+          Width = 130
         end
         object TvDatajam: TcxGridDBColumn
           Caption = 'Jam'
           DataBinding.FieldName = 'jam'
+          Width = 40
         end
         object TvDataket: TcxGridDBColumn
           Caption = 'Keterangan'
-          DataBinding.FieldName = 'ket'
+          DataBinding.FieldName = 'keterangan'
+          Width = 156
         end
       end
       object lvData: TcxGridLevel

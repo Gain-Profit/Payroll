@@ -23,7 +23,6 @@ type
     pnlUtama: TsPanel;
     grid: TcxGrid;
     TvData: TcxGridDBTableView;
-    TvDatauser_id: TcxGridDBColumn;
     TvDatacheckin_time: TcxGridDBColumn;
     TvDatacheckout_time: TcxGridDBColumn;
     TvDataTotal: TcxGridDBColumn;
@@ -59,15 +58,15 @@ uses UDM, UMain;
 
 procedure TFDaftarHadir.FormCreate(Sender: TObject);
 begin
+  edID.Text := dm.QKaryawan.FIeldByName('kd_user').Text;
+  edNama.Text := dm.QKaryawan.FIeldByName('n_user').Text;
+
+  Caption := 'Daftar Hadir - ' + edID.Text; 
   FMain.MDIChildCreated(self.Handle);
 end;
 
 procedure TFDaftarHadir.FormShow(Sender: TObject);
 begin
-  edID.Text := dm.QKaryawan.FIeldByName('kd_user').Text;
-  edNama.Text := dm.QKaryawan.FIeldByName('n_user').Text;
-
-  Caption := 'Daftar Hadir - ' + edID.Text; 
   PostMessage(Self.Handle, WM_AFTER_SHOW, 0, 0);
 end;
 
@@ -79,7 +78,7 @@ begin
   sql := 'SELECT user_id,checkin_time,checkout_time, ' +
   'TIMEDIFF(checkout_time,checkin_time) AS Total, ' +
   'IFNULL(fx_pembulatan(checkout_time,checkin_time),0) AS Jam, ' +
-  'fx_overhours(checkout_time,checkin_time) AS ket FROM tb_checkinout ' +
+  'keterangan AS keterangan FROM tb_checkinout ' +
   'WHERE EXTRACT(YEAR_MONTH FROM checkin_time) = "'+periode+'" ' +
   'AND user_id = "'+edID.Text+'" ORDER BY checkin_time DESC';
   
