@@ -31,6 +31,7 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormShow(Sender: TObject);
     procedure tc_childChange(Sender: TObject);
+    procedure cek_update;
   private
     procedure WmAfterShow(var Msg: TMessage); message WM_AFTER_SHOW;
     { Private declarations }
@@ -47,6 +48,31 @@ uses
   URegister, UDaftarKaryawan, UDM, U_Login;
 
 {$R *.dfm}
+
+function program_versi:string;
+var V1, V2, V3, V4: Word;
+   VerInfoSize, VerValueSize, Dummy : DWORD;
+   VerInfo : Pointer;
+   VerValue : PVSFixedFileInfo;
+begin
+VerInfoSize := GetFileVersionInfoSize(PChar(ParamStr(0)), Dummy);
+GetMem(VerInfo, VerInfoSize);
+GetFileVersionInfo(PChar(ParamStr(0)), 0, VerInfoSize, VerInfo);
+VerQueryValue(VerInfo, '\', Pointer(VerValue), VerValueSize);
+With VerValue^ do
+begin
+  V1 := dwFileVersionMS shr 16;
+  V2 := dwFileVersionMS and $FFFF;
+  V3 := dwFileVersionLS shr 16;
+  V4 := dwFileVersionLS and $FFFF;
+end;
+FreeMem(VerInfo, VerInfoSize);
+
+Result := IntToStr(V1) + '.'
+            + IntToStr(V2) + '.'
+            + IntToStr(V3) + '.'
+            + IntToStr(V4);
+end;
 
 procedure TFMain.panel_auto_width;
 var x: integer;
@@ -84,7 +110,9 @@ end;
 
 procedure TFMain.FormShow(Sender: TObject);
 begin
+  cek_update;
   metu_kabeh := False;
+  sb.Panels[0].Text := program_versi;
   sb.Panels[2].Text := dm.xConn.DatabaseName + '@' + dm.xConn.Host;
 
   PostMessage(Self.Handle, WM_AFTER_SHOW, 0, 0);
@@ -141,6 +169,33 @@ begin
       Break;
     end;
   end;
+end;
+
+procedure TFMain.cek_update;
+var
+  versiDB,versiAPP,URLDownload:string;
+  fileName, UrlDownloadLocal:string;
+begin
+  versiAPP := program_versi;
+
+  dm.SQLExec(dm.QShow,'select versi_terbaru, URLdownload from  app_versi where kode="payroll.exe"',true);
+  versiDB           := dm.QShow.FieldByName('versi_terbaru').AsString;
+  URLDownload       := dm.QShow.FieldByName('URLdownload').AsString;
+  fileName          := Copy(URLDownload,LastDelimiter('/',URLDownload) + 1,Length(URLDownload));
+  UrlDownloadLocal  := dm.xConn.Host + '/GainProfit/' + fileName;
+
+  if versiAPP < versiDB then
+  begin
+    ShowMessage('APLIKASI PENGGAJIAN VERSI : '+ versiAPP +
+    'TIDAK DAPAT DIJALANKAN' + #13#10 +
+    'aplikasi terbaru dengan versi : '+ versiDB + #13#10 +
+    'SUDAH DIRILIS...'+ #13#10#13#10 +
+    'Download Applikasi Terbaru!!!' );
+
+    WinExec(PChar('rundll32 url.dll,FileProtocolHandler '+ UrlDownloadLocal),
+    SW_MAXIMIZE);
+    Application.Terminate;
+  end;  
 end;
 
 end.
