@@ -187,6 +187,7 @@ object FGaji: TFGaji
       Height = 21
       AutoSize = False
       TabOrder = 0
+      OnExit = editExit
       BoundLabel.Indent = 0
       BoundLabel.Font.Charset = DEFAULT_CHARSET
       BoundLabel.Font.Color = clWindowText
@@ -208,6 +209,7 @@ object FGaji: TFGaji
       Height = 21
       AutoSize = False
       TabOrder = 1
+      OnExit = editExit
       BoundLabel.Indent = 0
       BoundLabel.Font.Charset = DEFAULT_CHARSET
       BoundLabel.Font.Color = clWindowText
@@ -229,6 +231,7 @@ object FGaji: TFGaji
       Height = 21
       AutoSize = False
       TabOrder = 2
+      OnExit = editExit
       BoundLabel.Indent = 0
       BoundLabel.Font.Charset = DEFAULT_CHARSET
       BoundLabel.Font.Color = clWindowText
@@ -294,6 +297,7 @@ object FGaji: TFGaji
       Height = 21
       AutoSize = False
       TabOrder = 7
+      OnExit = editExit
       BoundLabel.Indent = 0
       BoundLabel.Font.Charset = DEFAULT_CHARSET
       BoundLabel.Font.Color = clWindowText
@@ -315,6 +319,7 @@ object FGaji: TFGaji
       Height = 21
       AutoSize = False
       TabOrder = 8
+      OnExit = editExit
       BoundLabel.Indent = 0
       BoundLabel.Font.Charset = DEFAULT_CHARSET
       BoundLabel.Font.Color = clWindowText
@@ -402,7 +407,7 @@ object FGaji: TFGaji
     Width = 517
     Height = 41
     Align = alBottom
-    TabOrder = 4
+    TabOrder = 5
     SkinData.SkinSection = 'PANEL'
     DesignSize = (
       517
@@ -479,9 +484,9 @@ object FGaji: TFGaji
     object sLabel18: TsLabel
       Left = 168
       Top = 48
-      Width = 59
+      Width = 58
       Height = 13
-      Caption = 'AKhir Tahun'
+      Caption = 'Akhir Tahun'
     end
     object sLabel19: TsLabel
       Left = 360
@@ -504,6 +509,7 @@ object FGaji: TFGaji
       Height = 21
       AutoSize = False
       TabOrder = 0
+      OnExit = editExit
       BoundLabel.Indent = 0
       BoundLabel.Font.Charset = DEFAULT_CHARSET
       BoundLabel.Font.Color = clWindowText
@@ -525,6 +531,7 @@ object FGaji: TFGaji
       Height = 21
       AutoSize = False
       TabOrder = 1
+      OnExit = editExit
       BoundLabel.Indent = 0
       BoundLabel.Font.Charset = DEFAULT_CHARSET
       BoundLabel.Font.Color = clWindowText
@@ -546,6 +553,7 @@ object FGaji: TFGaji
       Height = 21
       AutoSize = False
       TabOrder = 2
+      OnExit = editExit
       BoundLabel.Indent = 0
       BoundLabel.Font.Charset = DEFAULT_CHARSET
       BoundLabel.Font.Color = clWindowText
@@ -567,6 +575,7 @@ object FGaji: TFGaji
       Height = 21
       AutoSize = False
       TabOrder = 3
+      OnExit = editExit
       BoundLabel.Indent = 0
       BoundLabel.Font.Charset = DEFAULT_CHARSET
       BoundLabel.Font.Color = clWindowText
@@ -588,6 +597,7 @@ object FGaji: TFGaji
       Height = 21
       AutoSize = False
       TabOrder = 5
+      OnExit = editExit
       BoundLabel.Indent = 0
       BoundLabel.Font.Charset = DEFAULT_CHARSET
       BoundLabel.Font.Color = clWindowText
@@ -609,6 +619,7 @@ object FGaji: TFGaji
       Height = 21
       AutoSize = False
       TabOrder = 4
+      OnExit = editExit
       BoundLabel.Indent = 0
       BoundLabel.Font.Charset = DEFAULT_CHARSET
       BoundLabel.Font.Color = clWindowText
@@ -623,7 +634,7 @@ object FGaji: TFGaji
       GlyphMode.Grayed = False
       DisplayFormat = '###,###,##0;(###,###,##0);0'
     end
-    object ed5: TsCurrencyEdit
+    object edTotalTunjangan: TsCurrencyEdit
       Left = 310
       Top = 72
       Width = 195
@@ -690,13 +701,14 @@ object FGaji: TFGaji
       Height = 13
       Caption = 'Total Potongan'
     end
-    object ed1: TsCurrencyEdit
+    object edAngsuranDuta: TsCurrencyEdit
       Left = 93
       Top = 24
       Width = 92
       Height = 21
       AutoSize = False
       TabOrder = 0
+      OnExit = editExit
       BoundLabel.Indent = 0
       BoundLabel.Font.Charset = DEFAULT_CHARSET
       BoundLabel.Font.Color = clWindowText
@@ -711,13 +723,14 @@ object FGaji: TFGaji
       GlyphMode.Grayed = False
       DisplayFormat = '###,###,##0;(###,###,##0);0'
     end
-    object ed2: TsCurrencyEdit
+    object edAngsuranBank: TsCurrencyEdit
       Left = 93
       Top = 48
       Width = 92
       Height = 21
       AutoSize = False
       TabOrder = 1
+      OnExit = editExit
       BoundLabel.Indent = 0
       BoundLabel.Font.Charset = DEFAULT_CHARSET
       BoundLabel.Font.Color = clWindowText
@@ -732,13 +745,14 @@ object FGaji: TFGaji
       GlyphMode.Grayed = False
       DisplayFormat = '###,###,##0;(###,###,##0);0'
     end
-    object ed3: TsCurrencyEdit
+    object edCashBon: TsCurrencyEdit
       Left = 248
       Top = 24
       Width = 89
       Height = 21
       AutoSize = False
       TabOrder = 2
+      OnExit = editExit
       BoundLabel.Indent = 0
       BoundLabel.Font.Charset = DEFAULT_CHARSET
       BoundLabel.Font.Color = clWindowText
@@ -753,13 +767,14 @@ object FGaji: TFGaji
       GlyphMode.Grayed = False
       DisplayFormat = '###,###,##0;(###,###,##0);0'
     end
-    object ed4: TsCurrencyEdit
+    object edPotonganLain: TsCurrencyEdit
       Left = 400
       Top = 24
       Width = 105
       Height = 21
       AutoSize = False
       TabOrder = 3
+      OnExit = editExit
       BoundLabel.Indent = 0
       BoundLabel.Font.Charset = DEFAULT_CHARSET
       BoundLabel.Font.Color = clWindowText
@@ -774,7 +789,7 @@ object FGaji: TFGaji
       GlyphMode.Grayed = False
       DisplayFormat = '###,###,##0;(###,###,##0);0'
     end
-    object ed6: TsCurrencyEdit
+    object edTotalPotongan: TsCurrencyEdit
       Left = 310
       Top = 48
       Width = 195
@@ -804,7 +819,7 @@ object FGaji: TFGaji
     Height = 49
     Align = alClient
     Enabled = False
-    TabOrder = 5
+    TabOrder = 4
     SkinData.SkinSection = 'PANEL'
     object sLabel26: TsLabel
       Left = 1
@@ -823,7 +838,7 @@ object FGaji: TFGaji
       Font.Name = 'Rockwell'
       Font.Style = []
     end
-    object ed_nilai_faktur: TsCurrencyEdit
+    object edTotalGaji: TsCurrencyEdit
       Left = 263
       Top = 1
       Width = 253

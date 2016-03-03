@@ -58,18 +58,19 @@ type
     sLabel20: TsLabel;
     sLabel21: TsLabel;
     sLabel22: TsLabel;
-    ed1: TsCurrencyEdit;
-    ed2: TsCurrencyEdit;
-    ed3: TsCurrencyEdit;
-    ed4: TsCurrencyEdit;
+    edAngsuranDuta: TsCurrencyEdit;
+    edAngsuranBank: TsCurrencyEdit;
+    edCashBon: TsCurrencyEdit;
+    edPotonganLain: TsCurrencyEdit;
     sLabel23: TsLabel;
-    ed5: TsCurrencyEdit;
+    edTotalTunjangan: TsCurrencyEdit;
     sLabel24: TsLabel;
-    ed6: TsCurrencyEdit;
+    edTotalPotongan: TsCurrencyEdit;
     sLabel25: TsLabel;
     pnlTotalGaji: TsPanel;
     sLabel26: TsLabel;
-    ed_nilai_faktur: TsCurrencyEdit;
+    edTotalGaji: TsCurrencyEdit;
+    procedure editExit(Sender: TObject);
   private
     { Private declarations }
   public
@@ -83,5 +84,20 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TFGaji.editExit(Sender: TObject);
+begin
+  edTotalGajiPokok.Value := edGajiPokok.Value + edKonsumsi.Value + edInsentif.Value +
+  edGajiHadir.Value + edGajiTransport.Value;
+
+  edTotalTunjangan.Value := edJabatan.Value + edMasaKerja.Value + edKesehatan.Value +
+  edHariRaya.Value + edAkhirTahun.Value + edTunjanganLain.Value;
+
+  edTotalPotongan.Value := edAngsuranDuta.Value + edAngsuranBank.Value +
+  edCashBon.Value + edPotonganLain.Value;
+
+  edTotalGaji.Value := edTotalGajiPokok.Value + edTotalTunjangan.Value -
+  edTotalTunjangan;  
+end;
 
 end.
