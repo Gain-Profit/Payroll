@@ -136,6 +136,7 @@ end;
 procedure TFDaftarUser.btntambahClick(Sender: TObject);
 begin
   Application.CreateForm(TFUser, FUser);
+  FUser.BuatDataBaru;
   FUser.ShowModal;
 end;
 
