@@ -33,7 +33,6 @@ type
     pnlButton: TsPanel;
     btntambah: TsButton;
     btnEdit: TsButton;
-    btnHapus: TsButton;
     btnDuplikat: TsButton;
     TvDataemail: TcxGridDBColumn;
     TvDatasex: TcxGridDBColumn;

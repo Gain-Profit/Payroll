@@ -199,18 +199,18 @@ object FDaftarUser: TFDaftarUser
     end
     object pnlButton: TsPanel
       Left = 0
-      Top = 305
+      Top = 336
       Width = 150
-      Height = 137
+      Height = 106
       Align = alBottom
       TabOrder = 0
       SkinData.SkinSection = 'PANEL'
       DesignSize = (
         150
-        137)
+        106)
       object btntambah: TsButton
         Left = 6
-        Top = 8
+        Top = 9
         Width = 136
         Height = 25
         Anchors = [akBottom]
@@ -221,7 +221,7 @@ object FDaftarUser: TFDaftarUser
       end
       object btnEdit: TsButton
         Left = 6
-        Top = 40
+        Top = 41
         Width = 136
         Height = 25
         Anchors = [akBottom]
@@ -230,24 +230,14 @@ object FDaftarUser: TFDaftarUser
         OnClick = btnEditClick
         SkinData.SkinSection = 'BUTTON'
       end
-      object btnHapus: TsButton
-        Left = 6
-        Top = 72
-        Width = 136
-        Height = 25
-        Anchors = [akBottom]
-        Caption = '&Hapus Data'
-        TabOrder = 2
-        SkinData.SkinSection = 'BUTTON'
-      end
       object btnDuplikat: TsButton
         Left = 6
-        Top = 104
+        Top = 73
         Width = 136
         Height = 25
         Anchors = [akBottom]
         Caption = '&Duplikat Data'
-        TabOrder = 3
+        TabOrder = 2
         OnClick = btnDuplikatClick
         SkinData.SkinSection = 'BUTTON'
       end
