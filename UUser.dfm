@@ -336,8 +336,8 @@ object FUser: TFUser
     Columns = 2
     ItemIndex = 0
     Items.Strings = (
-      'Belum Kawin'
-      'Sudah Kawin')
+      'Sudah Kawin'
+      'Belum Kawin')
   end
   object rgStatusAktif: TsRadioGroup
     Left = 8
