@@ -40,10 +40,14 @@ type
     btnBatal: TsButton;
   procedure ShowData;
   procedure DuplicateData;
+    procedure FormKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure btnSimpanClick(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
+    dataBaru: Boolean;
   end;
 
 var
@@ -52,15 +56,37 @@ var
 implementation
 
 {$R *.dfm}
-
+{
+  procedure yang digunakan untuk menampilkan data.
+}
 procedure TFUser.ShowData;
 begin
-// Show data
+  // data baru dibuat false karena database akan di edit.
+  dataBaru := False;
 end;
 
+{
+  procedure yang digunakan untuk duplikate data.
+}
 procedure TFUser.DuplicateData;
 begin
-// duplicate data
+  // dataBaru dibuat True karena data hanya diduplikat saja.
+  dataBaru := True;
+end;
+
+procedure TFUser.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+ if Key = vk_escape then
+  Close;
+end;
+
+{
+  Procedure untuk menyimpan data kedalam database.
+}
+procedure TFUser.btnSimpanClick(Sender: TObject);
+begin
+  // simpan data
 end;
 
 end.

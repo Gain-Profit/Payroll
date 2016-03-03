@@ -12,8 +12,10 @@ object FUser: TFUser
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
+  KeyPreview = True
   OldCreateOrder = False
   Position = poScreenCenter
+  OnKeyDown = FormKeyDown
   PixelsPerInch = 96
   TextHeight = 13
   object lbl1: TsLabel
@@ -367,6 +369,7 @@ object FUser: TFUser
       Height = 25
       Caption = '&Simpan'
       TabOrder = 0
+      OnClick = btnSimpanClick
       SkinData.SkinSection = 'BUTTON'
     end
     object btnBatal: TsButton
@@ -375,6 +378,7 @@ object FUser: TFUser
       Width = 75
       Height = 25
       Caption = '&Batal'
+      ModalResult = 2
       TabOrder = 1
       SkinData.SkinSection = 'BUTTON'
     end
