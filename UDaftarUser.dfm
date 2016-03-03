@@ -93,6 +93,11 @@ object FDaftarUser: TFDaftarUser
           Visible = False
           Width = 56
         end
+        object TvDataTanggalLahir: TcxGridDBColumn
+          Caption = 'Tanggal Lahir'
+          DataBinding.FieldName = 'tanggal_lahir'
+          Visible = False
+        end
         object TvDataAlamat: TcxGridDBColumn
           DataBinding.FieldName = 'Alamat'
           Width = 127
@@ -211,6 +216,7 @@ object FDaftarUser: TFDaftarUser
         Anchors = [akBottom]
         Caption = '&Tambah Data'
         TabOrder = 0
+        OnClick = btntambahClick
         SkinData.SkinSection = 'BUTTON'
       end
       object btnEdit: TsButton
@@ -221,6 +227,7 @@ object FDaftarUser: TFDaftarUser
         Anchors = [akBottom]
         Caption = '&Ubah Data'
         TabOrder = 1
+        OnClick = btnEditClick
         SkinData.SkinSection = 'BUTTON'
       end
       object btnHapus: TsButton
@@ -241,6 +248,7 @@ object FDaftarUser: TFDaftarUser
         Anchors = [akBottom]
         Caption = '&Duplikat Data'
         TabOrder = 3
+        OnClick = btnDuplikatClick
         SkinData.SkinSection = 'BUTTON'
       end
     end

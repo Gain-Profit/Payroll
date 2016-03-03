@@ -40,6 +40,7 @@ type
     TvDatakawin: TcxGridDBColumn;
     TvDatajabatan: TcxGridDBColumn;
     TvDatapendidikan: TcxGridDBColumn;
+    TvDataTanggalLahir: TcxGridDBColumn;
     procedure WMMDIACTIVATE(var msg: TWMMDIACTIVATE); message WM_MDIACTIVATE;
     procedure FormShow(Sender: TObject);
     procedure sb_1Click(Sender: TObject);
@@ -49,6 +50,9 @@ type
     procedure TvDataCellDblClick(Sender: TcxCustomGridTableView;
       ACellViewInfo: TcxGridTableDataCellViewInfo; AButton: TMouseButton;
       AShift: TShiftState; var AHandled: Boolean);
+    procedure btntambahClick(Sender: TObject);
+    procedure btnEditClick(Sender: TObject);
+    procedure btnDuplikatClick(Sender: TObject);
   private
     procedure WmAfterShow(var Msg: TMessage); message WM_AFTER_SHOW;
     { Private declarations }
@@ -62,7 +66,7 @@ var
 implementation
 
 uses
-  UMain, UDM, URegister, UDaftarHadir;
+  UMain, UDM, URegister, UDaftarHadir, UUser;
 
 {$R *.dfm}
 
@@ -127,7 +131,27 @@ procedure TFDaftarUser.TvDataCellDblClick(
   ACellViewInfo: TcxGridTableDataCellViewInfo; AButton: TMouseButton;
   AShift: TShiftState; var AHandled: Boolean);
 begin
-// on double click
+  btnEditClick(Sender);
+end;
+
+procedure TFDaftarUser.btntambahClick(Sender: TObject);
+begin
+  Application.CreateForm(TFUser, FUser);
+  FUser.ShowModal;
+end;
+
+procedure TFDaftarUser.btnEditClick(Sender: TObject);
+begin
+  Application.CreateForm(TFUser, FUser);
+  FUser.ShowData;
+  FUser.ShowModal;
+end;
+
+procedure TFDaftarUser.btnDuplikatClick(Sender: TObject);
+begin
+  Application.CreateForm(TFUser, FUser);
+  FUser.DuplicateData;
+  FUser.ShowModal;
 end;
 
 end.
