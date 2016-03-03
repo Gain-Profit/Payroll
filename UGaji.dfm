@@ -312,7 +312,7 @@ object FGaji: TFGaji
       GlyphMode.Grayed = False
       DisplayFormat = '###,###,##0;(###,###,##0);0'
     end
-    object edTransportasi: TsCurrencyEdit
+    object edTransport: TsCurrencyEdit
       Left = 400
       Top = 48
       Width = 105
@@ -420,6 +420,7 @@ object FGaji: TFGaji
       Anchors = [akLeft, akBottom]
       Caption = '&Load dari Template'
       TabOrder = 0
+      OnClick = btnLoadClick
       SkinData.SkinSection = 'BUTTON'
     end
     object btnSimpan: TsButton
