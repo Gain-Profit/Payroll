@@ -149,7 +149,7 @@ object FDaftarUser: TFDaftarUser
     BevelOuter = bvNone
     TabOrder = 1
     SkinData.SkinSection = 'PANEL'
-    object sb_2: TsSpeedButton
+    object sbRefresh: TsSpeedButton
       Left = 0
       Top = 90
       Width = 150
@@ -165,7 +165,7 @@ object FDaftarUser: TFDaftarUser
       Layout = blGlyphTop
       ParentFont = False
       Spacing = 0
-      OnClick = sb_2Click
+      OnClick = sbRefreshClick
       Align = alTop
       SkinData.SkinSection = 'TOOLBUTTON'
       DisabledGlyphKind = []
@@ -173,7 +173,7 @@ object FDaftarUser: TFDaftarUser
       Images = DM.image
       Reflected = True
     end
-    object sb_1: TsSpeedButton
+    object sbKeluar: TsSpeedButton
       Left = 0
       Top = 0
       Width = 150
@@ -189,7 +189,7 @@ object FDaftarUser: TFDaftarUser
       Layout = blGlyphTop
       ParentFont = False
       Spacing = 0
-      OnClick = sb_1Click
+      OnClick = sbKeluarClick
       Align = alTop
       SkinData.SkinSection = 'TOOLBUTTON'
       DisabledGlyphKind = []

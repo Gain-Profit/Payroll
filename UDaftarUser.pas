@@ -20,8 +20,8 @@ type
     TvData: TcxGridDBTableView;
     lvData: TcxGridLevel;
     sPanel1: TsPanel;
-    sb_2: TsSpeedButton;
-    sb_1: TsSpeedButton;
+    sbRefresh: TsSpeedButton;
+    sbKeluar: TsSpeedButton;
     sSkinProvider1: TsSkinProvider;
     TvDatakd_user: TcxGridDBColumn;
     TvDatan_user: TcxGridDBColumn;
@@ -42,10 +42,10 @@ type
     TvDataTanggalLahir: TcxGridDBColumn;
     procedure WMMDIACTIVATE(var msg: TWMMDIACTIVATE); message WM_MDIACTIVATE;
     procedure FormShow(Sender: TObject);
-    procedure sb_1Click(Sender: TObject);
+    procedure sbKeluarClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
-    procedure sb_2Click(Sender: TObject);
+    procedure sbRefreshClick(Sender: TObject);
     procedure TvDataCellDblClick(Sender: TcxCustomGridTableView;
       ACellViewInfo: TcxGridTableDataCellViewInfo; AButton: TMouseButton;
       AShift: TShiftState; var AHandled: Boolean);
@@ -85,7 +85,7 @@ begin
   tvdata.DataController.FocusedRowIndex := 1;
 end;
 
-procedure TFDaftarUser.sb_1Click(Sender: TObject);
+procedure TFDaftarUser.sbKeluarClick(Sender: TObject);
 begin
   Close;
 end;
@@ -115,7 +115,7 @@ begin
   FDaftarUser := nil;
 end;
 
-procedure TFDaftarUser.sb_2Click(Sender: TObject);
+procedure TFDaftarUser.sbRefreshClick(Sender: TObject);
 var
   posisi: integer;
 begin
