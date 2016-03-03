@@ -38,6 +38,7 @@ type
     procedure FormShow(Sender: TObject);
     procedure tc_childChange(Sender: TObject);
     procedure cek_update;
+    procedure miDaftarGajiClick(Sender: TObject);
   private
     procedure WmAfterShow(var Msg: TMessage); message WM_AFTER_SHOW;
     { Private declarations }
@@ -51,7 +52,7 @@ var
 implementation
 
 uses
-  URegister, UDaftarKaryawan, UDM, ULogin, UDaftarUser;
+  URegister, UDaftarKaryawan, UDM, ULogin, UDaftarUser, UDaftarGaji;
 
 {$R *.dfm}
 
@@ -144,7 +145,7 @@ end;
 procedure TFMain.miDaftarKaryawanClick(Sender: TObject);
 begin
   if FDaftarKaryawan = nil then
-    application.CreateForm(tFDaftarKaryawan, FDaftarKaryawan);
+    application.CreateForm(TFDaftarKaryawan, FDaftarKaryawan);
 
   FDaftarKaryawan.Show;
 end;
@@ -152,7 +153,7 @@ end;
 procedure TFMain.miDaftarUserClick(Sender: TObject);
 begin
   if FDaftarUser = nil then
-    application.CreateForm(tFDaftarUser, FDaftarUser);
+    application.CreateForm(TFDaftarUser, FDaftarUser);
 
   FDaftarUser.Show;
 end;
@@ -210,6 +211,14 @@ begin
     SW_MAXIMIZE);
     Application.Terminate;
   end;  
+end;
+
+procedure TFMain.miDaftarGajiClick(Sender: TObject);
+begin
+  if FDaftarGaji = nil then
+    application.CreateForm(TFDaftarGaji, FDaftarGaji);
+
+  FDaftarGaji.Show;
 end;
 
 end.

@@ -428,4 +428,14 @@ object DM: TDM
     Left = 88
     Top = 184
   end
+  object QGaji: TmySQLQuery
+    Database = xConn
+    Left = 24
+    Top = 232
+  end
+  object dsGaji: TDataSource
+    DataSet = QGaji
+    Left = 88
+    Top = 232
+  end
 end

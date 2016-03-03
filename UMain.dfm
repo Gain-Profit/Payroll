@@ -192,6 +192,7 @@ object FMain: TFMain
     Top = 8
     object miDaftarGaji: TMenuItem
       Caption = 'Daftar Gaji'
+      OnClick = miDaftarGajiClick
     end
     object MenuItem3: TMenuItem
       Caption = '-'

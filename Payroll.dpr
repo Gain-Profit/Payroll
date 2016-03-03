@@ -9,7 +9,8 @@ uses
   ULogin in 'ULogin.pas' {FLogin},
   UDaftarHadir in 'UDaftarHadir.pas' {FDaftarHadir},
   UDaftarUser in 'UDaftarUser.pas' {FDaftarUser},
-  UUser in 'UUser.pas' {FUser};
+  UUser in 'UUser.pas' {FUser},
+  UDaftarGaji in 'UDaftarGaji.pas' {FDaftarGaji};
 
 {$R *.res}
 
