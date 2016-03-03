@@ -418,4 +418,14 @@ object DM: TDM
     Left = 88
     Top = 136
   end
+  object QUser: TmySQLQuery
+    Database = xConn
+    Left = 24
+    Top = 184
+  end
+  object dsUser: TDataSource
+    DataSet = QUser
+    Left = 88
+    Top = 184
+  end
 end

@@ -93,6 +93,7 @@ object FMain: TFMain
       Font.Style = [fsBold]
       Layout = blGlyphTop
       ParentFont = False
+      PopupMenu = pmPenggajian
       Spacing = 0
       Align = alLeft
       ButtonStyle = tbsDropDown
@@ -180,6 +181,25 @@ object FMain: TFMain
     end
     object N5: TMenuItem
       Caption = '-'
+    end
+    object miDaftarUser: TMenuItem
+      Caption = 'Daftar User'
+      OnClick = miDaftarUserClick
+    end
+  end
+  object pmPenggajian: TPopupMenu
+    MenuAnimation = [maLeftToRight, maRightToLeft, maTopToBottom, maBottomToTop]
+    Left = 144
+    Top = 8
+    object miDaftarGaji: TMenuItem
+      Caption = 'Daftar Gaji'
+      OnClick = miDaftarKaryawanClick
+    end
+    object MenuItem3: TMenuItem
+      Caption = '-'
+    end
+    object miDaftarGajiTemplate: TMenuItem
+      Caption = 'Daftar Gaji Template'
     end
   end
 end

@@ -23,11 +23,17 @@ type
     pmMasterData: TPopupMenu;
     miDaftarKaryawan: TMenuItem;
     N5: TMenuItem;
+    miDaftarUser: TMenuItem;
+    pmPenggajian: TPopupMenu;
+    miDaftarGaji: TMenuItem;
+    MenuItem3: TMenuItem;
+    miDaftarGajiTemplate: TMenuItem;
     procedure panel_auto_width;
     procedure MDIChildCreated(const childHandle: THandle);
     procedure MDIChildDestroyed(const childHandle: THandle);
     procedure sbKeluarClick(Sender: TObject);
     procedure miDaftarKaryawanClick(Sender: TObject);
+    procedure miDaftarUserClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormShow(Sender: TObject);
     procedure tc_childChange(Sender: TObject);
@@ -45,7 +51,7 @@ var
 implementation
 
 uses
-  URegister, UDaftarKaryawan, UDM, ULogin;
+  URegister, UDaftarKaryawan, UDM, ULogin, UDaftarUser;
 
 {$R *.dfm}
 
@@ -141,6 +147,14 @@ begin
     application.CreateForm(tFDaftarKaryawan, FDaftarKaryawan);
 
   FDaftarKaryawan.Show;
+end;
+
+procedure TFMain.miDaftarUserClick(Sender: TObject);
+begin
+  if FDaftarUser = nil then
+    application.CreateForm(tFDaftarUser, FDaftarUser);
+
+  FDaftarUser.Show;
 end;
 
 procedure TFMain.FormClose(Sender: TObject; var Action: TCloseAction);

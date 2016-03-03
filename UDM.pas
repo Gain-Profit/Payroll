@@ -15,6 +15,8 @@ type
     image: TsAlphaImageList;
     QKaryawan: TmySQLQuery;
     dsKaryawan: TDataSource;
+    QUser: TmySQLQuery;
+    dsUser: TDataSource;
     procedure koneksikan;
     procedure DataModuleCreate(Sender: TObject);
     procedure SQLExec(aQuery: TmySQLQuery; _SQL: string; isSearch: boolean);
