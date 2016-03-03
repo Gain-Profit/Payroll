@@ -5,23 +5,23 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, sEdit, sLabel, Mask, sMaskEdit, sCustomComboEdit,
-  sTooledit, sGroupBox, ExtCtrls, sButton, sPanel;
+  sTooledit, sGroupBox, ExtCtrls, sButton, sPanel, sRadioButton;
 
 type
   TFUser = class(TForm)
     lbl1: TsLabel;
-    ed1: TsEdit;
-    sEdit1: TsEdit;
+    edKodeUser: TsEdit;
+    edNamaUser: TsEdit;
     sLabel1: TsLabel;
-    sEdit2: TsEdit;
+    edAlamat: TsEdit;
     sLabel2: TsLabel;
-    sEdit3: TsEdit;
+    edKontak: TsEdit;
     sLabel3: TsLabel;
-    sEdit4: TsEdit;
+    edEmail: TsEdit;
     sLabel4: TsLabel;
-    sEdit5: TsEdit;
+    edJabatan: TsEdit;
     sLabel5: TsLabel;
-    sEdit6: TsEdit;
+    edPendidikan: TsEdit;
     sLabel6: TsLabel;
     deTanggalMasuk: TsDateEdit;
     deTanggalKeluar: TsDateEdit;
@@ -30,7 +30,7 @@ type
     sLabel10: TsLabel;
     rgJenisKelamin: TsRadioGroup;
     sLabel12: TsLabel;
-    sEdit7: TsEdit;
+    edPassword: TsEdit;
     deTanggalLahir: TsDateEdit;
     rgStatusPerkawinan: TsRadioGroup;
     rgStatusAktif: TsRadioGroup;

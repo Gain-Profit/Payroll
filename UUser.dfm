@@ -4,7 +4,7 @@ object FUser: TFUser
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'User'
-  ClientHeight = 375
+  ClientHeight = 377
   ClientWidth = 517
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -101,7 +101,7 @@ object FUser: TFUser
     Center = True
     Proportional = True
   end
-  object ed1: TsEdit
+  object edKodeUser: TsEdit
     Left = 72
     Top = 16
     Width = 121
@@ -118,7 +118,7 @@ object FUser: TFUser
     BoundLabel.MaxWidth = 0
     BoundLabel.UseSkinColor = True
   end
-  object sEdit1: TsEdit
+  object edNamaUser: TsEdit
     Left = 264
     Top = 16
     Width = 241
@@ -135,7 +135,7 @@ object FUser: TFUser
     BoundLabel.MaxWidth = 0
     BoundLabel.UseSkinColor = True
   end
-  object sEdit2: TsEdit
+  object edAlamat: TsEdit
     Left = 72
     Top = 48
     Width = 433
@@ -152,7 +152,7 @@ object FUser: TFUser
     BoundLabel.MaxWidth = 0
     BoundLabel.UseSkinColor = True
   end
-  object sEdit3: TsEdit
+  object edKontak: TsEdit
     Left = 72
     Top = 80
     Width = 177
@@ -169,7 +169,7 @@ object FUser: TFUser
     BoundLabel.MaxWidth = 0
     BoundLabel.UseSkinColor = True
   end
-  object sEdit4: TsEdit
+  object edEmail: TsEdit
     Left = 312
     Top = 80
     Width = 193
@@ -186,12 +186,12 @@ object FUser: TFUser
     BoundLabel.MaxWidth = 0
     BoundLabel.UseSkinColor = True
   end
-  object sEdit5: TsEdit
+  object edJabatan: TsEdit
     Left = 72
     Top = 296
     Width = 289
     Height = 21
-    TabOrder = 5
+    TabOrder = 13
     SkinData.SkinSection = 'EDIT'
     BoundLabel.Indent = 0
     BoundLabel.Font.Charset = DEFAULT_CHARSET
@@ -203,12 +203,12 @@ object FUser: TFUser
     BoundLabel.MaxWidth = 0
     BoundLabel.UseSkinColor = True
   end
-  object sEdit6: TsEdit
+  object edPendidikan: TsEdit
     Left = 72
     Top = 112
     Width = 177
     Height = 21
-    TabOrder = 6
+    TabOrder = 5
     SkinData.SkinSection = 'EDIT'
     BoundLabel.Indent = 0
     BoundLabel.Font.Charset = DEFAULT_CHARSET
@@ -228,7 +228,7 @@ object FUser: TFUser
     AutoSize = False
     EditMask = '!99/99/9999;1; '
     MaxLength = 10
-    TabOrder = 7
+    TabOrder = 11
     Text = '  /  /    '
     BoundLabel.Indent = 0
     BoundLabel.Font.Charset = DEFAULT_CHARSET
@@ -251,7 +251,7 @@ object FUser: TFUser
     AutoSize = False
     EditMask = '!99/99/9999;1; '
     MaxLength = 10
-    TabOrder = 8
+    TabOrder = 12
     Text = '  /  /    '
     BoundLabel.Indent = 0
     BoundLabel.Font.Charset = DEFAULT_CHARSET
@@ -273,20 +273,21 @@ object FUser: TFUser
     Height = 41
     Caption = '| Jenis Kelamin |'
     ParentBackground = False
-    TabOrder = 9
+    TabOrder = 7
     SkinData.SkinSection = 'GROUPBOX'
     Columns = 2
+    ItemIndex = 0
     Items.Strings = (
       'Laki-Laki'
       'Perempuan')
   end
-  object sEdit7: TsEdit
+  object edPassword: TsEdit
     Left = 312
     Top = 112
     Width = 193
     Height = 21
     PasswordChar = '@'
-    TabOrder = 10
+    TabOrder = 6
     SkinData.SkinSection = 'EDIT'
     BoundLabel.Indent = 0
     BoundLabel.Font.Charset = DEFAULT_CHARSET
@@ -306,7 +307,7 @@ object FUser: TFUser
     AutoSize = False
     EditMask = '!99/99/9999;1; '
     MaxLength = 10
-    TabOrder = 11
+    TabOrder = 10
     Text = '  /  /    '
     BoundLabel.Indent = 0
     BoundLabel.Font.Charset = DEFAULT_CHARSET
@@ -328,9 +329,10 @@ object FUser: TFUser
     Height = 41
     Caption = '| Status Perkawinan |'
     ParentBackground = False
-    TabOrder = 12
+    TabOrder = 8
     SkinData.SkinSection = 'GROUPBOX'
     Columns = 2
+    ItemIndex = 0
     Items.Strings = (
       'Belum Kawin'
       'Sudah Kawin')
@@ -342,16 +344,17 @@ object FUser: TFUser
     Height = 41
     Caption = '| Status Keaktifan |'
     ParentBackground = False
-    TabOrder = 13
+    TabOrder = 9
     SkinData.SkinSection = 'GROUPBOX'
     Columns = 2
+    ItemIndex = 0
     Items.Strings = (
       'Masih Aktif'
       'Tidak Aktif')
   end
   object pnlBawah: TsPanel
     Left = 0
-    Top = 333
+    Top = 335
     Width = 517
     Height = 42
     Align = alBottom
