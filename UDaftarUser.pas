@@ -138,6 +138,7 @@ begin
   Application.CreateForm(TFUser, FUser);
   FUser.BuatDataBaru;
   FUser.ShowModal;
+  sbRefreshClick(Sender);
 end;
 
 procedure TFDaftarUser.btnEditClick(Sender: TObject);
@@ -145,6 +146,7 @@ begin
   Application.CreateForm(TFUser, FUser);
   FUser.ShowData;
   FUser.ShowModal;
+  sbRefreshClick(Sender);
 end;
 
 procedure TFDaftarUser.btnDuplikatClick(Sender: TObject);
@@ -152,6 +154,7 @@ begin
   Application.CreateForm(TFUser, FUser);
   FUser.DuplicateData;
   FUser.ShowModal;
+  sbRefreshClick(Sender);
 end;
 
 end.
