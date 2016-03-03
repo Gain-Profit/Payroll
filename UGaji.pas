@@ -75,8 +75,10 @@ type
     edTemplateMasaKerja: TsCurrencyEdit;
     sLabel28: TsLabel;
     procedure HitungGaji;
+    procedure FormShow(Sender: TObject);
     procedure editExit(Sender: TObject);
     procedure btnLoadClick(Sender: TObject);
+    procedure btnSimpanClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -108,19 +110,15 @@ begin
   edTotalPotongan.Value;
 end;
 
-procedure TFGaji.editExit(Sender: TObject);
-begin
-  HitungGaji;
-end;
 
-procedure TFGaji.btnLoadClick(Sender: TObject);
+procedure TFGaji.FormShow(Sender: TObject);
 var
   sql,DatePeriode: string;
 begin
   DatePeriode:= periode;          // 201603
   Insert('-',DatePeriode,5);      // 2016-03
   Insert('-01',DatePeriode,8);    // 2016-03-01
-  
+
   sql:= 'SELECT SUM(fx_pembulatan(checkout_time,checkin_time)) AS Total_Jam'
   +' FROM tb_checkinout WHERE user_id ="'+ edId.Text +'" AND'
   +' EXTRACT(YEAR_MONTH FROM checkin_time) ="'+periode+'" GROUP BY'
@@ -141,7 +139,17 @@ begin
 
   DM.SQLExec(DM.QShow,sql,True);
   edTahun.Value := DM.QShow.FieldByName('Total_Tahun').AsInteger;
+end;
 
+procedure TFGaji.editExit(Sender: TObject);
+begin
+  HitungGaji;
+end;
+
+procedure TFGaji.btnLoadClick(Sender: TObject);
+var
+  sql: string;
+begin
   sql:= 'SELECT * FROM tb_user_gaji_template WHERE user_id ="'+edId.Text +'"';
 
   DM.SQLExec(DM.QShow,sql,True);
@@ -159,8 +167,30 @@ begin
   edHadir.Value := edJam.Value * edTemplateHadir.Value;
   edTransport.Value := edHari.Value * edTemplateTransport.Value;
   edMasaKerja.Value := edTahun.Value * edTemplateMasaKerja.Value;
-  HitungGaji;  
+  HitungGaji;
 end;
 
+procedure TFGaji.btnSimpanClick(Sender: TObject);
+var
+  sql: string;
+begin
+  sql:= Format('REPLACE INTO tb_user_gaji(user_id, periode, pokok, jam_hadir,'
+  +' transport, konsumsi, insentif, jabatan, masa_kerja, kesehatan, hari_raya,'
+  + 'akhir_tahun, tunjangan_lain, angsuran_duta, angsuran_bank, cash_bon,'
+  + 'potongan_lain) VALUES ("%s", %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,'
+  + '%s,%s,%s,%s,%s)',[edId.Text,periode,edGajiPokok.Text,edHadir.Text,
+  edTransport.Text,edKonsumsi.Text,edInsentif.Text,edJabatan.Text,edMasaKerja.Text,
+  edKesehatan.Text,edHariRaya.Text,edAkhirTahun.Text,edTunjanganLain.Text,
+  edAngsuranDuta.Text,edAngsuranBank.Text,edCashBon.Text,edPotonganLain.Text]);
+
+  try
+    DM.SQLExec(dm.Qexe, sql, False);
+    ShowMessage('Data Berhasil Disimpan ke database...');
+    Close;
+  except
+    on e: Exception do
+      ShowMessage('data tidak berhasil disimpan, '#10#13'' + e.Message);
+  end;
+end;
 
 end.

@@ -14,6 +14,7 @@ object FGaji: TFGaji
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object pnlHeader: TsPanel
@@ -431,6 +432,7 @@ object FGaji: TFGaji
       Anchors = [akRight, akBottom]
       Caption = '&Simpan'
       TabOrder = 1
+      OnClick = btnSimpanClick
       SkinData.SkinSection = 'BUTTON'
     end
     object btnBatal: TsButton
