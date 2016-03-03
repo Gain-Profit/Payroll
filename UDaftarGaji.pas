@@ -62,7 +62,7 @@ var
 implementation
 
 uses
-  UMain, UDM, URegister, UDaftarHadir, UUser;
+  UMain, UDM, URegister, UDaftarHadir, UUser, UGaji;
 
 {$R *.dfm}
 
@@ -132,7 +132,12 @@ end;
 
 procedure TFDaftarGaji.btnEditClick(Sender: TObject);
 begin
-  //
+  Application.CreateForm(TFGaji, FGaji);
+  FGaji.edId.Text := dm.QGaji.FieldByName('kd_user').AsString;
+  FGaji.edNama.Text := dm.QGaji.FieldByName('n_user').AsString;
+  FGaji.edPeriode.Text := cbBulan.Text + ' ' + edTahun.Text;
+  FGaji.periode := GetPeriode;
+  FGaji.ShowModal;
 end;
 
 procedure TFDaftarGaji.refreshData;

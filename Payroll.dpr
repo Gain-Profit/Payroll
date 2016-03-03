@@ -10,7 +10,8 @@ uses
   UDaftarHadir in 'UDaftarHadir.pas' {FDaftarHadir},
   UDaftarUser in 'UDaftarUser.pas' {FDaftarUser},
   UUser in 'UUser.pas' {FUser},
-  UDaftarGaji in 'UDaftarGaji.pas' {FDaftarGaji};
+  UDaftarGaji in 'UDaftarGaji.pas' {FDaftarGaji},
+  UGaji in 'UGaji.pas' {FGaji};
 
 {$R *.res}
 
