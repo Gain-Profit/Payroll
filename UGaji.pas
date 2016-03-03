@@ -75,6 +75,8 @@ type
     edTemplateMasaKerja: TsCurrencyEdit;
     sLabel28: TsLabel;
     procedure HitungGaji;
+    function GetTemplateFromData(BilPertama: Real; BilanganKedua: Real): Real;
+    procedure LoadData;
     procedure FormShow(Sender: TObject);
     procedure editExit(Sender: TObject);
     procedure btnLoadClick(Sender: TObject);
@@ -111,6 +113,45 @@ begin
 end;
 
 
+function TFGaji.GetTemplateFromData(BilPertama: Real; BilanganKedua: Real): Real;
+begin
+  if BilanganKedua = 0 then
+    Result := 0
+  else
+    Result := BilPertama / BilanganKedua;
+end;
+
+procedure TFGaji.LoadData;
+var
+  sql: string;
+begin
+  sql:= 'SELECT * FROM tb_user_gaji WHERE user_id = "'+edId.Text +'" AND'
+  + ' periode = "'+periode+'"';
+
+  DM.SQLExec(DM.QShow,sql,True);
+
+  edGajiPokok.Value := DM.QShow.FieldByName('pokok').AsInteger;
+  edHadir.Value := DM.QShow.FieldByName('jam_hadir').AsInteger;
+  edTransport.Value := DM.QShow.FieldByName('transport').AsInteger;
+  edKonsumsi.Value := DM.QShow.FieldByName('konsumsi').AsInteger;
+  edInsentif.Value :=  DM.QShow.FieldByName('insentif').AsInteger;
+  edJabatan.Value := DM.QShow.FieldByName('jabatan').AsInteger;
+  edMasaKerja.Value := DM.QShow.FieldByName('masa_kerja').AsInteger;
+  edKesehatan.Value := DM.QShow.FieldByName('kesehatan').AsInteger;
+  edHariRaya.Value :=  DM.QShow.FieldByName('hari_raya').AsInteger;
+  edAkhirTahun.Value :=  DM.QShow.FieldByName('akhir_tahun').AsInteger;
+  edTunjanganLain.Value :=  DM.QShow.FieldByName('tunjangan_lain').AsInteger;
+  edAngsuranDuta.Value := DM.QShow.FieldByName('angsuran_duta').AsInteger;
+  edAngsuranBank.Value := DM.QShow.FieldByName('angsuran_bank').AsInteger;
+  edCashBon.Value :=  DM.QShow.FieldByName('cash_bon').AsInteger;
+  edPotonganLain.Value :=  DM.QShow.FieldByName('potongan_lain').AsInteger;
+
+  edTemplateHadir.Value := GetTemplateFromData(edHadir.Value,edJam.Value);
+  edTemplateTransport.Value := GetTemplateFromData(edTransport.Value,edHari.Value);
+  edTemplateMasaKerja.Value := GetTemplateFromData(edMasaKerja.Value,edTahun.Value);
+  HitungGaji;
+end;
+
 procedure TFGaji.FormShow(Sender: TObject);
 var
   sql,DatePeriode: string;
@@ -139,6 +180,8 @@ begin
 
   DM.SQLExec(DM.QShow,sql,True);
   edTahun.Value := DM.QShow.FieldByName('Total_Tahun').AsInteger;
+
+  LoadData;
 end;
 
 procedure TFGaji.editExit(Sender: TObject);
