@@ -31,8 +31,8 @@ type
     edInsentif: TsCurrencyEdit;
     edJam: TsCurrencyEdit;
     edHari: TsCurrencyEdit;
-    edGajiHadir: TsCurrencyEdit;
-    edGajiTransport: TsCurrencyEdit;
+    edHadir: TsCurrencyEdit;
+    edTransportasi: TsCurrencyEdit;
     sLabel9: TsLabel;
     edTemplateHadir: TsCurrencyEdit;
     edTemplateTransport: TsCurrencyEdit;
@@ -70,6 +70,10 @@ type
     pnlTotalGaji: TsPanel;
     sLabel26: TsLabel;
     edTotalGaji: TsCurrencyEdit;
+    edTahun: TsCurrencyEdit;
+    sLabel27: TsLabel;
+    edTemplateMasaKerja: TsCurrencyEdit;
+    sLabel28: TsLabel;
     procedure editExit(Sender: TObject);
   private
     { Private declarations }
@@ -88,7 +92,7 @@ implementation
 procedure TFGaji.editExit(Sender: TObject);
 begin
   edTotalGajiPokok.Value := edGajiPokok.Value + edKonsumsi.Value + edInsentif.Value +
-  edGajiHadir.Value + edGajiTransport.Value;
+  edHadir.Value + edTransportasi.Value;
 
   edTotalTunjangan.Value := edJabatan.Value + edMasaKerja.Value + edKesehatan.Value +
   edHariRaya.Value + edAkhirTahun.Value + edTunjanganLain.Value;

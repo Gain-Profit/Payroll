@@ -146,28 +146,28 @@ object FGaji: TFGaji
       Caption = 'Insentif'
     end
     object sLabel9: TsLabel
-      Left = 288
+      Left = 282
       Top = 52
       Width = 27
       Height = 13
       Caption = 'hari X'
     end
     object sLabel10: TsLabel
-      Left = 288
+      Left = 282
       Top = 28
       Width = 26
       Height = 13
       Caption = 'jam X'
     end
     object sLabel11: TsLabel
-      Left = 408
+      Left = 392
       Top = 28
       Width = 6
       Height = 13
       Caption = '='
     end
     object sLabel12: TsLabel
-      Left = 408
+      Left = 392
       Top = 52
       Width = 6
       Height = 13
@@ -290,10 +290,10 @@ object FGaji: TFGaji
       GlyphMode.Grayed = False
       DisplayFormat = '###,###,##0;(###,###,##0);0'
     end
-    object edGajiHadir: TsCurrencyEdit
-      Left = 424
+    object edHadir: TsCurrencyEdit
+      Left = 400
       Top = 24
-      Width = 81
+      Width = 105
       Height = 21
       AutoSize = False
       TabOrder = 7
@@ -312,10 +312,10 @@ object FGaji: TFGaji
       GlyphMode.Grayed = False
       DisplayFormat = '###,###,##0;(###,###,##0);0'
     end
-    object edGajiTransport: TsCurrencyEdit
-      Left = 424
+    object edTransportasi: TsCurrencyEdit
+      Left = 400
       Top = 48
-      Width = 81
+      Width = 105
       Height = 21
       AutoSize = False
       TabOrder = 8
@@ -335,9 +335,9 @@ object FGaji: TFGaji
       DisplayFormat = '###,###,##0;(###,###,##0);0'
     end
     object edTemplateHadir: TsCurrencyEdit
-      Left = 320
+      Left = 310
       Top = 24
-      Width = 81
+      Width = 82
       Height = 21
       AutoSize = False
       Enabled = False
@@ -357,9 +357,9 @@ object FGaji: TFGaji
       DisplayFormat = '###,###,##0;(###,###,##0);0'
     end
     object edTemplateTransport: TsCurrencyEdit
-      Left = 320
+      Left = 310
       Top = 48
-      Width = 81
+      Width = 82
       Height = 21
       AutoSize = False
       Enabled = False
@@ -461,35 +461,35 @@ object FGaji: TFGaji
       Caption = 'Jabatan'
     end
     object sLabel15: TsLabel
-      Left = 8
+      Left = 168
       Top = 48
       Width = 53
       Height = 13
       Caption = 'Masa Kerja'
     end
     object sLabel16: TsLabel
-      Left = 8
-      Top = 72
+      Left = 168
+      Top = 24
       Width = 51
       Height = 13
       Caption = 'Kesehatan'
     end
     object sLabel17: TsLabel
-      Left = 168
-      Top = 24
+      Left = 8
+      Top = 48
       Width = 47
       Height = 13
       Caption = 'Hari Raya'
     end
     object sLabel18: TsLabel
-      Left = 168
-      Top = 48
+      Left = 8
+      Top = 72
       Width = 58
       Height = 13
       Caption = 'Akhir Tahun'
     end
     object sLabel19: TsLabel
-      Left = 360
+      Left = 344
       Top = 24
       Width = 39
       Height = 13
@@ -501,6 +501,20 @@ object FGaji: TFGaji
       Width = 78
       Height = 13
       Caption = 'Total Tunjangan'
+    end
+    object sLabel27: TsLabel
+      Left = 266
+      Top = 50
+      Width = 37
+      Height = 13
+      Caption = 'tahun X'
+    end
+    object sLabel28: TsLabel
+      Left = 392
+      Top = 50
+      Width = 6
+      Height = 13
+      Caption = '='
     end
     object edJabatan: TsCurrencyEdit
       Left = 69
@@ -525,9 +539,9 @@ object FGaji: TFGaji
       DisplayFormat = '###,###,##0;(###,###,##0);0'
     end
     object edMasaKerja: TsCurrencyEdit
-      Left = 69
+      Left = 400
       Top = 48
-      Width = 92
+      Width = 105
       Height = 21
       AutoSize = False
       TabOrder = 1
@@ -547,9 +561,9 @@ object FGaji: TFGaji
       DisplayFormat = '###,###,##0;(###,###,##0);0'
     end
     object edKesehatan: TsCurrencyEdit
-      Left = 69
-      Top = 72
-      Width = 92
+      Left = 237
+      Top = 24
+      Width = 100
       Height = 21
       AutoSize = False
       TabOrder = 2
@@ -569,9 +583,9 @@ object FGaji: TFGaji
       DisplayFormat = '###,###,##0;(###,###,##0);0'
     end
     object edHariRaya: TsCurrencyEdit
-      Left = 237
-      Top = 24
-      Width = 116
+      Left = 69
+      Top = 48
+      Width = 92
       Height = 21
       AutoSize = False
       TabOrder = 3
@@ -591,9 +605,9 @@ object FGaji: TFGaji
       DisplayFormat = '###,###,##0;(###,###,##0);0'
     end
     object edTunjanganLain: TsCurrencyEdit
-      Left = 405
+      Left = 392
       Top = 24
-      Width = 100
+      Width = 113
       Height = 21
       AutoSize = False
       TabOrder = 5
@@ -613,9 +627,9 @@ object FGaji: TFGaji
       DisplayFormat = '###,###,##0;(###,###,##0);0'
     end
     object edAkhirTahun: TsCurrencyEdit
-      Left = 237
-      Top = 48
-      Width = 116
+      Left = 69
+      Top = 72
+      Width = 92
       Height = 21
       AutoSize = False
       TabOrder = 4
@@ -642,6 +656,52 @@ object FGaji: TFGaji
       AutoSize = False
       Enabled = False
       TabOrder = 6
+      BoundLabel.Indent = 0
+      BoundLabel.Font.Charset = DEFAULT_CHARSET
+      BoundLabel.Font.Color = clWindowText
+      BoundLabel.Font.Height = -11
+      BoundLabel.Font.Name = 'MS Sans Serif'
+      BoundLabel.Font.Style = []
+      BoundLabel.Layout = sclLeft
+      BoundLabel.MaxWidth = 0
+      BoundLabel.UseSkinColor = True
+      SkinData.SkinSection = 'EDIT'
+      GlyphMode.Blend = 0
+      GlyphMode.Grayed = False
+      DisplayFormat = '###,###,##0;(###,###,##0);0'
+    end
+    object edTahun: TsCurrencyEdit
+      Left = 237
+      Top = 48
+      Width = 28
+      Height = 21
+      AutoSize = False
+      Enabled = False
+      TabOrder = 7
+      OnExit = editExit
+      BoundLabel.Indent = 0
+      BoundLabel.Font.Charset = DEFAULT_CHARSET
+      BoundLabel.Font.Color = clWindowText
+      BoundLabel.Font.Height = -11
+      BoundLabel.Font.Name = 'MS Sans Serif'
+      BoundLabel.Font.Style = []
+      BoundLabel.Layout = sclLeft
+      BoundLabel.MaxWidth = 0
+      BoundLabel.UseSkinColor = True
+      SkinData.SkinSection = 'EDIT'
+      GlyphMode.Blend = 0
+      GlyphMode.Grayed = False
+      DisplayFormat = '###,###,##0;(###,###,##0);0'
+    end
+    object edTemplateMasaKerja: TsCurrencyEdit
+      Left = 306
+      Top = 48
+      Width = 84
+      Height = 21
+      AutoSize = False
+      Enabled = False
+      TabOrder = 8
+      OnExit = editExit
       BoundLabel.Indent = 0
       BoundLabel.Font.Charset = DEFAULT_CHARSET
       BoundLabel.Font.Color = clWindowText
