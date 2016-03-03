@@ -97,7 +97,7 @@ begin
   edCashBon.Value + edPotonganLain.Value;
 
   edTotalGaji.Value := edTotalGajiPokok.Value + edTotalTunjangan.Value -
-  edTotalTunjangan.Value;  
+  edTotalPotongan.Value;  
 end;
 
 end.
