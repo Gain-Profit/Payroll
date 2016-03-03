@@ -544,7 +544,7 @@ object FGaji: TFGaji
       Width = 105
       Height = 21
       AutoSize = False
-      TabOrder = 1
+      TabOrder = 5
       OnExit = editExit
       BoundLabel.Indent = 0
       BoundLabel.Font.Charset = DEFAULT_CHARSET
@@ -566,7 +566,7 @@ object FGaji: TFGaji
       Width = 100
       Height = 21
       AutoSize = False
-      TabOrder = 2
+      TabOrder = 3
       OnExit = editExit
       BoundLabel.Indent = 0
       BoundLabel.Font.Charset = DEFAULT_CHARSET
@@ -588,7 +588,7 @@ object FGaji: TFGaji
       Width = 92
       Height = 21
       AutoSize = False
-      TabOrder = 3
+      TabOrder = 1
       OnExit = editExit
       BoundLabel.Indent = 0
       BoundLabel.Font.Charset = DEFAULT_CHARSET
@@ -610,7 +610,7 @@ object FGaji: TFGaji
       Width = 113
       Height = 21
       AutoSize = False
-      TabOrder = 5
+      TabOrder = 4
       OnExit = editExit
       BoundLabel.Indent = 0
       BoundLabel.Font.Charset = DEFAULT_CHARSET
@@ -632,7 +632,7 @@ object FGaji: TFGaji
       Width = 92
       Height = 21
       AutoSize = False
-      TabOrder = 4
+      TabOrder = 2
       OnExit = editExit
       BoundLabel.Indent = 0
       BoundLabel.Font.Charset = DEFAULT_CHARSET
@@ -655,7 +655,7 @@ object FGaji: TFGaji
       Height = 21
       AutoSize = False
       Enabled = False
-      TabOrder = 6
+      TabOrder = 8
       BoundLabel.Indent = 0
       BoundLabel.Font.Charset = DEFAULT_CHARSET
       BoundLabel.Font.Color = clWindowText
@@ -677,7 +677,7 @@ object FGaji: TFGaji
       Height = 21
       AutoSize = False
       Enabled = False
-      TabOrder = 7
+      TabOrder = 6
       OnExit = editExit
       BoundLabel.Indent = 0
       BoundLabel.Font.Charset = DEFAULT_CHARSET
@@ -700,7 +700,7 @@ object FGaji: TFGaji
       Height = 21
       AutoSize = False
       Enabled = False
-      TabOrder = 8
+      TabOrder = 7
       OnExit = editExit
       BoundLabel.Indent = 0
       BoundLabel.Font.Charset = DEFAULT_CHARSET
