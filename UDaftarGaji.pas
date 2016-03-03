@@ -138,6 +138,7 @@ begin
   FGaji.edPeriode.Text := cbBulan.Text + ' ' + edTahun.Text;
   FGaji.periode := GetPeriode;
   FGaji.ShowModal;
+  refreshData;
 end;
 
 procedure TFDaftarGaji.refreshData;
