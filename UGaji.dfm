@@ -16,23 +16,6 @@ object FGaji: TFGaji
   Position = poScreenCenter
   PixelsPerInch = 96
   TextHeight = 13
-  object sLabel26: TsLabel
-    Left = 0
-    Top = 361
-    Width = 264
-    Height = 49
-    Align = alClient
-    Alignment = taCenter
-    Caption = 'Total Gaji'
-    Color = clBtnFace
-    ParentColor = False
-    ParentFont = False
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -40
-    Font.Name = 'Rockwell'
-    Font.Style = []
-  end
   object pnlHeader: TsPanel
     Left = 0
     Top = 0
@@ -814,39 +797,66 @@ object FGaji: TFGaji
       DisplayFormat = '###,###,##0;(###,###,##0);0'
     end
   end
-  object ed_nilai_faktur: TsCurrencyEdit
-    Left = 264
+  object pnlTotalGaji: TsPanel
+    Left = 0
     Top = 361
-    Width = 253
+    Width = 517
     Height = 49
-    AutoSize = False
-    BevelInner = bvLowered
-    BevelKind = bkFlat
-    Color = 15263976
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clBlue
-    Font.Height = -40
-    Font.Name = 'Rockwell'
-    Font.Style = []
-    ParentFont = False
-    ReadOnly = True
+    Align = alClient
+    Enabled = False
     TabOrder = 5
-    Align = alRight
-    BoundLabel.Indent = 0
-    BoundLabel.Font.Charset = DEFAULT_CHARSET
-    BoundLabel.Font.Color = clWindowText
-    BoundLabel.Font.Height = -11
-    BoundLabel.Font.Name = 'MS Sans Serif'
-    BoundLabel.Font.Style = []
-    BoundLabel.Layout = sclLeft
-    BoundLabel.MaxWidth = 0
-    BoundLabel.UseSkinColor = True
-    SkinData.CustomColor = True
-    SkinData.CustomFont = True
     SkinData.SkinSection = 'PANEL'
-    GlyphMode.Blend = 0
-    GlyphMode.Grayed = False
-    DecimalPlaces = 0
-    DisplayFormat = '###,###,##0;-###,###,##0;0'
+    object sLabel26: TsLabel
+      Left = 1
+      Top = 1
+      Width = 262
+      Height = 47
+      Align = alClient
+      Alignment = taCenter
+      Caption = 'Total Gaji'
+      Color = clBtnFace
+      ParentColor = False
+      ParentFont = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -40
+      Font.Name = 'Rockwell'
+      Font.Style = []
+    end
+    object ed_nilai_faktur: TsCurrencyEdit
+      Left = 263
+      Top = 1
+      Width = 253
+      Height = 47
+      AutoSize = False
+      BevelInner = bvLowered
+      BevelKind = bkFlat
+      Color = 15263976
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlue
+      Font.Height = -40
+      Font.Name = 'Rockwell'
+      Font.Style = []
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 0
+      Align = alRight
+      BoundLabel.Indent = 0
+      BoundLabel.Font.Charset = DEFAULT_CHARSET
+      BoundLabel.Font.Color = clWindowText
+      BoundLabel.Font.Height = -11
+      BoundLabel.Font.Name = 'MS Sans Serif'
+      BoundLabel.Font.Style = []
+      BoundLabel.Layout = sclLeft
+      BoundLabel.MaxWidth = 0
+      BoundLabel.UseSkinColor = True
+      SkinData.CustomColor = True
+      SkinData.CustomFont = True
+      SkinData.SkinSection = 'PANEL'
+      GlyphMode.Blend = 0
+      GlyphMode.Grayed = False
+      DecimalPlaces = 0
+      DisplayFormat = '###,###,##0;-###,###,##0;0'
+    end
   end
 end

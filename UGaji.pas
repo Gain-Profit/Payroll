@@ -67,8 +67,9 @@ type
     sLabel24: TsLabel;
     ed6: TsCurrencyEdit;
     sLabel25: TsLabel;
-    ed_nilai_faktur: TsCurrencyEdit;
+    pnlTotalGaji: TsPanel;
     sLabel26: TsLabel;
+    ed_nilai_faktur: TsCurrencyEdit;
   private
     { Private declarations }
   public
