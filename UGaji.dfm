@@ -318,6 +318,7 @@ object FGaji: TFGaji
       Width = 105
       Height = 21
       AutoSize = False
+      Enabled = False
       TabOrder = 8
       BoundLabel.Indent = 0
       BoundLabel.Font.Charset = DEFAULT_CHARSET
