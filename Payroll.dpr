@@ -8,7 +8,8 @@ uses
   UDaftarKaryawan in 'UDaftarKaryawan.pas' {FDaftarKaryawan},
   ULogin in 'ULogin.pas' {FLogin},
   UDaftarHadir in 'UDaftarHadir.pas' {FDaftarHadir},
-  UDaftarUser in 'UDaftarUser.pas' {FDaftarUser};
+  UDaftarUser in 'UDaftarUser.pas' {FDaftarUser},
+  UUser in 'UUser.pas' {FUser};
 
 {$R *.res}
 
