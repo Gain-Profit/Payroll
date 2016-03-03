@@ -27,7 +27,7 @@ type
     pmPenggajian: TPopupMenu;
     miDaftarGaji: TMenuItem;
     MenuItem3: TMenuItem;
-    miDaftarGajiTemplate: TMenuItem;
+    miDaftarTemplateGaji: TMenuItem;
     procedure panel_auto_width;
     procedure MDIChildCreated(const childHandle: THandle);
     procedure MDIChildDestroyed(const childHandle: THandle);

@@ -196,8 +196,8 @@ object FMain: TFMain
     object MenuItem3: TMenuItem
       Caption = '-'
     end
-    object miDaftarGajiTemplate: TMenuItem
-      Caption = 'Daftar Gaji Template'
+    object miDaftarTemplateGaji: TMenuItem
+      Caption = 'Daftar Template Gaji'
     end
   end
 end
