@@ -68,7 +68,6 @@ object FMain: TFMain
       Font.Style = [fsBold]
       Layout = blGlyphTop
       ParentFont = False
-      PopupMenu = pmMasterData
       Spacing = 0
       Align = alLeft
       ButtonStyle = tbsDropDown
@@ -93,11 +92,11 @@ object FMain: TFMain
       Font.Style = [fsBold]
       Layout = blGlyphTop
       ParentFont = False
-      PopupMenu = pmPenggajian
       Spacing = 0
       Align = alLeft
       ButtonStyle = tbsDropDown
       SkinData.SkinSection = 'TOOLBUTTON'
+      DropdownMenu = pmPenggajian
       ImageIndex = 1
       Images = DM.image
       Reflected = True
@@ -193,7 +192,6 @@ object FMain: TFMain
     Top = 8
     object miDaftarGaji: TMenuItem
       Caption = 'Daftar Gaji'
-      OnClick = miDaftarKaryawanClick
     end
     object MenuItem3: TMenuItem
       Caption = '-'
