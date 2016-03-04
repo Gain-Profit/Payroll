@@ -104,7 +104,7 @@ object FMain: TFMain
   end
   object sb: TsStatusBar
     Left = 0
-    Top = 516
+    Top = 515
     Width = 792
     Height = 25
     Hint = 'Double Klick Untuk Mengganti Periode Akun'
@@ -199,6 +199,7 @@ object FMain: TFMain
     end
     object miDaftarTemplateGaji: TMenuItem
       Caption = 'Daftar Template Gaji'
+      OnClick = miDaftarTemplateGajiClick
     end
   end
 end

@@ -19,6 +19,8 @@ type
     dsUser: TDataSource;
     QGaji: TmySQLQuery;
     dsGaji: TDataSource;
+    QGajiTemp: TmySQLQuery;
+    dsGajiTemp: TDataSource;
     procedure koneksikan;
     procedure DataModuleCreate(Sender: TObject);
     procedure SQLExec(aQuery: TmySQLQuery; _SQL: string; isSearch: boolean);

@@ -430,12 +430,22 @@ object DM: TDM
   end
   object QGaji: TmySQLQuery
     Database = xConn
-    Left = 24
-    Top = 232
+    Left = 144
+    Top = 136
   end
   object dsGaji: TDataSource
     DataSet = QGaji
-    Left = 88
-    Top = 232
+    Left = 208
+    Top = 136
+  end
+  object QGajiTemp: TmySQLQuery
+    Database = xConn
+    Left = 144
+    Top = 184
+  end
+  object dsGajiTemp: TDataSource
+    DataSet = QGajiTemp
+    Left = 208
+    Top = 184
   end
 end

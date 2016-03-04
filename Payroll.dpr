@@ -11,7 +11,8 @@ uses
   UDaftarUser in 'UDaftarUser.pas' {FDaftarUser},
   UUser in 'UUser.pas' {FUser},
   UDaftarGaji in 'UDaftarGaji.pas' {FDaftarGaji},
-  UGaji in 'UGaji.pas' {FGaji};
+  UGaji in 'UGaji.pas' {FGaji},
+  UDaftarGajiTemplate in 'UDaftarGajiTemplate.pas' {FDaftarGajiTemplate};
 
 {$R *.res}
 

@@ -39,6 +39,7 @@ type
     procedure tc_childChange(Sender: TObject);
     procedure cek_update;
     procedure miDaftarGajiClick(Sender: TObject);
+    procedure miDaftarTemplateGajiClick(Sender: TObject);
   private
     procedure WmAfterShow(var Msg: TMessage); message WM_AFTER_SHOW;
     { Private declarations }
@@ -52,7 +53,8 @@ var
 implementation
 
 uses
-  URegister, UDaftarKaryawan, UDM, ULogin, UDaftarUser, UDaftarGaji;
+  URegister, UDaftarKaryawan, UDM, ULogin, UDaftarUser, UDaftarGaji,
+  UDaftarGajiTemplate;
 
 {$R *.dfm}
 
@@ -219,6 +221,14 @@ begin
     application.CreateForm(TFDaftarGaji, FDaftarGaji);
 
   FDaftarGaji.Show;
+end;
+
+procedure TFMain.miDaftarTemplateGajiClick(Sender: TObject);
+begin
+  if FDaftarGajiTemplate = nil then
+    application.CreateForm(TFDaftarGajiTemplate, FDaftarGajiTemplate);
+
+  FDaftarGajiTemplate.Show;
 end;
 
 end.
