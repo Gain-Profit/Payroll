@@ -99,6 +99,10 @@ uses UDM;
 
 procedure TFGaji.HitungGaji;
 begin
+  edHadir.Value := edJam.Value * edTemplateHadir.Value;
+  edTransport.Value := edHari.Value * edTemplateTransport.Value;
+  edMasaKerja.Value := edTahun.Value * edTemplateMasaKerja.Value;
+
   edTotalGajiPokok.Value := edGajiPokok.Value + edKonsumsi.Value + edInsentif.Value +
   edHadir.Value + edTransport.Value;
 
@@ -207,9 +211,6 @@ begin
   edAngsuranDuta.Value := DM.QShow.FieldByName('angsuran_duta').AsInteger;
   edAngsuranBank.Value := DM.QShow.FieldByName('angsuran_bank').AsInteger;
 
-  edHadir.Value := edJam.Value * edTemplateHadir.Value;
-  edTransport.Value := edHari.Value * edTemplateTransport.Value;
-  edMasaKerja.Value := edTahun.Value * edTemplateMasaKerja.Value;
   HitungGaji;
 end;
 
