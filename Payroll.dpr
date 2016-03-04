@@ -12,7 +12,8 @@ uses
   UUser in 'UUser.pas' {FUser},
   UDaftarGaji in 'UDaftarGaji.pas' {FDaftarGaji},
   UGaji in 'UGaji.pas' {FGaji},
-  UDaftarGajiTemplate in 'UDaftarGajiTemplate.pas' {FDaftarGajiTemplate};
+  UDaftarGajiTemplate in 'UDaftarGajiTemplate.pas' {FDaftarGajiTemplate},
+  UGajiTemplate in 'UGajiTemplate.pas' {FGajiTemplate};
 
 {$R *.res}
 
@@ -21,5 +22,6 @@ begin
   Application.Title := 'Aplikasi Penggajian';
   Application.CreateForm(TDM, DM);
   Application.CreateForm(TFMain, FMain);
+  Application.CreateForm(TFGajiTemplate, FGajiTemplate);
   Application.Run;
 end.
