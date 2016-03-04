@@ -61,7 +61,7 @@ var
 implementation
 
 uses
-  UMain, UDM, URegister, UDaftarHadir, UUser;
+  UMain, UDM, URegister, UDaftarHadir, UUser, UGajiTemplate;
 
 {$R *.dfm}
 
@@ -125,13 +125,11 @@ end;
 
 procedure TFDaftarGajiTemplate.btnEditClick(Sender: TObject);
 begin
-//  Application.CreateForm(TFGaji, FGaji);
-//  FGaji.edId.Text := dm.QGaji.FieldByName('kd_user').AsString;
-//  FGaji.edNama.Text := dm.QGaji.FieldByName('n_user').AsString;
-//  FGaji.edPeriode.Text := cbBulan.Text + ' ' + edTahun.Text;
-//  FGaji.periode := GetPeriode;
-//  FGaji.ShowModal;
-//  refreshData;
+  Application.CreateForm(TFGajiTemplate, FGajiTemplate);
+  FGajiTemplate.edId.Text := dm.QGajiTemp.FieldByName('kd_user').AsString;
+  FGajiTemplate.edNama.Text := dm.QGajiTemp.FieldByName('n_user').AsString;
+  FGajiTemplate.ShowModal;
+  refreshData;
 end;
 
 procedure TFDaftarGajiTemplate.refreshData;
@@ -141,7 +139,7 @@ begin
   sql := 'SELECT us.kd_user, us.n_user, gt.pokok, gt.jam_hadir, gt.transport,'
   + ' gt.konsumsi, gt.jabatan, gt.masa_kerja, gt.kesehatan, gt.angsuran_duta,'
   + ' gt.angsuran_bank FROM tb_user us LEFT JOIN tb_user_gaji_template gt'
-  + ' ON us.kd_user = gt.user_id';
+  + ' ON us.kd_user = gt.user_id ORDER BY us.kd_user';
 
   dm.SQLExec(dm.QGajiTemp, sql, true);
 end;
