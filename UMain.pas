@@ -199,7 +199,7 @@ begin
   versiDB           := dm.QShow.FieldByName('versi_terbaru').AsString;
   URLDownload       := dm.QShow.FieldByName('URLdownload').AsString;
   fileName          := Copy(URLDownload,LastDelimiter('/',URLDownload) + 1,Length(URLDownload));
-  UrlDownloadLocal  := dm.xConn.Host + '/GainProfit/' + fileName;
+  UrlDownloadLocal  := 'http://'+dm.xConn.Host + '/GainProfit/' + fileName;
 
   if versiAPP < versiDB then
   begin
