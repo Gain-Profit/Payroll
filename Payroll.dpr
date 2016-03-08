@@ -22,6 +22,5 @@ begin
   Application.Title := 'Aplikasi Penggajian';
   Application.CreateForm(TDM, DM);
   Application.CreateForm(TFMain, FMain);
-  Application.CreateForm(TFGajiTemplate, FGajiTemplate);
   Application.Run;
 end.
