@@ -74,6 +74,8 @@ type
     sLabel27: TsLabel;
     edTemplateMasaKerja: TsCurrencyEdit;
     sLabel28: TsLabel;
+    sLabel29: TsLabel;
+    edLembur: TsCurrencyEdit;
     procedure HitungGaji;
     function GetTemplateFromData(BilPertama: Real; BilanganKedua: Real): Real;
     procedure LoadData;
@@ -104,7 +106,7 @@ begin
   edMasaKerja.Value := edTahun.Value * edTemplateMasaKerja.Value;
 
   edTotalGajiPokok.Value := edGajiPokok.Value + edKonsumsi.Value + edInsentif.Value +
-  edHadir.Value + edTransport.Value;
+  edHadir.Value + edTransport.Value + edLembur.Value;
 
   edTotalTunjangan.Value := edJabatan.Value + edMasaKerja.Value + edKesehatan.Value +
   edHariRaya.Value + edAkhirTahun.Value + edTunjanganLain.Value;
@@ -139,6 +141,7 @@ begin
   edTransport.Value := DM.QShow.FieldByName('transport').AsInteger;
   edKonsumsi.Value := DM.QShow.FieldByName('konsumsi').AsInteger;
   edInsentif.Value :=  DM.QShow.FieldByName('insentif').AsInteger;
+  edLembur.Value :=  DM.QShow.FieldByName('lembur').AsInteger;
   edJabatan.Value := DM.QShow.FieldByName('jabatan').AsInteger;
   edMasaKerja.Value := DM.QShow.FieldByName('masa_kerja').AsInteger;
   edKesehatan.Value := DM.QShow.FieldByName('kesehatan').AsInteger;
@@ -219,11 +222,11 @@ var
   sql: string;
 begin
   sql:= Format('REPLACE INTO tb_user_gaji(user_id, periode, pokok, jam_hadir,'
-  +' transport, konsumsi, insentif, jabatan, masa_kerja, kesehatan, hari_raya,'
+  +' transport, konsumsi, insentif, lembur, jabatan, masa_kerja, kesehatan, hari_raya,'
   + 'akhir_tahun, tunjangan_lain, angsuran_duta, angsuran_bank, cash_bon,'
   + 'potongan_lain) VALUES ("%s", %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,'
-  + '%s,%s,%s,%s,%s)',[edId.Text,periode,edGajiPokok.Text,edHadir.Text,
-  edTransport.Text,edKonsumsi.Text,edInsentif.Text,edJabatan.Text,edMasaKerja.Text,
+  + '%s,%s,%s,%s,%s,%s)',[edId.Text,periode,edGajiPokok.Text,edHadir.Text,
+  edTransport.Text,edKonsumsi.Text,edInsentif.Text,edLembur.Text,edJabatan.Text,edMasaKerja.Text,
   edKesehatan.Text,edHariRaya.Text,edAkhirTahun.Text,edTunjanganLain.Text,
   edAngsuranDuta.Text,edAngsuranBank.Text,edCashBon.Text,edPotonganLain.Text]);
 

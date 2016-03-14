@@ -146,10 +146,10 @@ var
   sql: string;
 begin
   sql := 'SELECT us.kd_user, us.n_user, gj.pokok + gj.jam_hadir + gj.transport + '
-    + 'gj.konsumsi + gj.insentif AS gaji_pokok, gj.jabatan + gj.masa_kerja + '
+    + 'gj.konsumsi + gj.insentif + gj.lembur AS gaji_pokok, gj.jabatan + gj.masa_kerja + '
     + 'gj.kesehatan + gj.hari_raya + gj.akhir_tahun + gj.tunjangan_lain AS tunjangan, '
     + 'gj.angsuran_duta + gj.angsuran_bank + gj.cash_bon + gj.potongan_lain AS potongan, '
-    + '(gj.pokok + gj.jam_hadir + gj.transport + gj.konsumsi + gj.insentif) + '
+    + '(gj.pokok + gj.jam_hadir + gj.transport + gj.konsumsi + gj.insentif + gj.lembur) + '
     + '(gj.jabatan + gj.masa_kerja + gj.kesehatan + gj.hari_raya + gj.akhir_tahun + '
     + 'gj.tunjangan_lain) - (gj.angsuran_duta + gj.angsuran_bank + gj.cash_bon + '
     + 'gj.potongan_lain) AS Total_Gaji FROM tb_user us LEFT JOIN tb_user_gaji gj '

@@ -4,7 +4,7 @@ object FGaji: TFGaji
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Gaji'
-  ClientHeight = 451
+  ClientHeight = 471
   ClientWidth = 517
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -106,7 +106,7 @@ object FGaji: TFGaji
     Left = 0
     Top = 65
     Width = 517
-    Height = 112
+    Height = 136
     Align = alTop
     Caption = '| Gaji Pokok |'
     TabOrder = 1
@@ -176,10 +176,17 @@ object FGaji: TFGaji
     end
     object sLabel13: TsLabel
       Left = 210
-      Top = 72
+      Top = 96
       Width = 79
       Height = 13
       Caption = 'Total Gaji Pokok'
+    end
+    object sLabel29: TsLabel
+      Left = 8
+      Top = 96
+      Width = 35
+      Height = 13
+      Caption = 'Lembur'
     end
     object edGajiPokok: TsCurrencyEdit
       Left = 72
@@ -254,7 +261,7 @@ object FGaji: TFGaji
       Height = 21
       AutoSize = False
       Enabled = False
-      TabOrder = 3
+      TabOrder = 4
       BoundLabel.Indent = 0
       BoundLabel.Font.Charset = DEFAULT_CHARSET
       BoundLabel.Font.Color = clWindowText
@@ -276,7 +283,7 @@ object FGaji: TFGaji
       Height = 21
       AutoSize = False
       Enabled = False
-      TabOrder = 5
+      TabOrder = 6
       BoundLabel.Indent = 0
       BoundLabel.Font.Charset = DEFAULT_CHARSET
       BoundLabel.Font.Color = clWindowText
@@ -298,7 +305,7 @@ object FGaji: TFGaji
       Height = 21
       AutoSize = False
       Enabled = False
-      TabOrder = 7
+      TabOrder = 8
       BoundLabel.Indent = 0
       BoundLabel.Font.Charset = DEFAULT_CHARSET
       BoundLabel.Font.Color = clWindowText
@@ -320,7 +327,7 @@ object FGaji: TFGaji
       Height = 21
       AutoSize = False
       Enabled = False
-      TabOrder = 8
+      TabOrder = 9
       BoundLabel.Indent = 0
       BoundLabel.Font.Charset = DEFAULT_CHARSET
       BoundLabel.Font.Color = clWindowText
@@ -341,7 +348,7 @@ object FGaji: TFGaji
       Width = 82
       Height = 21
       AutoSize = False
-      TabOrder = 4
+      TabOrder = 5
       OnExit = editExit
       BoundLabel.Indent = 0
       BoundLabel.Font.Charset = DEFAULT_CHARSET
@@ -363,7 +370,7 @@ object FGaji: TFGaji
       Width = 82
       Height = 21
       AutoSize = False
-      TabOrder = 6
+      TabOrder = 7
       OnExit = editExit
       BoundLabel.Indent = 0
       BoundLabel.Font.Charset = DEFAULT_CHARSET
@@ -381,12 +388,34 @@ object FGaji: TFGaji
     end
     object edTotalGajiPokok: TsCurrencyEdit
       Left = 310
-      Top = 72
+      Top = 96
       Width = 195
       Height = 21
       AutoSize = False
       Enabled = False
-      TabOrder = 9
+      TabOrder = 10
+      BoundLabel.Indent = 0
+      BoundLabel.Font.Charset = DEFAULT_CHARSET
+      BoundLabel.Font.Color = clWindowText
+      BoundLabel.Font.Height = -11
+      BoundLabel.Font.Name = 'MS Sans Serif'
+      BoundLabel.Font.Style = []
+      BoundLabel.Layout = sclLeft
+      BoundLabel.MaxWidth = 0
+      BoundLabel.UseSkinColor = True
+      SkinData.SkinSection = 'EDIT'
+      GlyphMode.Blend = 0
+      GlyphMode.Grayed = False
+      DisplayFormat = '###,###,##0;(###,###,##0);0'
+    end
+    object edLembur: TsCurrencyEdit
+      Left = 72
+      Top = 96
+      Width = 81
+      Height = 21
+      AutoSize = False
+      TabOrder = 3
+      OnExit = editExit
       BoundLabel.Indent = 0
       BoundLabel.Font.Charset = DEFAULT_CHARSET
       BoundLabel.Font.Color = clWindowText
@@ -404,7 +433,7 @@ object FGaji: TFGaji
   end
   object pnlFooter: TsPanel
     Left = 0
-    Top = 410
+    Top = 430
     Width = 517
     Height = 41
     Align = alBottom
@@ -449,7 +478,7 @@ object FGaji: TFGaji
   end
   object gbTunjangan: TsGroupBox
     Left = 0
-    Top = 177
+    Top = 201
     Width = 517
     Height = 104
     Align = alTop
@@ -720,7 +749,7 @@ object FGaji: TFGaji
   end
   object gbPotongan: TsGroupBox
     Left = 0
-    Top = 281
+    Top = 305
     Width = 517
     Height = 80
     Align = alTop
@@ -875,9 +904,9 @@ object FGaji: TFGaji
   end
   object pnlTotalGaji: TsPanel
     Left = 0
-    Top = 361
+    Top = 385
     Width = 517
-    Height = 49
+    Height = 45
     Align = alClient
     Enabled = False
     TabOrder = 4
@@ -886,7 +915,7 @@ object FGaji: TFGaji
       Left = 1
       Top = 1
       Width = 262
-      Height = 47
+      Height = 43
       Align = alClient
       Alignment = taCenter
       Caption = 'Total Gaji'
@@ -903,7 +932,7 @@ object FGaji: TFGaji
       Left = 263
       Top = 1
       Width = 253
-      Height = 47
+      Height = 43
       AutoSize = False
       BevelInner = bvLowered
       BevelKind = bkFlat
