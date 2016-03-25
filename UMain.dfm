@@ -104,7 +104,7 @@ object FMain: TFMain
   end
   object sb: TsStatusBar
     Left = 0
-    Top = 515
+    Top = 516
     Width = 792
     Height = 25
     Hint = 'Double Klick Untuk Mengganti Periode Akun'
@@ -123,21 +123,6 @@ object FMain: TFMain
         Alignment = taCenter
         Text = 'profit@localhost'
         Width = 150
-      end
-      item
-        Alignment = taCenter
-        Text = 'Periode :'
-        Width = 60
-      end
-      item
-        Alignment = taCenter
-        Text = '02'
-        Width = 50
-      end
-      item
-        Alignment = taCenter
-        Text = '2016'
-        Width = 75
       end
       item
         Width = 50
