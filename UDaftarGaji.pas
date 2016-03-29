@@ -37,6 +37,7 @@ type
     TvDataTunjangan: TcxGridDBColumn;
     TvDataPotongan: TcxGridDBColumn;
     TvDataTotal_Gaji: TcxGridDBColumn;
+    btnCetak: TsButton;
     procedure WMMDIACTIVATE(var msg: TWMMDIACTIVATE); message WM_MDIACTIVATE;
     procedure refreshData;
     procedure FormShow(Sender: TObject);

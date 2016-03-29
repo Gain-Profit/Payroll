@@ -251,24 +251,34 @@ object FDaftarGaji: TFDaftarGaji
     end
     object pnlButton: TsPanel
       Left = 0
-      Top = 296
+      Top = 264
       Width = 150
-      Height = 40
+      Height = 72
       Align = alBottom
       TabOrder = 1
       SkinData.SkinSection = 'PANEL'
       DesignSize = (
         150
-        40)
+        72)
       object btnEdit: TsButton
         Left = 6
-        Top = 7
+        Top = 39
         Width = 136
         Height = 25
         Anchors = [akBottom]
         Caption = '&Ubah Data'
         TabOrder = 0
         OnClick = btnEditClick
+        SkinData.SkinSection = 'BUTTON'
+      end
+      object btnCetak: TsButton
+        Left = 6
+        Top = 7
+        Width = 136
+        Height = 25
+        Anchors = [akBottom]
+        Caption = '&Cetak Data'
+        TabOrder = 1
         SkinData.SkinSection = 'BUTTON'
       end
     end
