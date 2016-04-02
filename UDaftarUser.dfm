@@ -113,6 +113,12 @@ object FDaftarUser: TFDaftarUser
           Visible = False
           Width = 60
         end
+        object TvDataRekening: TcxGridDBColumn
+          Caption = 'Rekening'
+          DataBinding.FieldName = 'rekening'
+          Visible = False
+          Width = 60
+        end
         object TvDatakawin: TcxGridDBColumn
           Caption = 'Kawin'
           DataBinding.FieldName = 'kawin'

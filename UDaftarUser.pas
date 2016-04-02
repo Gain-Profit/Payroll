@@ -40,6 +40,7 @@ type
     TvDatajabatan: TcxGridDBColumn;
     TvDatapendidikan: TcxGridDBColumn;
     TvDataTanggalLahir: TcxGridDBColumn;
+    TvDataRekening: TcxGridDBColumn;
     procedure WMMDIACTIVATE(var msg: TWMMDIACTIVATE); message WM_MDIACTIVATE;
     procedure FormShow(Sender: TObject);
     procedure sbKeluarClick(Sender: TObject);

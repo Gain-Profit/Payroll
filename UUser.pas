@@ -77,6 +77,7 @@ begin
   edEmail.Text := DM.QUser.FieldByName('email').AsString;
   edPendidikan.Text := DM.QUser.FieldByName('pendidikan').AsString;
   edJabatan.Text := DM.QUser.FieldByName('jabatan').AsString;
+  edRekening.Text := DM.QUser.FieldByName('rekening').AsString;
 
   if DM.QUser.FieldByName('sex').AsString = 'L' then
     rgJenisKelamin.ItemIndex := 0
@@ -183,20 +184,20 @@ begin
   if dataBaru then
   begin
     sql := Format('INSERT INTO tb_user(kd_user, `password`, n_user, Alamat, ' +
-      'Kontak, email, sex, kawin, jabatan, pendidikan, tanggal_lahir, tanggal_masuk, ' +
+      'Kontak, email, sex, kawin, jabatan, pendidikan, rekening, tanggal_lahir, tanggal_masuk, ' +
       'tanggal_keluar, aktif) VALUES ("%s",MD5("%s"),"%s","%s","%s","%s","%s", ' +
-      '"%s","%s","%s",%s,%s,%s,"%s")', [edKodeUser.Text, edPassword.Text,
+      '"%s","%s","%s","%s",%s,%s,%s,"%s")', [edKodeUser.Text, edPassword.Text,
       edNamaUser.Text, edAlamat.Text, edKontak.Text, edEmail.Text, sex, kawin,
-      edJabatan.Text, edPendidikan.Text, lahir, masuk, keluar, aktif]);
+      edJabatan.Text, edPendidikan.Text, edRekening.Text, lahir, masuk, keluar, aktif]);
   end
   else
   begin
     sql := Format('UPDATE tb_user SET n_user="%s", Alamat="%s", Kontak="%s", ' +
-      'email="%s", sex="%s", kawin="%s", jabatan="%s", pendidikan="%s", ' +
+      'email="%s", sex="%s", kawin="%s", jabatan="%s", pendidikan="%s", rekening="%s", ' +
       'tanggal_lahir=%s, tanggal_masuk=%s, tanggal_keluar=%s, aktif="%s" ' +
       'WHERE kd_user="%s"', [edNamaUser.Text, edAlamat.Text, edKontak.Text,
-      edEmail.Text, sex, kawin, edJabatan.Text, edPendidikan.Text, lahir, masuk,
-      keluar, aktif, edKodeUser.Text]);
+      edEmail.Text, sex, kawin, edJabatan.Text, edPendidikan.Text, edRekening.Text,
+      lahir, masuk, keluar, aktif, edKodeUser.Text]);
   end;
 
   try
