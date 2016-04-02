@@ -448,4 +448,38 @@ object DM: TDM
     Left = 208
     Top = 184
   end
+  object laporan: TfrxReport
+    Version = '4.9.35'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Default'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 42462.571759293980000000
+    ReportOptions.LastChange = 42462.571759293980000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'begin'
+      ''
+      'end.')
+    Left = 32
+    Top = 248
+    Datasets = <>
+    Variables = <>
+    Style = <>
+  end
+  object DbLaporan1: TfrxDBDataset
+    UserName = 'DbLaporan'
+    CloseDataSource = False
+    DataSet = QLaporan
+    BCDToCurrency = False
+    Left = 96
+    Top = 304
+  end
+  object QLaporan: TmySQLQuery
+    Database = xConn
+    Left = 32
+    Top = 304
+  end
 end

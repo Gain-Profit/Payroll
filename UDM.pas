@@ -4,7 +4,8 @@ interface
 
 uses
   SysUtils, Classes, DB, mySQLDbTables, Dialogs, sSkinManager, IniFiles, Forms,
-  ImgList, Controls, acAlphaImageList, Windows, SHFolder;
+  ImgList, Controls, acAlphaImageList, Windows, SHFolder, frxClass,
+  frxDBSet;
 
 type
   TDM = class(TDataModule)
@@ -21,6 +22,9 @@ type
     dsGaji: TDataSource;
     QGajiTemp: TmySQLQuery;
     dsGajiTemp: TDataSource;
+    laporan: TfrxReport;
+    DbLaporan1: TfrxDBDataset;
+    QLaporan: TmySQLQuery;
     procedure koneksikan;
     procedure DataModuleCreate(Sender: TObject);
     procedure SQLExec(aQuery: TmySQLQuery; _SQL: string; isSearch: boolean);
