@@ -179,7 +179,7 @@ procedure TFDaftarGaji.btnCetakClick(Sender: TObject);
 var
   sql: string;
 begin
-  sql:= 'SELECT * FROM tb_user_gaji WHERE periode = "'+ GetPeriode +'"';
+  sql:= 'SELECT * FROM vw_user_gaji WHERE periode = "'+ GetPeriode +'"';
   DM.SQLExec(dm.QLaporan,sql,true);
   DM.laporan.LoadFromFile(dm.WPath + 'laporan\gaji.fr3');
   DM.laporan.ShowReport;
