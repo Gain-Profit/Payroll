@@ -50,6 +50,7 @@ type
       var AHandled: Boolean);
     procedure btnEditClick(Sender: TObject);
     function GetPeriode:string;
+    procedure btnCetakClick(Sender: TObject);
   private
     procedure WmAfterShow(var Msg: TMessage); message WM_AFTER_SHOW;
     { Private declarations }
@@ -172,6 +173,16 @@ begin
     periode := edTahun.Text + ix;
 
   Result := periode;
+end;
+
+procedure TFDaftarGaji.btnCetakClick(Sender: TObject);
+var
+  sql: string;
+begin
+  sql:= 'SELECT * FROM tb_user_gaji WHERE periode = "'+ GetPeriode +'"';
+  DM.SQLExec(dm.QLaporan,sql,true);
+  DM.laporan.LoadFromFile(dm.WPath + 'laporan\gaji.fr3');
+  DM.laporan.ShowReport;
 end;
 
 end.

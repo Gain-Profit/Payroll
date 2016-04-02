@@ -279,6 +279,7 @@ object FDaftarGaji: TFDaftarGaji
         Anchors = [akBottom]
         Caption = '&Cetak Data'
         TabOrder = 1
+        OnClick = btnCetakClick
         SkinData.SkinSection = 'BUTTON'
       end
     end
