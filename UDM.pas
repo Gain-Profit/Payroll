@@ -23,7 +23,7 @@ type
     QGajiTemp: TmySQLQuery;
     dsGajiTemp: TDataSource;
     laporan: TfrxReport;
-    DbLaporan1: TfrxDBDataset;
+    DbLaporan: TfrxDBDataset;
     QLaporan: TmySQLQuery;
     procedure koneksikan;
     procedure DataModuleCreate(Sender: TObject);

@@ -469,7 +469,7 @@ object DM: TDM
     Variables = <>
     Style = <>
   end
-  object DbLaporan1: TfrxDBDataset
+  object DbLaporan: TfrxDBDataset
     UserName = 'DbLaporan'
     CloseDataSource = False
     DataSet = QLaporan
