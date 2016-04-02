@@ -4,7 +4,7 @@ object FUser: TFUser
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'User'
-  ClientHeight = 377
+  ClientHeight = 397
   ClientWidth = 517
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -99,9 +99,16 @@ object FUser: TFUser
     Left = 368
     Top = 144
     Width = 135
-    Height = 180
+    Height = 201
     Center = True
     Proportional = True
+  end
+  object sLabel9: TsLabel
+    Left = 8
+    Top = 328
+    Width = 66
+    Height = 13
+    Caption = 'No. Rekening'
   end
   object edKodeUser: TsEdit
     Left = 72
@@ -189,9 +196,9 @@ object FUser: TFUser
     BoundLabel.UseSkinColor = True
   end
   object edJabatan: TsEdit
-    Left = 72
+    Left = 80
     Top = 296
-    Width = 289
+    Width = 281
     Height = 21
     TabOrder = 13
     SkinData.SkinSection = 'EDIT'
@@ -356,11 +363,11 @@ object FUser: TFUser
   end
   object pnlBawah: TsPanel
     Left = 0
-    Top = 335
+    Top = 355
     Width = 517
     Height = 42
     Align = alBottom
-    TabOrder = 14
+    TabOrder = 15
     SkinData.SkinSection = 'PANEL'
     object btnSimpan: TsButton
       Left = 344
@@ -382,5 +389,22 @@ object FUser: TFUser
       TabOrder = 1
       SkinData.SkinSection = 'BUTTON'
     end
+  end
+  object edRekening: TsEdit
+    Left = 80
+    Top = 328
+    Width = 281
+    Height = 21
+    TabOrder = 14
+    SkinData.SkinSection = 'EDIT'
+    BoundLabel.Indent = 0
+    BoundLabel.Font.Charset = DEFAULT_CHARSET
+    BoundLabel.Font.Color = clWindowText
+    BoundLabel.Font.Height = -11
+    BoundLabel.Font.Name = 'MS Sans Serif'
+    BoundLabel.Font.Style = []
+    BoundLabel.Layout = sclLeft
+    BoundLabel.MaxWidth = 0
+    BoundLabel.UseSkinColor = True
   end
 end

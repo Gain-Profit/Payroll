@@ -38,6 +38,8 @@ type
     pnlBawah: TsPanel;
     btnSimpan: TsButton;
     btnBatal: TsButton;
+    sLabel9: TsLabel;
+    edRekening: TsEdit;
     procedure loadData;
     procedure BuatDataBaru;
     procedure ShowData;
