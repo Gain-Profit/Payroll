@@ -57,7 +57,7 @@ uses
   UDaftarGajiTemplate;
 
 {$R *.dfm}
-
+// untuk mengetahui versi applikasi.
 function program_versi:string;
 var V1, V2, V3, V4: Word;
    VerInfoSize, VerValueSize, Dummy : DWORD;
