@@ -83,6 +83,7 @@ Result := IntToStr(V1) + '.'
             + IntToStr(V4);
 end;
 
+// lebar panel menyesuaikan dengan teks yang ada di dalamnya.
 procedure TFMain.panel_auto_width;
 var x: integer;
     y: string;
