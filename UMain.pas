@@ -96,7 +96,8 @@ begin
  end;
 end;
 
-//add a tab for an MDI child
+// ADD a tab for an MDI child
+// @param  Thandle
 procedure TFMain.MDIChildCreated(const childHandle: THandle);
 begin
   tc_child.Tabs.AddObject(TForm(FindControl(childHandle)).Caption, TObject(childHandle));
@@ -107,7 +108,8 @@ begin
   end;
 end;
 
-//remove a tab for this MDI child
+// Remove a tab for this MDI child
+// @param  Thandle
 procedure TFMain.MDIChildDestroyed(const childHandle: THandle);
 var
   idx: Integer;
