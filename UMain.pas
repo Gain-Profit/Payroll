@@ -174,6 +174,9 @@ begin
   FDaftarUser.Show;
 end;
 
+// prosedur dipanggil ketika form utama di keluarkan.
+// @param TObject sender
+// @param TCloseAction action on close
 procedure TFMain.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   metu_kabeh := True;
@@ -183,6 +186,8 @@ begin
   FMain := nil;
 end;
 
+// prosedur dipanggil ketika tab control di click. untuk menampilkan form.
+// @param TObject sender
 procedure TFMain.tc_childChange(Sender: TObject);
 var
   cHandle: Integer;
@@ -202,6 +207,7 @@ begin
   end;
 end;
 
+// prosedure untuk cek update applikasi 
 procedure TFMain.cek_update;
 var
   versiDB,versiAPP,URLDownload:string;
