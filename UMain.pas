@@ -122,6 +122,7 @@ begin
 end;
 
 // prosedur dipanggil ketika form ditampilkan
+// @param TObject sender
 procedure TFMain.FormShow(Sender: TObject);
 begin
   cek_update;
@@ -133,6 +134,7 @@ begin
 end;
 
 // prosedur dipanggil setelah form utama di tampilkan.
+// @param TMessage message
 procedure TFMain.WmAfterShow(var Msg: TMessage);
 begin
   dm.sm.Active := true;
@@ -145,11 +147,15 @@ begin
     Close;
 end;
 
+// prosedur dipanggil ketika speedbutton keluar di klick
+// @param TObject sender
 procedure TFMain.sbKeluarClick(Sender: TObject);
 begin
   Close;
 end;
 
+// prosedur dipanggil ketika menu daftar karyawan di klick
+// @param TObject sender
 procedure TFMain.miDaftarKaryawanClick(Sender: TObject);
 begin
   if FDaftarKaryawan = nil then
@@ -158,6 +164,8 @@ begin
   FDaftarKaryawan.Show;
 end;
 
+// prosedur dipanggil ketika menu daftar user di klick
+// @param TObject sender
 procedure TFMain.miDaftarUserClick(Sender: TObject);
 begin
   if FDaftarUser = nil then
@@ -218,6 +226,8 @@ begin
   end;  
 end;
 
+// prosedur dipanggil ketika menu daftar Gaji di klick
+// @param TObject sender
 procedure TFMain.miDaftarGajiClick(Sender: TObject);
 begin
   if FDaftarGaji = nil then
@@ -226,6 +236,8 @@ begin
   FDaftarGaji.Show;
 end;
 
+// prosedur dipanggil ketika menu daftar Template di klick
+// @param TObject sender
 procedure TFMain.miDaftarTemplateGajiClick(Sender: TObject);
 begin
   if FDaftarGajiTemplate = nil then
