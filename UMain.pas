@@ -58,6 +58,7 @@ uses
 
 {$R *.dfm}
 
+// untuk mengetahui versi applikasi.
 function program_versi:string;
 var V1, V2, V3, V4: Word;
    VerInfoSize, VerValueSize, Dummy : DWORD;
@@ -83,6 +84,7 @@ Result := IntToStr(V1) + '.'
             + IntToStr(V4);
 end;
 
+// lebar panel menyesuaikan dengan teks yang ada di dalamnya.
 procedure TFMain.panel_auto_width;
 var x: integer;
     y: string;
