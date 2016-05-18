@@ -49,10 +49,15 @@ uses
 
 {$R *.dfm}
 
+// prosedur dipanggil ketika menekan keyboard pada ed_kd_user 
+// @param TObject sender
+// @param Key key pada keyboard
+// @param Shift ctrl shift atau alt
 procedure TFLogin.Ed_Kd_UserKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
 var
   sql: string;
 begin
+  // jika ditekan enter.
   if key = vk_return then
   begin
     sql := 'SELECT n_user, `password` FROM tb_user WHERE ' +
