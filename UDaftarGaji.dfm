@@ -24,7 +24,7 @@ object FDaftarGaji: TFDaftarGaji
     Left = 0
     Top = 0
     Width = 530
-    Height = 442
+    Height = 441
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
@@ -33,7 +33,7 @@ object FDaftarGaji: TFDaftarGaji
       Left = 0
       Top = 0
       Width = 530
-      Height = 442
+      Height = 441
       Align = alClient
       TabOrder = 0
       LookAndFeel.Kind = lfOffice11
@@ -123,7 +123,7 @@ object FDaftarGaji: TFDaftarGaji
     Left = 530
     Top = 0
     Width = 150
-    Height = 442
+    Height = 441
     Align = alRight
     BevelOuter = bvNone
     TabOrder = 1
@@ -178,7 +178,7 @@ object FDaftarGaji: TFDaftarGaji
     end
     object pnlPeriode: TsPanel
       Left = 0
-      Top = 336
+      Top = 335
       Width = 150
       Height = 106
       Align = alBottom
@@ -228,6 +228,7 @@ object FDaftarGaji: TFDaftarGaji
           'Juli'
           'Agustus'
           'September'
+          'Oktober'
           'Nopember'
           'Desember')
       end
@@ -251,7 +252,7 @@ object FDaftarGaji: TFDaftarGaji
     end
     object pnlButton: TsPanel
       Left = 0
-      Top = 264
+      Top = 263
       Width = 150
       Height = 72
       Align = alBottom
