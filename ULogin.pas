@@ -73,21 +73,24 @@ begin
       userRealName := dm.QShow.FieldByName('n_user').AsString;
       userPassword := dm.QShow.FieldByName('password').AsString;
 
-      sql := 'SELECT user_id FROM tb_checkinout WHERE ISNULL(checkout_time) ' +
-        'AND user_id="' + ed_kd_user.Text + '"';
-      dm.SQLExec(DM.QShow, sql, true);
-      if dm.QShow.Eof then
+      sql:= 'SELECT `nilai` FROM `tb_settings` WHERE `parameter`="checkin"';
+      dm.SQLExec(DM.QShow,sql,true);
+      if dm.QShow.FieldByName('nilai').AsBoolean then
       begin
-        messagedlg('Tidak Dapat Login '#10#13'USER belum Check IN....',
-          mtError,[mbOk], 0);
-        ed_kd_user.SetFocus;
-      end
-      else
-      begin
-        ed_password.Enabled := true;
-        Ed_Password.SetFocus;
-        Ed_N_User.Text := userRealName;
+        sql:= 'SELECT user_id FROM tb_checkinout WHERE ISNULL(checkout_time) ' +
+              'AND user_id="'+ed_kd_user.Text+'"';
+        dm.SQLExec(DM.QShow,sql,true);
+        if dm.QShow.Eof then
+        begin
+          messagedlg('Tidak Dapat Login '#10#13'USER belum Check IN....',mtError,[mbOk],0);
+          ed_kd_user.SetFocus;
+          Exit;
+        end;
       end;
+
+      ed_password.Enabled := true;
+      Ed_Password.SetFocus;
+      Ed_N_User.Text := userRealName;
     end;
   end;
 
