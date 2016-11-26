@@ -101,7 +101,7 @@ var
   idx: Integer;
 begin
   active := FindControl(msg.ActiveWnd);
-  if not (metu_kabeh) then
+  if not (DM.metu_kabeh) then
   begin
     if Assigned(active) then
     begin

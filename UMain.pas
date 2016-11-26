@@ -126,7 +126,7 @@ end;
 procedure TFMain.FormShow(Sender: TObject);
 begin
   cek_update;
-  metu_kabeh := False;
+  DM.metu_kabeh := False;
   sb.Panels[0].Text := program_versi;
   sb.Panels[2].Text := dm.xConn.DatabaseName + '@' + dm.xConn.Host;
 
@@ -138,12 +138,12 @@ end;
 procedure TFMain.WmAfterShow(var Msg: TMessage);
 begin
   dm.sm.Active := true;
-  login := False;
+  DM.login := False;
 
   application.CreateForm(TFLogin, FLogin);
   FLogin.ShowModal;
 
-  if not(login) then
+  if not(dm.login) then
     Close;
 end;
 
@@ -179,7 +179,7 @@ end;
 // @param TCloseAction action on close
 procedure TFMain.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-  metu_kabeh := True;
+  DM.metu_kabeh := True;
   dm.xConn.Connected := false;
 
   action := cafree;

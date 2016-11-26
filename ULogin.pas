@@ -31,6 +31,8 @@ type
     procedure Ed_PasswordKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure Ed_Kd_UserChange(Sender: TObject);
   private
+    userPassword, userRealName: string;
+    isAdmin: Boolean;
     { Private declarations }
   public
     { Public declarations }
@@ -38,8 +40,6 @@ type
 
 var
   FLogin: TFLogin;
-  userPassword, userRealName: string;
-  isAdmin: Boolean;
 
 implementation
 
@@ -117,7 +117,7 @@ begin
       FMain.Sb.Panels[1].Text := UpperCase(ed_kd_user.Text);
 
       FMain.panel_auto_width;
-      login := True;
+      DM.login := True;
       close;
     end;
   end;

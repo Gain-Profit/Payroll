@@ -29,17 +29,17 @@ type
     procedure DataModuleCreate(Sender: TObject);
     procedure SQLExec(aQuery: TmySQLQuery; _SQL: string; isSearch: boolean);
   private
+    _host, _db, _user, _password: string;
+    _port: Integer;
     { Private declarations }
   public
     WPath, AppPath, DocPath: string;
+    metu_kabeh,login: Boolean;
     { Public declarations }
   end;
 
 var
   DM: TDM;
-  _host, _db, _user, _password: string;
-  _port: Integer;
-  metu_kabeh,login: Boolean;
 
 implementation
 

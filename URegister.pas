@@ -43,15 +43,15 @@ type
   private
     { Private declarations }
   public
+    SN: WideString;
+    Verification: WideString;
+    Activation: WideString;
+    FixTemplate: WideString;
     { Public declarations }
   end;
 
 var
   FRegister: TFRegister;
-  SN: WideString;
-  Verification: WideString;
-  Activation: WideString;
-  FixTemplate: WideString;
 
 implementation
 
