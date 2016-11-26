@@ -156,7 +156,7 @@ begin
     + 'gj.tunjangan_lain) - (gj.angsuran_duta + gj.angsuran_bank + gj.cash_bon + '
     + 'gj.potongan_lain) AS Total_Gaji FROM tb_user us LEFT JOIN tb_user_gaji gj '
     + 'ON (((us.kd_user = gj.user_id) AND (gj.periode = ' + GetPeriode + '))) '
-    + 'ORDER BY us.kd_user';
+    + 'WHERE us.aktif="Y" ORDER BY us.kd_user';
 
   dm.SQLExec(dm.QGaji, sql, true);
 end;

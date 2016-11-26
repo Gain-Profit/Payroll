@@ -139,7 +139,7 @@ begin
   sql := 'SELECT us.kd_user, us.n_user, gt.pokok, gt.jam_hadir, gt.transport,'
   + ' gt.konsumsi, gt.jabatan, gt.masa_kerja, gt.kesehatan, gt.angsuran_duta,'
   + ' gt.angsuran_bank FROM tb_user us LEFT JOIN tb_user_gaji_template gt'
-  + ' ON us.kd_user = gt.user_id ORDER BY us.kd_user';
+  + ' ON us.kd_user = gt.user_id WHERE us.aktif="Y" ORDER BY us.kd_user';
 
   dm.SQLExec(dm.QGajiTemp, sql, true);
 end;
