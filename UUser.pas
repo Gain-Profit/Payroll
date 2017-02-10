@@ -4,8 +4,9 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, sEdit, sLabel, Mask, sMaskEdit, sCustomComboEdit, sTooledit,
-  sGroupBox, ExtCtrls, sButton, sPanel, sRadioButton;
+  Dialogs, sEdit, sLabel, sTooledit,
+  sGroupBox, ExtCtrls, sButton, sPanel, StdCtrls, Mask, sMaskEdit,
+  sCustomComboEdit;
 
 type
   TFUser = class(TForm)

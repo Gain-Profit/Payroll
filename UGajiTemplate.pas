@@ -4,8 +4,9 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, ExtCtrls, sPanel, StdCtrls, sEdit, sLabel, Mask, sMaskEdit,
-  sCustomComboEdit, sCurrEdit, sCurrencyEdit, sGroupBox, sButton;
+  Dialogs, ExtCtrls, sPanel, sEdit, sLabel, 
+  sCurrEdit, sCurrencyEdit, sGroupBox, sButton, StdCtrls, Mask, sMaskEdit,
+  sCustomComboEdit;
 
 type
   TFGajiTemplate = class(TForm)

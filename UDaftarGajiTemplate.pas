@@ -4,12 +4,12 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, cxStyles, cxCustomData, cxGraphics, cxFilter, cxData, cxDataStorage,
-  cxEdit, DB, cxDBData, cxTextEdit, cxSpinEdit, sSkinProvider, StdCtrls, sButton,
-  Buttons, sSpeedButton, sEdit, cxGridLevel, cxGridCustomTableView,
+  Dialogs, cxStyles, cxCustomData, cxGraphics, cxDataStorage,
+  cxEdit, DB, cxDBData, cxTextEdit, cxSpinEdit, sSkinProvider, sButton,
+  Buttons, sSpeedButton, cxGridLevel, cxGridCustomTableView,
   cxGridTableView, cxGridDBTableView, cxClasses, cxControls, cxGridCustomView,
-  cxGrid, ExtCtrls, sPanel, Mask, sMaskEdit, sCustomComboEdit, sTooledit, sLabel,
-  ComCtrls, sComboBox, cxCurrencyEdit;
+  cxGrid, ExtCtrls, sPanel, 
+  ComCtrls, cxCurrencyEdit, cxFilter, cxData, StdCtrls;
 
 const
   WM_AFTER_SHOW = WM_USER + 300; // custom message
@@ -61,7 +61,7 @@ var
 implementation
 
 uses
-  UMain, UDM, URegister, UDaftarHadir, UUser, UGajiTemplate;
+  UMain, UDM, UGajiTemplate;
 
 {$R *.dfm}
 

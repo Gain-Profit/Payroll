@@ -4,10 +4,10 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, sLabel, sEdit, sGroupBox, Buttons, sBitBtn, sButton, Mask,
-  sMaskEdit, sCustomComboEdit, ComCtrls, sStatusBar, sTooledit, cxControls,
-  cxContainer, cxEdit, cxImage, mySQLDbTables, db, Registry, sSkinProvider, jpeg,
-  ExtCtrls, sPanel, XPMan;
+  Dialogs, StdCtrls, sLabel, sEdit, sGroupBox, Buttons, sBitBtn, sButton, 
+  ComCtrls, sStatusBar, cxControls,
+  cxContainer, cxEdit, cxImage, db, sSkinProvider, 
+  ExtCtrls;
 
 type
   TFLogin = class(TForm)
@@ -145,7 +145,7 @@ begin
 
   Ed_Kd_User.setfocus;
 
-  sb.Panels[0].Text := dm.xConn.DatabaseName + '@' + dm.xConn.Host;
+  sb.Panels[0].Text := dm.xConn.Database + '@' + dm.xConn.Server;
 end;
 
 procedure TFLogin.Ed_PasswordKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);

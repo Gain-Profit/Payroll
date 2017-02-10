@@ -4,9 +4,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, MMSystem, sSkinProvider, ActnList, Menus, ComCtrls,
-  sTabControl, sStatusBar, Buttons, sSpeedButton, ExtCtrls, sPanel, sEdit,
-  sSpinEdit;
+  Dialogs, sSkinProvider, ActnList, Menus, ComCtrls,
+  sTabControl, sStatusBar, Buttons, sSpeedButton, ExtCtrls, sPanel;
 
 const
   WM_AFTER_SHOW = WM_USER + 300; // custom message
@@ -53,7 +52,7 @@ var
 implementation
 
 uses
-  URegister, UDaftarKaryawan, UDM, ULogin, UDaftarUser, UDaftarGaji,
+  UDaftarKaryawan, UDM, ULogin, UDaftarUser, UDaftarGaji,
   UDaftarGajiTemplate;
 
 {$R *.dfm}
@@ -128,7 +127,7 @@ begin
   cek_update;
   DM.metu_kabeh := False;
   sb.Panels[0].Text := program_versi;
-  sb.Panels[2].Text := dm.xConn.DatabaseName + '@' + dm.xConn.Host;
+  sb.Panels[2].Text := dm.xConn.Database + '@' + dm.xConn.Server;
 
   PostMessage(Self.Handle, WM_AFTER_SHOW, 0, 0);
 end;
@@ -219,7 +218,7 @@ begin
   versiDB           := dm.QShow.FieldByName('versi_terbaru').AsString;
   URLDownload       := dm.QShow.FieldByName('URLdownload').AsString;
   fileName          := Copy(URLDownload,LastDelimiter('/',URLDownload) + 1,Length(URLDownload));
-  UrlDownloadLocal  := 'http://'+dm.xConn.Host + '/GainProfit/' + fileName;
+  UrlDownloadLocal  := 'http://'+dm.xConn.Server + '/GainProfit/' + fileName;
 
   if versiAPP < versiDB then
   begin
