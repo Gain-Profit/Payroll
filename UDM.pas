@@ -3,31 +3,31 @@ unit UDM;
 interface
 
 uses
-  SysUtils, Classes, DB, mySQLDbTables, Dialogs, sSkinManager, IniFiles, Forms,
+  SysUtils, Classes, DB, Dialogs, sSkinManager, IniFiles, Forms,
   ImgList, Controls, acAlphaImageList, Windows, SHFolder, frxClass,
-  frxDBSet;
+  frxDBSet, MemDS, DBAccess, MyAccess;
 
 type
   TDM = class(TDataModule)
-    xConn: TmySQLDatabase;
-    Qexe: TmySQLQuery;
-    QShow: TmySQLQuery;
+    xConn: TMyConnection;
+    Qexe: TMyQuery;
+    QShow: TMyQuery;
     sm: TsSkinManager;
     image: TsAlphaImageList;
-    QKaryawan: TmySQLQuery;
+    QKaryawan: TMyQuery;
     dsKaryawan: TDataSource;
-    QUser: TmySQLQuery;
+    QUser: TMyQuery;
     dsUser: TDataSource;
-    QGaji: TmySQLQuery;
+    QGaji: TMyQuery;
     dsGaji: TDataSource;
-    QGajiTemp: TmySQLQuery;
+    QGajiTemp: TMyQuery;
     dsGajiTemp: TDataSource;
     laporan: TfrxReport;
     DbLaporan: TfrxDBDataset;
-    QLaporan: TmySQLQuery;
+    QLaporan: TMyQuery;
     procedure koneksikan;
     procedure DataModuleCreate(Sender: TObject);
-    procedure SQLExec(aQuery: TmySQLQuery; _SQL: string; isSearch: boolean);
+    procedure SQLExec(aQuery: TMyQuery; _SQL: string; isSearch: boolean);
   private
     _host, _db, _user, _password: string;
     _port: Integer;
@@ -55,7 +55,7 @@ begin
     Result := '';
 end;
 
-procedure Tdm.SQLExec(aQuery: TmySQLQuery; _SQL: string; isSearch: boolean);
+procedure Tdm.SQLExec(aQuery: TMyQuery; _SQL: string; isSearch: boolean);
 begin
   with aQuery do
   begin
@@ -106,12 +106,11 @@ begin
     with xConn do
     begin
       Connected := False;
-      Host := _host;
-      DatabaseName := _db;
+      Server := _host;
+      Database := _db;
       UserName := _user;
-      UserPassword := _password;
+      Password := _password;
       port := _port;
-      Connected := True;
     end;
   except
     showmessage('Tidak Terkoneksi ke database...');

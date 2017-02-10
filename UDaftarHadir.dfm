@@ -281,8 +281,8 @@ object FDaftarHadir: TFDaftarHadir
       end
     end
   end
-  object QDaftarHadir: TmySQLQuery
-    Database = DM.xConn
+  object QDaftarHadir: TMyQuery
+    Connection = DM.xConn
     Left = 8
     Top = 88
   end

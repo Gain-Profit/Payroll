@@ -5,29 +5,17 @@ object DM: TDM
   Top = 174
   Height = 415
   Width = 427
-  object xConn: TmySQLDatabase
-    DatabaseName = 'profit'
-    UserName = 'root'
-    UserPassword = 'server'
-    Host = 'localhost'
-    ConnectOptions = []
-    Params.Strings = (
-      'Port=3306'
-      'TIMEOUT=30'
-      'DatabaseName=profit'
-      'Host=localhost'
-      'UID=root'
-      'PWD=server')
+  object xConn: TMyConnection
     Left = 24
     Top = 16
   end
-  object Qexe: TmySQLQuery
-    Database = xConn
+  object Qexe: TMyQuery
+    Connection = xConn
     Left = 88
     Top = 16
   end
-  object QShow: TmySQLQuery
-    Database = xConn
+  object QShow: TMyQuery
+    Connection = xConn
     Left = 24
     Top = 72
   end
@@ -408,8 +396,8 @@ object DM: TDM
     Top = 72
     Bitmap = {}
   end
-  object QKaryawan: TmySQLQuery
-    Database = xConn
+  object QKaryawan: TMyQuery
+    Connection = xConn
     Left = 24
     Top = 136
   end
@@ -418,8 +406,8 @@ object DM: TDM
     Left = 88
     Top = 136
   end
-  object QUser: TmySQLQuery
-    Database = xConn
+  object QUser: TMyQuery
+    Connection = xConn
     Left = 24
     Top = 184
   end
@@ -428,8 +416,8 @@ object DM: TDM
     Left = 88
     Top = 184
   end
-  object QGaji: TmySQLQuery
-    Database = xConn
+  object QGaji: TMyQuery
+    Connection = xConn
     Left = 144
     Top = 136
   end
@@ -438,8 +426,8 @@ object DM: TDM
     Left = 208
     Top = 136
   end
-  object QGajiTemp: TmySQLQuery
-    Database = xConn
+  object QGajiTemp: TMyQuery
+    Connection = xConn
     Left = 144
     Top = 184
   end
@@ -477,8 +465,8 @@ object DM: TDM
     Left = 96
     Top = 304
   end
-  object QLaporan: TmySQLQuery
-    Database = xConn
+  object QLaporan: TMyQuery
+    Connection = xConn
     Left = 32
     Top = 304
   end

@@ -4,12 +4,13 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, cxStyles, cxCustomData, cxGraphics, cxFilter, cxData,
-  cxDataStorage, cxEdit, DB, cxDBData, mySQLDbTables, StdCtrls, sButton,
+  Dialogs, cxStyles, cxGraphics, 
+  cxDataStorage, cxEdit, DB, cxDBData, StdCtrls, 
   Buttons, sSpeedButton, ExtCtrls, sPanel, cxGridLevel,
   cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxClasses,
   cxControls, cxGridCustomView, cxGrid, sEdit, sLabel, Mask, sMaskEdit,
-  sCustomComboEdit, sTooledit;
+  sCustomComboEdit, sTooledit, MemDS, DBAccess, MyAccess, cxCustomData,
+  cxFilter, cxData;
 
 const
   WM_AFTER_SHOW = WM_USER + 300; // custom message
@@ -19,7 +20,7 @@ type
     pnlSamping: TsPanel;
     sb_2: TsSpeedButton;
     sb_1: TsSpeedButton;
-    QDaftarHadir: TmySQLQuery;
+    QDaftarHadir: TMyQuery;
     dsDaftarHadir: TDataSource;
     pnlUtama: TsPanel;
     grid: TcxGrid;
