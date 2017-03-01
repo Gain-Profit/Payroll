@@ -135,7 +135,7 @@ begin
   'keterangan AS keterangan FROM tb_checkinout ' +
   'WHERE user_id = "'+edID.Text+'"  AND date(checkin_time) >= '+
   quotedstr(FormatDateTime('yyyy-MM-dd',deMulai.Date))+' AND date(checkin_time) <= '+
-  quotedstr(FormatDateTime('yyyy-MM-dd',deSampai.Date))+'ORDER BY checkin_time DESC';
+  quotedstr(FormatDateTime('yyyy-MM-dd',deSampai.Date))+' ORDER BY checkin_time DESC';
   
   dm.SQLExec(QDaftarHadir, sql, true);
 end;
