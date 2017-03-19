@@ -37,6 +37,7 @@ object FDaftarUser: TFDaftarUser
       Align = alClient
       TabOrder = 0
       LookAndFeel.Kind = lfOffice11
+      LookAndFeel.NativeStyle = False
       object TvData: TcxGridDBTableView
         NavigatorButtons.ConfirmDelete = False
         OnCellDblClick = TvDataCellDblClick
