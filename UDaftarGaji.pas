@@ -9,7 +9,8 @@ uses
   Buttons, sSpeedButton, sEdit, cxGridLevel, cxGridCustomTableView,
   cxGridTableView, cxGridDBTableView, cxClasses, cxControls, cxGridCustomView,
   cxGrid, ExtCtrls, sPanel, sLabel,
-  ComCtrls, sComboBox, cxCurrencyEdit, cxFilter, cxData, StdCtrls;
+  ComCtrls, sComboBox, cxCurrencyEdit, cxFilter, cxData, StdCtrls,
+  cxLookAndFeels, cxLookAndFeelPainters, cxNavigator;
 
 const
   WM_AFTER_SHOW = WM_USER + 300; // custom message

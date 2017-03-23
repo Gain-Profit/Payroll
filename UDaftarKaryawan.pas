@@ -8,7 +8,8 @@ uses
   cxEdit, DB, cxDBData, cxTextEdit, cxSpinEdit, sSkinProvider, sButton,
   Buttons, sSpeedButton, cxGridLevel, cxGridCustomTableView,
   cxGridTableView, cxGridDBTableView, cxClasses, cxControls, cxGridCustomView,
-  cxGrid, ExtCtrls, sPanel, cxFilter, cxData, StdCtrls;
+  cxGrid, ExtCtrls, sPanel, cxFilter, cxData, StdCtrls, cxLookAndFeels,
+  cxLookAndFeelPainters, cxNavigator;
 
 const
   WM_AFTER_SHOW = WM_USER + 300; // custom message

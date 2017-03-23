@@ -39,7 +39,7 @@ object FDaftarGajiTemplate: TFDaftarGajiTemplate
       LookAndFeel.Kind = lfOffice11
       LookAndFeel.NativeStyle = False
       object TvData: TcxGridDBTableView
-        NavigatorButtons.ConfirmDelete = False
+        Navigator.Buttons.CustomButtons = <>
         OnCellDblClick = TvDataCellDblClick
         DataController.DataSource = DM.dsGajiTemp
         DataController.Summary.DefaultGroupSummaryItems = <
@@ -176,9 +176,8 @@ object FDaftarGajiTemplate: TFDaftarGajiTemplate
       OnClick = sbRefreshClick
       Align = alTop
       SkinData.SkinSection = 'TOOLBUTTON'
-      DisabledGlyphKind = []
-      ImageIndex = 4
       Images = DM.image
+      ImageIndex = 4
       Reflected = True
     end
     object sbKeluar: TsSpeedButton
@@ -200,9 +199,8 @@ object FDaftarGajiTemplate: TFDaftarGajiTemplate
       OnClick = sbKeluarClick
       Align = alTop
       SkinData.SkinSection = 'TOOLBUTTON'
-      DisabledGlyphKind = []
-      ImageIndex = 3
       Images = DM.image
+      ImageIndex = 3
       Reflected = True
     end
     object pnlButton: TsPanel
@@ -230,11 +228,6 @@ object FDaftarGajiTemplate: TFDaftarGajiTemplate
     end
   end
   object sSkinProvider1: TsSkinProvider
-    AddedTitle.Font.Charset = DEFAULT_CHARSET
-    AddedTitle.Font.Color = clNone
-    AddedTitle.Font.Height = -11
-    AddedTitle.Font.Name = 'MS Sans Serif'
-    AddedTitle.Font.Style = []
     SkinData.SkinSection = 'FORM'
     TitleButtons = <>
     Left = 8

@@ -24,7 +24,7 @@ object FDaftarHadir: TFDaftarHadir
     Left = 530
     Top = 0
     Width = 150
-    Height = 442
+    Height = 441
     Align = alRight
     BevelOuter = bvNone
     TabOrder = 0
@@ -48,9 +48,8 @@ object FDaftarHadir: TFDaftarHadir
       OnClick = sb_2Click
       Align = alTop
       SkinData.SkinSection = 'TOOLBUTTON'
-      DisabledGlyphKind = []
-      ImageIndex = 4
       Images = DM.image
+      ImageIndex = 4
       Reflected = True
     end
     object sb_1: TsSpeedButton
@@ -72,14 +71,13 @@ object FDaftarHadir: TFDaftarHadir
       OnClick = sb_1Click
       Align = alTop
       SkinData.SkinSection = 'TOOLBUTTON'
-      DisabledGlyphKind = []
-      ImageIndex = 3
       Images = DM.image
+      ImageIndex = 3
       Reflected = True
     end
     object p1: TsPanel
       Left = 0
-      Top = 352
+      Top = 351
       Width = 150
       Height = 90
       Align = alBottom
@@ -109,15 +107,6 @@ object FDaftarHadir: TFDaftarHadir
         MaxLength = 10
         TabOrder = 0
         Text = '  /  /    '
-        BoundLabel.Indent = 0
-        BoundLabel.Font.Charset = DEFAULT_CHARSET
-        BoundLabel.Font.Color = clWindowText
-        BoundLabel.Font.Height = -11
-        BoundLabel.Font.Name = 'MS Sans Serif'
-        BoundLabel.Font.Style = []
-        BoundLabel.Layout = sclLeft
-        BoundLabel.MaxWidth = 0
-        BoundLabel.UseSkinColor = True
         SkinData.SkinSection = 'EDIT'
         GlyphMode.Blend = 0
         GlyphMode.Grayed = False
@@ -132,15 +121,6 @@ object FDaftarHadir: TFDaftarHadir
         MaxLength = 10
         TabOrder = 1
         Text = '  /  /    '
-        BoundLabel.Indent = 0
-        BoundLabel.Font.Charset = DEFAULT_CHARSET
-        BoundLabel.Font.Color = clWindowText
-        BoundLabel.Font.Height = -11
-        BoundLabel.Font.Name = 'MS Sans Serif'
-        BoundLabel.Font.Style = []
-        BoundLabel.Layout = sclLeft
-        BoundLabel.MaxWidth = 0
-        BoundLabel.UseSkinColor = True
         SkinData.SkinSection = 'EDIT'
         GlyphMode.Blend = 0
         GlyphMode.Grayed = False
@@ -151,7 +131,7 @@ object FDaftarHadir: TFDaftarHadir
     Left = 0
     Top = 0
     Width = 530
-    Height = 442
+    Height = 441
     Align = alClient
     TabOrder = 1
     SkinData.SkinSection = 'PANEL'
@@ -159,13 +139,13 @@ object FDaftarHadir: TFDaftarHadir
       Left = 1
       Top = 65
       Width = 528
-      Height = 376
+      Height = 375
       Align = alClient
       TabOrder = 0
       LookAndFeel.Kind = lfOffice11
       LookAndFeel.NativeStyle = False
       object TvData: TcxGridDBTableView
-        NavigatorButtons.ConfirmDelete = False
+        Navigator.Buttons.CustomButtons = <>
         DataController.DataSource = dsDaftarHadir
         DataController.Summary.DefaultGroupSummaryItems = <
           item
@@ -252,15 +232,6 @@ object FDaftarHadir: TFDaftarHadir
         ReadOnly = True
         TabOrder = 0
         SkinData.SkinSection = 'EDIT'
-        BoundLabel.Indent = 0
-        BoundLabel.Font.Charset = DEFAULT_CHARSET
-        BoundLabel.Font.Color = clWindowText
-        BoundLabel.Font.Height = -11
-        BoundLabel.Font.Name = 'MS Sans Serif'
-        BoundLabel.Font.Style = []
-        BoundLabel.Layout = sclLeft
-        BoundLabel.MaxWidth = 0
-        BoundLabel.UseSkinColor = True
       end
       object edNama: TsEdit
         Left = 96
@@ -270,15 +241,6 @@ object FDaftarHadir: TFDaftarHadir
         ReadOnly = True
         TabOrder = 1
         SkinData.SkinSection = 'EDIT'
-        BoundLabel.Indent = 0
-        BoundLabel.Font.Charset = DEFAULT_CHARSET
-        BoundLabel.Font.Color = clWindowText
-        BoundLabel.Font.Height = -11
-        BoundLabel.Font.Name = 'MS Sans Serif'
-        BoundLabel.Font.Style = []
-        BoundLabel.Layout = sclLeft
-        BoundLabel.MaxWidth = 0
-        BoundLabel.UseSkinColor = True
       end
     end
   end

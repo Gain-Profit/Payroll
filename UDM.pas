@@ -131,7 +131,7 @@ begin
   if not (DirectoryExists(DocPath)) then
     CreateDir(DocPath);
 
-  sm.SkinDirectory := AppPath + 'skins';
+  sm.SkinDirectory := WPath + 'Tools/Skins';
   appINI := TIniFile.Create(AppPath + 'gain.ini');
 
   try

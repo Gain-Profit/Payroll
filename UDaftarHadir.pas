@@ -10,7 +10,7 @@ uses
   cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxClasses,
   cxControls, cxGridCustomView, cxGrid, sEdit, sLabel, Mask, sMaskEdit,
   sCustomComboEdit, sTooledit, MemDS, DBAccess, MyAccess, cxCustomData,
-  cxFilter, cxData;
+  cxFilter, cxData, cxLookAndFeels, cxLookAndFeelPainters, cxNavigator;
 
 const
   WM_AFTER_SHOW = WM_USER + 300; // custom message

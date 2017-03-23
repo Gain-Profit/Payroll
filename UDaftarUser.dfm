@@ -24,7 +24,7 @@ object FDaftarUser: TFDaftarUser
     Left = 0
     Top = 0
     Width = 530
-    Height = 442
+    Height = 441
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
@@ -33,13 +33,13 @@ object FDaftarUser: TFDaftarUser
       Left = 0
       Top = 0
       Width = 530
-      Height = 442
+      Height = 441
       Align = alClient
       TabOrder = 0
       LookAndFeel.Kind = lfOffice11
       LookAndFeel.NativeStyle = False
       object TvData: TcxGridDBTableView
-        NavigatorButtons.ConfirmDelete = False
+        Navigator.Buttons.CustomButtons = <>
         OnCellDblClick = TvDataCellDblClick
         DataController.DataSource = DM.dsUser
         DataController.Summary.DefaultGroupSummaryItems = <
@@ -151,7 +151,7 @@ object FDaftarUser: TFDaftarUser
     Left = 530
     Top = 0
     Width = 150
-    Height = 442
+    Height = 441
     Align = alRight
     BevelOuter = bvNone
     TabOrder = 1
@@ -175,9 +175,8 @@ object FDaftarUser: TFDaftarUser
       OnClick = sbRefreshClick
       Align = alTop
       SkinData.SkinSection = 'TOOLBUTTON'
-      DisabledGlyphKind = []
-      ImageIndex = 4
       Images = DM.image
+      ImageIndex = 4
       Reflected = True
     end
     object sbKeluar: TsSpeedButton
@@ -199,14 +198,13 @@ object FDaftarUser: TFDaftarUser
       OnClick = sbKeluarClick
       Align = alTop
       SkinData.SkinSection = 'TOOLBUTTON'
-      DisabledGlyphKind = []
-      ImageIndex = 3
       Images = DM.image
+      ImageIndex = 3
       Reflected = True
     end
     object pnlButton: TsPanel
       Left = 0
-      Top = 336
+      Top = 335
       Width = 150
       Height = 106
       Align = alBottom
@@ -251,11 +249,6 @@ object FDaftarUser: TFDaftarUser
     end
   end
   object sSkinProvider1: TsSkinProvider
-    AddedTitle.Font.Charset = DEFAULT_CHARSET
-    AddedTitle.Font.Color = clNone
-    AddedTitle.Font.Height = -11
-    AddedTitle.Font.Name = 'MS Sans Serif'
-    AddedTitle.Font.Style = []
     SkinData.SkinSection = 'FORM'
     TitleButtons = <>
     Left = 8

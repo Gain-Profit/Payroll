@@ -39,7 +39,7 @@ object FDaftarGaji: TFDaftarGaji
       LookAndFeel.Kind = lfOffice11
       LookAndFeel.NativeStyle = False
       object TvData: TcxGridDBTableView
-        NavigatorButtons.ConfirmDelete = False
+        Navigator.Buttons.CustomButtons = <>
         OnCellDblClick = TvDataCellDblClick
         DataController.DataSource = DM.dsGaji
         DataController.Summary.DefaultGroupSummaryItems = <
@@ -148,9 +148,8 @@ object FDaftarGaji: TFDaftarGaji
       OnClick = sbRefreshClick
       Align = alTop
       SkinData.SkinSection = 'TOOLBUTTON'
-      DisabledGlyphKind = []
-      ImageIndex = 4
       Images = DM.image
+      ImageIndex = 4
       Reflected = True
     end
     object sbKeluar: TsSpeedButton
@@ -172,9 +171,8 @@ object FDaftarGaji: TFDaftarGaji
       OnClick = sbKeluarClick
       Align = alTop
       SkinData.SkinSection = 'TOOLBUTTON'
-      DisabledGlyphKind = []
-      ImageIndex = 3
       Images = DM.image
+      ImageIndex = 3
       Reflected = True
     end
     object pnlPeriode: TsPanel
@@ -203,20 +201,12 @@ object FDaftarGaji: TFDaftarGaji
         Left = 8
         Top = 24
         Width = 137
-        Height = 22
+        Height = 21
         Alignment = taLeftJustify
-        BoundLabel.Indent = 0
-        BoundLabel.Font.Charset = DEFAULT_CHARSET
-        BoundLabel.Font.Color = clWindowText
-        BoundLabel.Font.Height = -11
-        BoundLabel.Font.Name = 'MS Sans Serif'
-        BoundLabel.Font.Style = []
-        BoundLabel.Layout = sclLeft
-        BoundLabel.MaxWidth = 0
-        BoundLabel.UseSkinColor = True
         SkinData.SkinSection = 'COMBOBOX'
+        VerticalAlignment = taAlignTop
         Style = csDropDownList
-        ItemHeight = 16
+        ItemHeight = 13
         ItemIndex = -1
         TabOrder = 0
         Items.Strings = (
@@ -240,15 +230,6 @@ object FDaftarGaji: TFDaftarGaji
         Height = 21
         TabOrder = 1
         SkinData.SkinSection = 'EDIT'
-        BoundLabel.Indent = 0
-        BoundLabel.Font.Charset = DEFAULT_CHARSET
-        BoundLabel.Font.Color = clWindowText
-        BoundLabel.Font.Height = -11
-        BoundLabel.Font.Name = 'MS Sans Serif'
-        BoundLabel.Font.Style = []
-        BoundLabel.Layout = sclLeft
-        BoundLabel.MaxWidth = 0
-        BoundLabel.UseSkinColor = True
       end
     end
     object pnlButton: TsPanel
@@ -287,11 +268,6 @@ object FDaftarGaji: TFDaftarGaji
     end
   end
   object sSkinProvider1: TsSkinProvider
-    AddedTitle.Font.Charset = DEFAULT_CHARSET
-    AddedTitle.Font.Color = clNone
-    AddedTitle.Font.Height = -11
-    AddedTitle.Font.Name = 'MS Sans Serif'
-    AddedTitle.Font.Style = []
     SkinData.SkinSection = 'FORM'
     TitleButtons = <>
     Left = 8
