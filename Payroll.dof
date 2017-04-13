@@ -112,9 +112,9 @@ RootDir=C:\Program Files (x86)\Borland\Delphi7\Bin\
 [Version Info]
 IncludeVerInfo=1
 AutoIncBuild=0
-MajorVer=1
-MinorVer=2
-Release=7
+MajorVer=17
+MinorVer=4
+Release=13
 Build=0
 Debug=0
 PreRelease=0
@@ -126,7 +126,7 @@ CodePage=1252
 [Version Info Keys]
 CompanyName=Gain-Profit
 FileDescription=
-FileVersion=1.2.7.0
+FileVersion=17.4.13.0
 InternalName=Payroll
 LegalCopyright=
 LegalTrademarks=
