@@ -1,9 +1,9 @@
 object FMain: TFMain
   Left = 168
   Top = 108
-  Width = 808
-  Height = 579
   Caption = 'Penggajian'
+  ClientHeight = 350
+  ClientWidth = 613
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -21,20 +21,21 @@ object FMain: TFMain
   object sCoolBar1: TsPanel
     Left = 0
     Top = 0
-    Width = 792
+    Width = 613
     Height = 81
     Align = alTop
     BorderWidth = 5
-    ParentBackground = True
     ParentColor = True
     TabOrder = 0
     SkinData.SkinSection = 'TOOLBAR'
+    ExplicitWidth = 116
     object sbKeluar: TsSpeedButton
-      Left = 640
+      Left = 461
       Top = 6
       Width = 146
       Height = 69
       Cursor = crHandPoint
+      Align = alRight
       Caption = 'Keluar'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
@@ -46,12 +47,11 @@ object FMain: TFMain
       ParentFont = False
       Spacing = 0
       OnClick = sbKeluarClick
-      Align = alRight
       SkinData.SkinSection = 'TOOLBUTTON'
-      DisabledGlyphKind = []
-      ImageIndex = 2
       Images = DM.image
+      ImageIndex = 2
       Reflected = True
+      ExplicitLeft = 640
     end
     object sSpeedButton1: TsSpeedButton
       Left = 6
@@ -59,6 +59,7 @@ object FMain: TFMain
       Width = 130
       Height = 69
       Cursor = crHandPoint
+      Align = alLeft
       Caption = 'Master Data'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
@@ -69,12 +70,11 @@ object FMain: TFMain
       Layout = blGlyphTop
       ParentFont = False
       Spacing = 0
-      Align = alLeft
       ButtonStyle = tbsDropDown
       SkinData.SkinSection = 'TOOLBUTTON'
       DropdownMenu = pmMasterData
-      ImageIndex = 0
       Images = DM.image
+      ImageIndex = 0
       Reflected = True
     end
     object sSpeedButton2: TsSpeedButton
@@ -83,6 +83,7 @@ object FMain: TFMain
       Width = 130
       Height = 69
       Cursor = crHandPoint
+      Align = alLeft
       Caption = 'Penggajian'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
@@ -93,19 +94,18 @@ object FMain: TFMain
       Layout = blGlyphTop
       ParentFont = False
       Spacing = 0
-      Align = alLeft
       ButtonStyle = tbsDropDown
       SkinData.SkinSection = 'TOOLBUTTON'
       DropdownMenu = pmPenggajian
-      ImageIndex = 1
       Images = DM.image
+      ImageIndex = 1
       Reflected = True
     end
   end
   object sb: TsStatusBar
     Left = 0
-    Top = 516
-    Width = 792
+    Top = 325
+    Width = 613
     Height = 25
     Hint = 'Double Klick Untuk Mengganti Periode Akun'
     Panels = <
@@ -130,11 +130,13 @@ object FMain: TFMain
     ParentShowHint = False
     ShowHint = True
     SkinData.SkinSection = 'STATUSBAR'
+    ExplicitTop = -25
+    ExplicitWidth = 116
   end
   object tc_child: TsTabControl
     Left = 0
     Top = 81
-    Width = 792
+    Width = 613
     Height = 24
     Cursor = crHandPoint
     Align = alTop
@@ -143,6 +145,7 @@ object FMain: TFMain
     Visible = False
     OnChange = tc_childChange
     SkinData.SkinSection = 'PAGECONTROL'
+    ExplicitWidth = 116
   end
   object sSkinProvider1: TsSkinProvider
     AddedTitle.Font.Charset = DEFAULT_CHARSET

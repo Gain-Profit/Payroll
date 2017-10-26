@@ -1,9 +1,9 @@
 object FDaftarGaji: TFDaftarGaji
   Left = 192
   Top = 124
-  Width = 696
-  Height = 480
   Caption = 'Daftar Gaji'
+  ClientHeight = 359
+  ClientWidth = 709
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -23,21 +23,25 @@ object FDaftarGaji: TFDaftarGaji
   object sPanel2: TsPanel
     Left = 0
     Top = 0
-    Width = 530
-    Height = 441
+    Width = 559
+    Height = 359
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
     SkinData.SkinSection = 'CHECKBOX'
+    ExplicitWidth = 530
+    ExplicitHeight = 0
     object grid: TcxGrid
       Left = 0
       Top = 0
-      Width = 530
-      Height = 441
+      Width = 559
+      Height = 359
       Align = alClient
       TabOrder = 0
       LookAndFeel.Kind = lfOffice11
       LookAndFeel.NativeStyle = False
+      ExplicitWidth = 530
+      ExplicitHeight = 0
       object TvData: TcxGridDBTableView
         Navigator.Buttons.CustomButtons = <>
         OnCellDblClick = TvDataCellDblClick
@@ -121,20 +125,23 @@ object FDaftarGaji: TFDaftarGaji
     end
   end
   object sPanel1: TsPanel
-    Left = 530
+    Left = 559
     Top = 0
     Width = 150
-    Height = 441
+    Height = 359
     Align = alRight
     BevelOuter = bvNone
     TabOrder = 1
     SkinData.SkinSection = 'PANEL'
+    ExplicitLeft = -34
+    ExplicitHeight = 0
     object sbRefresh: TsSpeedButton
       Left = 0
       Top = 90
       Width = 150
       Height = 90
       Cursor = crHandPoint
+      Align = alTop
       Caption = 'Refresh'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
@@ -146,7 +153,6 @@ object FDaftarGaji: TFDaftarGaji
       ParentFont = False
       Spacing = 0
       OnClick = sbRefreshClick
-      Align = alTop
       SkinData.SkinSection = 'TOOLBUTTON'
       Images = DM.image
       ImageIndex = 4
@@ -158,6 +164,7 @@ object FDaftarGaji: TFDaftarGaji
       Width = 150
       Height = 90
       Cursor = crHandPoint
+      Align = alTop
       Caption = 'Selesai'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
@@ -169,7 +176,6 @@ object FDaftarGaji: TFDaftarGaji
       ParentFont = False
       Spacing = 0
       OnClick = sbKeluarClick
-      Align = alTop
       SkinData.SkinSection = 'TOOLBUTTON'
       Images = DM.image
       ImageIndex = 3
@@ -177,12 +183,13 @@ object FDaftarGaji: TFDaftarGaji
     end
     object pnlPeriode: TsPanel
       Left = 0
-      Top = 335
+      Top = 253
       Width = 150
       Height = 106
       Align = alBottom
       TabOrder = 0
       SkinData.SkinSection = 'PANEL'
+      ExplicitTop = -106
       object l_1: TsLabel
         Left = 4
         Top = 5
@@ -206,7 +213,6 @@ object FDaftarGaji: TFDaftarGaji
         SkinData.SkinSection = 'COMBOBOX'
         VerticalAlignment = taAlignTop
         Style = csDropDownList
-        ItemHeight = 13
         ItemIndex = -1
         TabOrder = 0
         Items.Strings = (
@@ -234,12 +240,13 @@ object FDaftarGaji: TFDaftarGaji
     end
     object pnlButton: TsPanel
       Left = 0
-      Top = 263
+      Top = 181
       Width = 150
       Height = 72
       Align = alBottom
       TabOrder = 1
       SkinData.SkinSection = 'PANEL'
+      ExplicitTop = -178
       DesignSize = (
         150
         72)

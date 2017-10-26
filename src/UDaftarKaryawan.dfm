@@ -1,9 +1,9 @@
-object FDaftarUser: TFDaftarUser
+object FDaftarKaryawan: TFDaftarKaryawan
   Left = 192
   Top = 124
-  Width = 696
-  Height = 480
-  Caption = 'Daftar User'
+  Caption = 'Daftar Karyawan'
+  ClientHeight = 442
+  ClientWidth = 680
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -24,11 +24,12 @@ object FDaftarUser: TFDaftarUser
     Left = 0
     Top = 0
     Width = 530
-    Height = 441
+    Height = 442
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
     SkinData.SkinSection = 'CHECKBOX'
+    ExplicitHeight = 441
     object grid: TcxGrid
       Left = 0
       Top = 0
@@ -41,7 +42,8 @@ object FDaftarUser: TFDaftarUser
       object TvData: TcxGridDBTableView
         Navigator.Buttons.CustomButtons = <>
         OnCellDblClick = TvDataCellDblClick
-        DataController.DataSource = DM.dsUser
+        OnCustomDrawCell = TvDataCustomDrawCell
+        DataController.DataSource = DM.dsKaryawan
         DataController.Summary.DefaultGroupSummaryItems = <
           item
             Kind = skCount
@@ -49,7 +51,7 @@ object FDaftarUser: TFDaftarUser
           end>
         DataController.Summary.FooterSummaryItems = <
           item
-            Format = '###,##0 User'
+            Format = '###,##0 Karyawan'
             Kind = skCount
             Column = TvDatan_user
           end>
@@ -70,76 +72,25 @@ object FDaftarUser: TFDaftarUser
         object TvDatakd_user: TcxGridDBColumn
           Caption = 'Id Karyawan'
           DataBinding.FieldName = 'kd_user'
-          Width = 45
+          Width = 64
         end
         object TvDatan_user: TcxGridDBColumn
           Caption = 'Nama Karyawan'
           DataBinding.FieldName = 'n_user'
-          Width = 150
-        end
-        object TvDatajabatan: TcxGridDBColumn
-          Caption = 'Jabatan'
-          DataBinding.FieldName = 'jabatan'
-          Width = 86
-        end
-        object TvDatapendidikan: TcxGridDBColumn
-          Caption = 'Pendidikan'
-          DataBinding.FieldName = 'pendidikan'
-          Visible = False
-          Width = 43
-        end
-        object TvDatasex: TcxGridDBColumn
-          Caption = 'Jenis Kelamin'
-          DataBinding.FieldName = 'sex'
-          Visible = False
-          Width = 56
-        end
-        object TvDataTanggalLahir: TcxGridDBColumn
-          Caption = 'Tanggal Lahir'
-          DataBinding.FieldName = 'tanggal_lahir'
-          Visible = False
+          Width = 245
         end
         object TvDataAlamat: TcxGridDBColumn
           DataBinding.FieldName = 'Alamat'
-          Width = 127
+          Width = 135
         end
         object TvDataKontak: TcxGridDBColumn
-          Caption = 'Telp/HP'
           DataBinding.FieldName = 'Kontak'
-          Width = 87
+          Width = 114
         end
-        object TvDataemail: TcxGridDBColumn
-          Caption = 'Email'
-          DataBinding.FieldName = 'email'
-          Visible = False
-          Width = 60
-        end
-        object TvDataRekening: TcxGridDBColumn
-          Caption = 'Rekening'
-          DataBinding.FieldName = 'rekening'
-          Visible = False
-          Width = 60
-        end
-        object TvDatakawin: TcxGridDBColumn
-          Caption = 'Kawin'
-          DataBinding.FieldName = 'kawin'
-          Visible = False
-        end
-        object TvDataTanggal_masuk: TcxGridDBColumn
-          Caption = 'Tanggal Masuk'
-          DataBinding.FieldName = 'tanggal_masuk'
-          Width = 76
-        end
-        object TvDataTanggal_Keluar: TcxGridDBColumn
-          Caption = 'Tanggal Keluar'
-          DataBinding.FieldName = 'tanggal_keluar'
-          Visible = False
-          Width = 91
-        end
-        object TvDataAktif: TcxGridDBColumn
-          Caption = 'Aktif'
-          DataBinding.FieldName = 'aktif'
-          Width = 45
+        object TvDataCheckClock: TcxGridDBColumn
+          Caption = 'Check Clock'
+          DataBinding.FieldName = 'CheckClock'
+          Width = 114
         end
       end
       object lvData: TcxGridLevel
@@ -151,17 +102,19 @@ object FDaftarUser: TFDaftarUser
     Left = 530
     Top = 0
     Width = 150
-    Height = 441
+    Height = 442
     Align = alRight
     BevelOuter = bvNone
     TabOrder = 1
     SkinData.SkinSection = 'PANEL'
-    object sbRefresh: TsSpeedButton
+    ExplicitHeight = 441
+    object sb_2: TsSpeedButton
       Left = 0
       Top = 90
       Width = 150
       Height = 90
       Cursor = crHandPoint
+      Align = alTop
       Caption = 'Refresh'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
@@ -172,19 +125,19 @@ object FDaftarUser: TFDaftarUser
       Layout = blGlyphTop
       ParentFont = False
       Spacing = 0
-      OnClick = sbRefreshClick
-      Align = alTop
+      OnClick = sb_2Click
       SkinData.SkinSection = 'TOOLBUTTON'
       Images = DM.image
       ImageIndex = 4
       Reflected = True
     end
-    object sbKeluar: TsSpeedButton
+    object sb_1: TsSpeedButton
       Left = 0
       Top = 0
       Width = 150
       Height = 90
       Cursor = crHandPoint
+      Align = alTop
       Caption = 'Selesai'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
@@ -195,55 +148,43 @@ object FDaftarUser: TFDaftarUser
       Layout = blGlyphTop
       ParentFont = False
       Spacing = 0
-      OnClick = sbKeluarClick
-      Align = alTop
+      OnClick = sb_1Click
       SkinData.SkinSection = 'TOOLBUTTON'
       Images = DM.image
       ImageIndex = 3
       Reflected = True
     end
-    object pnlButton: TsPanel
+    object spnl1: TsPanel
       Left = 0
-      Top = 335
+      Top = 351
       Width = 150
-      Height = 106
+      Height = 90
       Align = alBottom
       TabOrder = 0
       SkinData.SkinSection = 'PANEL'
       DesignSize = (
         150
-        106)
-      object btntambah: TsButton
+        90)
+      object btnRegister: TsButton
+        Left = 6
+        Top = 41
+        Width = 136
+        Height = 40
+        Anchors = [akBottom]
+        Caption = '&Register'#13#10'Sidik Jari'
+        TabOrder = 0
+        OnClick = btnRegisterClick
+        SkinData.SkinSection = 'BUTTON'
+      end
+      object btnDaftarHadir: TsButton
         Left = 6
         Top = 9
         Width = 136
         Height = 25
         Anchors = [akBottom]
-        Caption = '&Tambah Data'
-        TabOrder = 0
-        OnClick = btntambahClick
-        SkinData.SkinSection = 'BUTTON'
-      end
-      object btnEdit: TsButton
-        Left = 6
-        Top = 41
-        Width = 136
-        Height = 25
-        Anchors = [akBottom]
-        Caption = '&Ubah Data'
+        Caption = 'Daftar Hadir'
         TabOrder = 1
-        OnClick = btnEditClick
-        SkinData.SkinSection = 'BUTTON'
-      end
-      object btnDuplikat: TsButton
-        Left = 6
-        Top = 73
-        Width = 136
-        Height = 25
-        Anchors = [akBottom]
-        Caption = '&Duplikat Data'
-        TabOrder = 2
-        OnClick = btnDuplikatClick
+        OnClick = btnDaftarHadirClick
         SkinData.SkinSection = 'BUTTON'
       end
     end

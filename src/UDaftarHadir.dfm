@@ -1,9 +1,9 @@
 object FDaftarHadir: TFDaftarHadir
   Left = 192
   Top = 124
-  Width = 696
-  Height = 480
   Caption = 'Daftar Hadir'
+  ClientHeight = 363
+  ClientWidth = 714
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -21,20 +21,23 @@ object FDaftarHadir: TFDaftarHadir
   PixelsPerInch = 96
   TextHeight = 13
   object pnlSamping: TsPanel
-    Left = 530
+    Left = 564
     Top = 0
     Width = 150
-    Height = 441
+    Height = 363
     Align = alRight
     BevelOuter = bvNone
     TabOrder = 0
     SkinData.SkinSection = 'PANEL'
+    ExplicitLeft = -34
+    ExplicitHeight = 0
     object sb_2: TsSpeedButton
       Left = 0
       Top = 90
       Width = 150
       Height = 90
       Cursor = crHandPoint
+      Align = alTop
       Caption = 'Refresh'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
@@ -46,7 +49,6 @@ object FDaftarHadir: TFDaftarHadir
       ParentFont = False
       Spacing = 0
       OnClick = sb_2Click
-      Align = alTop
       SkinData.SkinSection = 'TOOLBUTTON'
       Images = DM.image
       ImageIndex = 4
@@ -58,6 +60,7 @@ object FDaftarHadir: TFDaftarHadir
       Width = 150
       Height = 90
       Cursor = crHandPoint
+      Align = alTop
       Caption = 'Selesai'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
@@ -69,7 +72,6 @@ object FDaftarHadir: TFDaftarHadir
       ParentFont = False
       Spacing = 0
       OnClick = sb_1Click
-      Align = alTop
       SkinData.SkinSection = 'TOOLBUTTON'
       Images = DM.image
       ImageIndex = 3
@@ -77,12 +79,13 @@ object FDaftarHadir: TFDaftarHadir
     end
     object p1: TsPanel
       Left = 0
-      Top = 351
+      Top = 273
       Width = 150
       Height = 90
       Align = alBottom
       TabOrder = 0
       SkinData.SkinSection = 'PANEL'
+      ExplicitTop = -90
       object l_1: TsLabel
         Left = 4
         Top = 5
@@ -108,8 +111,8 @@ object FDaftarHadir: TFDaftarHadir
         TabOrder = 0
         Text = '  /  /    '
         SkinData.SkinSection = 'EDIT'
-        GlyphMode.Blend = 0
         GlyphMode.Grayed = False
+        GlyphMode.Blend = 0
       end
       object deSampai: TsDateEdit
         Left = 4
@@ -122,28 +125,32 @@ object FDaftarHadir: TFDaftarHadir
         TabOrder = 1
         Text = '  /  /    '
         SkinData.SkinSection = 'EDIT'
-        GlyphMode.Blend = 0
         GlyphMode.Grayed = False
+        GlyphMode.Blend = 0
       end
     end
   end
   object pnlUtama: TsPanel
     Left = 0
     Top = 0
-    Width = 530
-    Height = 441
+    Width = 564
+    Height = 363
     Align = alClient
     TabOrder = 1
     SkinData.SkinSection = 'PANEL'
+    ExplicitWidth = 530
+    ExplicitHeight = 0
     object grid: TcxGrid
       Left = 1
       Top = 65
-      Width = 528
-      Height = 375
+      Width = 562
+      Height = 297
       Align = alClient
       TabOrder = 0
       LookAndFeel.Kind = lfOffice11
       LookAndFeel.NativeStyle = False
+      ExplicitWidth = 528
+      ExplicitHeight = 375
       object TvData: TcxGridDBTableView
         Navigator.Buttons.CustomButtons = <>
         DataController.DataSource = dsDaftarHadir
@@ -205,11 +212,12 @@ object FDaftarHadir: TFDaftarHadir
     object pnlAtas: TsPanel
       Left = 1
       Top = 1
-      Width = 528
+      Width = 562
       Height = 64
       Align = alTop
       TabOrder = 1
       SkinData.SkinSection = 'PANEL'
+      ExplicitWidth = 528
       object lbl1: TsLabel
         Left = 8
         Top = 8

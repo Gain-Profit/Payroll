@@ -1,9 +1,9 @@
-object FDaftarKaryawan: TFDaftarKaryawan
+object FDaftarGajiTemplate: TFDaftarGajiTemplate
   Left = 192
   Top = 124
-  Width = 696
-  Height = 480
-  Caption = 'Daftar Karyawan'
+  Caption = 'Daftar Template Gaji'
+  ClientHeight = 365
+  ClientWidth = 714
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -23,26 +23,29 @@ object FDaftarKaryawan: TFDaftarKaryawan
   object sPanel2: TsPanel
     Left = 0
     Top = 0
-    Width = 530
-    Height = 441
+    Width = 564
+    Height = 365
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
     SkinData.SkinSection = 'CHECKBOX'
+    ExplicitWidth = 530
+    ExplicitHeight = 0
     object grid: TcxGrid
       Left = 0
       Top = 0
-      Width = 530
-      Height = 441
+      Width = 564
+      Height = 365
       Align = alClient
       TabOrder = 0
       LookAndFeel.Kind = lfOffice11
       LookAndFeel.NativeStyle = False
+      ExplicitWidth = 530
+      ExplicitHeight = 0
       object TvData: TcxGridDBTableView
         Navigator.Buttons.CustomButtons = <>
         OnCellDblClick = TvDataCellDblClick
-        OnCustomDrawCell = TvDataCustomDrawCell
-        DataController.DataSource = DM.dsKaryawan
+        DataController.DataSource = DM.dsGajiTemp
         DataController.Summary.DefaultGroupSummaryItems = <
           item
             Kind = skCount
@@ -50,9 +53,20 @@ object FDaftarKaryawan: TFDaftarKaryawan
           end>
         DataController.Summary.FooterSummaryItems = <
           item
-            Format = '###,##0 Karyawan'
-            Kind = skCount
-            Column = TvDatan_user
+            Format = '###,###,##0;(###,###,##0);0'
+            Kind = skSum
+          end
+          item
+            Format = '###,###,##0;(###,###,##0);0'
+            Kind = skSum
+          end
+          item
+            Format = '###,###,##0;(###,###,##0);0'
+            Kind = skSum
+          end
+          item
+            Format = '###,###,##0;(###,###,##0);0'
+            Kind = skSum
           end>
         DataController.Summary.SummaryGroups = <>
         OptionsBehavior.CellHints = True
@@ -71,25 +85,66 @@ object FDaftarKaryawan: TFDaftarKaryawan
         object TvDatakd_user: TcxGridDBColumn
           Caption = 'Id Karyawan'
           DataBinding.FieldName = 'kd_user'
-          Width = 64
+          Width = 45
         end
         object TvDatan_user: TcxGridDBColumn
           Caption = 'Nama Karyawan'
           DataBinding.FieldName = 'n_user'
-          Width = 245
+          Width = 150
         end
-        object TvDataAlamat: TcxGridDBColumn
-          DataBinding.FieldName = 'Alamat'
-          Width = 135
+        object TvDatapokok: TcxGridDBColumn
+          Caption = 'Pokok'
+          DataBinding.FieldName = 'pokok'
+          PropertiesClassName = 'TcxCurrencyEditProperties'
+          Properties.DisplayFormat = '###,###,##0;(###,###,##0);0'
         end
-        object TvDataKontak: TcxGridDBColumn
-          DataBinding.FieldName = 'Kontak'
-          Width = 114
+        object TvDatajam_hadir: TcxGridDBColumn
+          Caption = 'Jam Hadir'
+          DataBinding.FieldName = 'jam_hadir'
+          PropertiesClassName = 'TcxCurrencyEditProperties'
+          Properties.DisplayFormat = '###,###,##0;(###,###,##0);0'
         end
-        object TvDataCheckClock: TcxGridDBColumn
-          Caption = 'Check Clock'
-          DataBinding.FieldName = 'CheckClock'
-          Width = 114
+        object TvDatatransport: TcxGridDBColumn
+          Caption = 'Transport'
+          DataBinding.FieldName = 'transport'
+          PropertiesClassName = 'TcxCurrencyEditProperties'
+          Properties.DisplayFormat = '###,###,##0;(###,###,##0);0'
+        end
+        object TvDatakonsumsi: TcxGridDBColumn
+          Caption = 'Konsumsi'
+          DataBinding.FieldName = 'konsumsi'
+          PropertiesClassName = 'TcxCurrencyEditProperties'
+          Properties.DisplayFormat = '###,###,##0;(###,###,##0);0'
+        end
+        object TvDatajabatan: TcxGridDBColumn
+          Caption = 'Jabatan'
+          DataBinding.FieldName = 'jabatan'
+          PropertiesClassName = 'TcxCurrencyEditProperties'
+          Properties.DisplayFormat = '###,###,##0;(###,###,##0);0'
+        end
+        object TvDatamasa_kerja: TcxGridDBColumn
+          Caption = 'Masa Kerja'
+          DataBinding.FieldName = 'masa_kerja'
+          PropertiesClassName = 'TcxCurrencyEditProperties'
+          Properties.DisplayFormat = '###,###,##0;(###,###,##0);0'
+        end
+        object TvDatakesehatan: TcxGridDBColumn
+          Caption = 'Kesehatan'
+          DataBinding.FieldName = 'kesehatan'
+          PropertiesClassName = 'TcxCurrencyEditProperties'
+          Properties.DisplayFormat = '###,###,##0;(###,###,##0);0'
+        end
+        object TvDataangsuran_duta: TcxGridDBColumn
+          Caption = 'Angsuran Duta'
+          DataBinding.FieldName = 'angsuran_duta'
+          PropertiesClassName = 'TcxCurrencyEditProperties'
+          Properties.DisplayFormat = '###,###,##0;(###,###,##0);0'
+        end
+        object TvDataangsuran_bank: TcxGridDBColumn
+          Caption = 'Angsuran Bank'
+          DataBinding.FieldName = 'angsuran_bank'
+          PropertiesClassName = 'TcxCurrencyEditProperties'
+          Properties.DisplayFormat = '###,###,##0;(###,###,##0);0'
         end
       end
       object lvData: TcxGridLevel
@@ -98,20 +153,23 @@ object FDaftarKaryawan: TFDaftarKaryawan
     end
   end
   object sPanel1: TsPanel
-    Left = 530
+    Left = 564
     Top = 0
     Width = 150
-    Height = 441
+    Height = 365
     Align = alRight
     BevelOuter = bvNone
     TabOrder = 1
     SkinData.SkinSection = 'PANEL'
-    object sb_2: TsSpeedButton
+    ExplicitLeft = -34
+    ExplicitHeight = 0
+    object sbRefresh: TsSpeedButton
       Left = 0
       Top = 90
       Width = 150
       Height = 90
       Cursor = crHandPoint
+      Align = alTop
       Caption = 'Refresh'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
@@ -122,19 +180,19 @@ object FDaftarKaryawan: TFDaftarKaryawan
       Layout = blGlyphTop
       ParentFont = False
       Spacing = 0
-      OnClick = sb_2Click
-      Align = alTop
+      OnClick = sbRefreshClick
       SkinData.SkinSection = 'TOOLBUTTON'
       Images = DM.image
       ImageIndex = 4
       Reflected = True
     end
-    object sb_1: TsSpeedButton
+    object sbKeluar: TsSpeedButton
       Left = 0
       Top = 0
       Width = 150
       Height = 90
       Cursor = crHandPoint
+      Align = alTop
       Caption = 'Selesai'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
@@ -145,44 +203,33 @@ object FDaftarKaryawan: TFDaftarKaryawan
       Layout = blGlyphTop
       ParentFont = False
       Spacing = 0
-      OnClick = sb_1Click
-      Align = alTop
+      OnClick = sbKeluarClick
       SkinData.SkinSection = 'TOOLBUTTON'
       Images = DM.image
       ImageIndex = 3
       Reflected = True
     end
-    object spnl1: TsPanel
+    object pnlButton: TsPanel
       Left = 0
-      Top = 351
+      Top = 325
       Width = 150
-      Height = 90
+      Height = 40
       Align = alBottom
       TabOrder = 0
       SkinData.SkinSection = 'PANEL'
+      ExplicitTop = -40
       DesignSize = (
         150
-        90)
-      object btnRegister: TsButton
+        40)
+      object btnEdit: TsButton
         Left = 6
-        Top = 41
-        Width = 136
-        Height = 40
-        Anchors = [akBottom]
-        Caption = '&Register'#13#10'Sidik Jari'
-        TabOrder = 0
-        OnClick = btnRegisterClick
-        SkinData.SkinSection = 'BUTTON'
-      end
-      object btnDaftarHadir: TsButton
-        Left = 6
-        Top = 9
+        Top = 7
         Width = 136
         Height = 25
         Anchors = [akBottom]
-        Caption = 'Daftar Hadir'
-        TabOrder = 1
-        OnClick = btnDaftarHadirClick
+        Caption = '&Ubah Data'
+        TabOrder = 0
+        OnClick = btnEditClick
         SkinData.SkinSection = 'BUTTON'
       end
     end
