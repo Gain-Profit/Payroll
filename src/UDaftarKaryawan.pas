@@ -58,7 +58,7 @@ var
 implementation
 
 uses
-  UMain, UDM, {URegister,} UDaftarHadir;
+  UMain, UDM, URegister, UDaftarHadir;
 
 {$R *.dfm}
 
@@ -132,8 +132,8 @@ end;
 
 procedure TFDaftarKaryawan.btnRegisterClick(Sender: TObject);
 begin
-//  Application.CreateForm(TFRegister, FRegister);
-//  FRegister.ShowModal;
+  Application.CreateForm(TFRegister, FRegister);
+  FRegister.ShowModal;
 end;
 
 procedure TFDaftarKaryawan.btnDaftarHadirClick(Sender: TObject);
