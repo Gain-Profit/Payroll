@@ -8,8 +8,6 @@ uses
 
 type
   TFRegister = class(TForm)
-    FPReg: TFinFPReg;
-    FPVer: TFinFPVer;
     lbl1: TLabel;
     edIdUser: TEdit;
     cbFingerIndex: TComboBox;
@@ -26,22 +24,23 @@ type
     procedure FormShow(Sender: TObject);
     procedure btnDaftarClick(Sender: TObject);
     procedure ShowStatus(msg: string);
-    procedure FPRegFPRegistrationStatus(ASender: TObject; Status: Integer);
-    procedure FPRegFPSamplesNeeded(ASender: TObject; Samples: Smallint);
-    procedure FPRegFPRegistrationTemplate(ASender: TObject;
-      const FPTemplate: WideString);
-    procedure FPRegFPRegistrationImage(Sender: TObject);
     procedure btnSimpanClick(Sender: TObject);
     procedure btnVerifikasiClick(Sender: TObject);
     procedure StartVerifikasi;
     procedure StartRegistrasi;
     procedure LoadData;
+  private
+    FPReg: TFinFPReg;
+    FPVer: TFinFPVer;
+    procedure FPRegFPRegistrationStatus(ASender: TObject; Status: Integer);
+    procedure FPRegFPSamplesNeeded(ASender: TObject; Samples: Smallint);
+    procedure FPRegFPRegistrationTemplate(ASender: TObject;
+      const FPTemplate: WideString);
+    procedure FPRegFPRegistrationImage(Sender: TObject);
     procedure FPVerFPVerificationImage(Sender: TObject);
     procedure FPVerFPVerificationID(ASender: TObject; const ID: WideString;
       FingerNr: Integer);
     procedure FPVerFPVerificationStatus(ASender: TObject; Status: Integer);
-  private
-    { Private declarations }
   public
     SN: WideString;
     Verification: WideString;
@@ -71,6 +70,21 @@ end;
 
 procedure TFRegister.FormCreate(Sender: TObject);
 begin
+  FPReg := TFinFPReg.Create(Self);
+  FPReg.AutoConnect := False;
+  FPReg.ConnectKind := ckRunningOrNew;
+  FPReg.OnFPRegistrationStatus := FPRegFPRegistrationStatus;
+  FPReg.OnFPRegistrationTemplate := FPRegFPRegistrationTemplate;
+  FPReg.OnFPSamplesNeeded := FPRegFPSamplesNeeded;
+  FPReg.OnFPRegistrationImage := FPRegFPRegistrationImage;
+
+  FPVer := TFinFPVer.Create(Self);
+  FPVer.AutoConnect := False;
+  FPVer.ConnectKind := ckRunningOrNew;
+  FPVer.OnFPVerificationStatus := FPVerFPVerificationStatus;
+  FPVer.OnFPVerificationID := FPVerFPVerificationID;
+  FPVer.OnFPVerificationImage := FPVerFPVerificationImage;
+
   imgJari.Canvas.Create();
   FPReg.PictureSamplePath := ExtractFilePath(Application.ExeName) + '\FPTemp.BMP';
   FPReg.PictureSampleHeight := 1635;

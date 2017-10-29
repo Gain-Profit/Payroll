@@ -68,7 +68,6 @@ object FRegister: TFRegister
     Height = 21
     Style = csDropDownList
     Ctl3D = False
-    ItemHeight = 13
     ItemIndex = 6
     ParentCtl3D = False
     TabOrder = 2
@@ -130,29 +129,17 @@ object FRegister: TFRegister
     Width = 369
     Height = 233
     Ctl3D = True
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
     HideScrollBars = False
     ParentCtl3D = False
+    ParentFont = False
     ReadOnly = True
     ScrollBars = ssVertical
     TabOrder = 6
-  end
-  object FPReg: TFinFPReg
-    AutoConnect = False
-    ConnectKind = ckRunningOrNew
-    OnFPRegistrationStatus = FPRegFPRegistrationStatus
-    OnFPRegistrationTemplate = FPRegFPRegistrationTemplate
-    OnFPSamplesNeeded = FPRegFPSamplesNeeded
-    OnFPRegistrationImage = FPRegFPRegistrationImage
-    Left = 328
-    Top = 16
-  end
-  object FPVer: TFinFPVer
-    AutoConnect = False
-    ConnectKind = ckRunningOrNew
-    OnFPVerificationStatus = FPVerFPVerificationStatus
-    OnFPVerificationID = FPVerFPVerificationID
-    OnFPVerificationImage = FPVerFPVerificationImage
-    Left = 288
-    Top = 16
+    Zoom = 100
   end
 end

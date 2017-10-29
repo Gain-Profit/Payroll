@@ -2,7 +2,6 @@ program Payroll;
 
 uses
   Forms,
-//  URegister in '..\src\URegister.pas' {FRegister},
   UDM in '..\src\UDM.pas' {DM: TDataModule},
   UMain in '..\src\UMain.pas' {FMain},
   UDaftarKaryawan in '..\src\UDaftarKaryawan.pas' {FDaftarKaryawan},
@@ -13,7 +12,9 @@ uses
   UDaftarGaji in '..\src\UDaftarGaji.pas' {FDaftarGaji},
   UGaji in '..\src\UGaji.pas' {FGaji},
   UDaftarGajiTemplate in '..\src\UDaftarGajiTemplate.pas' {FDaftarGajiTemplate},
-  UGajiTemplate in '..\src\UGajiTemplate.pas' {FGajiTemplate};
+  UGajiTemplate in '..\src\UGajiTemplate.pas' {FGajiTemplate},
+  FlexCodeSDK in '..\..\tools\pascal\FlexCodeSDK.pas',
+  URegister in '..\src\URegister.pas' {FRegister};
 
 {$R *.res}
 
@@ -22,5 +23,6 @@ begin
   Application.Title := 'Aplikasi Penggajian';
   Application.CreateForm(TDM, DM);
   Application.CreateForm(TFMain, FMain);
+  Application.CreateForm(TFRegister, FRegister);
   Application.Run;
 end.
