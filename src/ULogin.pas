@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, sLabel, sEdit, sGroupBox, Buttons, sBitBtn, sButton, 
-  ComCtrls, sStatusBar, cxControls,
+  ComCtrls, sStatusBar, cxControls, System.UITypes,
   cxContainer, cxEdit, cxImage, db, sSkinProvider, 
   ExtCtrls;
 
@@ -32,7 +32,6 @@ type
     procedure Ed_Kd_UserChange(Sender: TObject);
   private
     userPassword, userRealName: string;
-    isAdmin: Boolean;
     { Private declarations }
   public
     { Public declarations }

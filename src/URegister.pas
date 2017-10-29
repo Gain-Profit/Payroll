@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, FlexCodeSDK, OleServer, StdCtrls, ExtCtrls, ComCtrls;
+  Dialogs, FlexCodeSDK, OleServer, StdCtrls, ExtCtrls, ComCtrls, System.UITypes;
 
 type
   TFRegister = class(TForm)

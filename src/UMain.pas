@@ -189,7 +189,7 @@ end;
 // @param TObject sender
 procedure TFMain.tc_childChange(Sender: TObject);
 var
-  cHandle: Integer;
+  cHandle: Cardinal;
   k: Integer;
 begin
   cHandle := Integer(tc_child.Tabs.Objects[tc_child.TabIndex]);
