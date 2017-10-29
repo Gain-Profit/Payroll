@@ -111,9 +111,13 @@ begin
       UserName := _user;
       Password := _password;
       port := _port;
+      Connected := True;
     end;
-  except
-    showmessage('Tidak Terkoneksi ke database...');
+  except on E: Exception do
+    begin
+      showmessage('koneksi tidak berhasil' + sLineBreak + E.Message);
+      application.Terminate;
+    end;
   end;
 end;
 
