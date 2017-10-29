@@ -22,7 +22,9 @@ begin
   Application.Initialize;
   Application.Title := 'Aplikasi Penggajian';
   Application.CreateForm(TDM, DM);
-  Application.CreateForm(TFMain, FMain);
-  Application.CreateForm(TFRegister, FRegister);
-  Application.Run;
+  if DM.xConn.Connected then
+  begin
+    Application.CreateForm(TFMain, FMain);
+    Application.Run;
+  end;
 end.

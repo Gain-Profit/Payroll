@@ -3,7 +3,7 @@ unit UDM;
 interface
 
 uses
-  SysUtils, Classes, DB, Dialogs, sSkinManager, IniFiles, Forms,
+  SysUtils, Classes, DB, Dialogs, sSkinManager, IniFiles, Forms, System.UITypes,
   ImgList, Controls, acAlphaImageList, Windows, SHFolder, MemDS, DBAccess, MyAccess,
   frxClass, frxDBSet, System.ImageList;
 
@@ -115,7 +115,7 @@ begin
     end;
   except on E: Exception do
     begin
-      showmessage('koneksi tidak berhasil' + sLineBreak + E.Message);
+      MessageDlg('koneksi tidak berhasil' + sLineBreak + e.Message, mtError, [mbOk], 0);
       application.Terminate;
     end;
   end;
