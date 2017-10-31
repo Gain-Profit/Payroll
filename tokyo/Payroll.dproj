@@ -68,6 +68,7 @@
         <VerInfo_Release>13</VerInfo_Release>
         <VerInfo_Locale>2057</VerInfo_Locale>
         <VerInfo_Keys>CompanyName=Gain-Profit;FileDescription=;FileVersion=17.4.13.0;InternalName=Payroll;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <DCC_ExeOutput>..\..\Gain Profit\$(Platform)\$(Config)</DCC_ExeOutput>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_Namespace>System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
@@ -83,7 +84,6 @@
         <VerInfo_MinorVer>10</VerInfo_MinorVer>
         <VerInfo_Release>26</VerInfo_Release>
         <DCC_UsePackage>acntDX10Tokyo_R;cxDataRS25;cxEditorsRS25;cxExportRS25;cxGridRS25;cxLibraryRS25;cxPageControlRS25;dac250;dxCoreRS25;dxGDIPlusRS25;dxLayoutControlRS25;dxOfficeCoreRS25;dxServerModeRS25;dxSpreadSheetRS25;dxThemeRS25;frxe25;mydac250;$(DCC_UsePackage)</DCC_UsePackage>
-        <DCC_ExeOutput>..\..\Gain Profit\$(Platform)\$(Config)</DCC_ExeOutput>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
         <Icon_MainIcon>Payroll_Icon.ico</Icon_MainIcon>
@@ -161,7 +161,6 @@
         <DCCReference Include="..\..\tools\pascal\FlexCodeSDK.pas"/>
         <DCCReference Include="..\src\URegister.pas">
             <Form>FRegister</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_2</Key>
